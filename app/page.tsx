@@ -88,27 +88,31 @@ export default function HomePage() {
             </div>
 
             <div className="space-y-3">
-              <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl md:text-5xl">
-                Transformez un flou juridique en plan d&apos;action concret pour
-                votre site web.
-              </h1>
-              <p className="max-w-xl text-sm text-slate-300 sm:text-base">
-                Nous analysons vos cookies, formulaires et contenus liés aux
-                renseignements personnels pour vous donner une vue claire des
-                risques Loi 25 et des correctifs à prioriser, en nous basant sur
-                les obligations publiées par la Commission d&apos;accès à
-                l&apos;information du Québec (CAI).
-              </p>
-              <p className="mt-3">
-  <Link
-    href="/ressources/checklist-loi-25-site-web"
-    className="inline-flex items-center gap-2 text-xs font-semibold text-sky-300 hover:text-sky-200"
-  >
-    <span>Préparer votre site : voir la checklist Loi 25</span>
-    <span className="text-[10px]">→</span>
-  </Link>
-</p>
-            </div>
+  <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl md:text-5xl">
+    Votre site web parle déjà de vous.
+    Assurez-vous qu&apos;il ne parle pas contre vous avec la Loi 25.
+  </h1>
+  <p className="max-w-xl text-sm text-slate-300 sm:text-base">
+    Vous avez ajouté une bannière de cookies, mis en ligne une politique de
+    confidentialité… mais vous n&apos;êtes pas certain que tout se tient vraiment.
+    Et vous n&apos;avez ni le temps ni l&apos;équipe interne pour décortiquer chaque
+    exigence de la Loi 25.
+  </p>
+  <p className="max-w-xl text-sm text-slate-300 sm:text-base">
+    L&apos;audit part de votre réalité&nbsp;: votre site, vos formulaires, vos outils.
+    L&apos;objectif est simple&nbsp;: transformer un flou juridique en plan d&apos;action
+    clair, priorisé et réaliste pour votre organisation.
+  </p>
+  <p className="mt-3">
+    <Link
+      href="/ressources/checklist-loi-25-site-web"
+      className="inline-flex items-center gap-2 text-xs font-semibold text-sky-300 hover:text-sky-200"
+    >
+      <span>Préparer votre site : voir la checklist Loi 25</span>
+      <span className="text-[10px]">→</span>
+    </Link>
+  </p>
+</div>
 
             <div className="flex flex-wrap items-center gap-3 text-xs text-slate-300 sm:text-sm">
               <span className="inline-flex items-center gap-2 rounded-full bg-slate-950/80 px-3 py-1 ring-1 ring-slate-700">
@@ -453,41 +457,48 @@ export default function HomePage() {
 
           {/* À propos */}
           <section className="md:col-span-2 mt-6 grid gap-8 rounded-2xl bg-slate-900/70 p-6 ring-1 ring-slate-800 md:grid-cols-[minmax(0,2fr),minmax(0,3fr)]">
-            <div className="space-y-3">
-              <h2 className="text-lg font-semibold text-slate-50">
-                Qui se cache derrière l&apos;audit ?
-              </h2>
-              <p className="text-sm text-slate-300">
-                L&apos;audit est réalisé par un praticien basé au Québec, habitué
-                à travailler avec des organisations qui doivent composer avec
-                peu de temps et de ressources, mais des obligations croissantes
-                en matière de protection des renseignements personnels.
-              </p>
-              <p className="text-xs text-slate-400">
-                L&apos;approche est volontairement pragmatique : comprendre votre
-                contexte, identifier les risques concrets sur votre site et vous
-                proposer des actions réalistes, en respectant vos ressources
-                humaines et financières.
-              </p>
-            </div>
-            <div className="space-y-3 text-sm text-slate-300">
-              <h3 className="text-sm font-semibold text-slate-100">
-                Ce que vous pouvez attendre de la collaboration
-              </h3>
-              <ul className="space-y-2 text-xs sm:text-sm list-disc list-inside">
-                <li>Un langage simple, sans jargon inutile.</li>
-                <li>Une vision extérieure sur vos pratiques numériques.</li>
-                <li>
-                  Des recommandations priorisées, faciles à transmettre à votre
-                  équipe ou à votre fournisseur web.
-                </li>
-                <li>
-                  Une posture de collaboration avec vos autres partenaires
-                  (juristes, TI, agence, etc.).
-                </li>
-              </ul>
-            </div>
-          </section>
+  <div className="space-y-3">
+    <h2 className="text-lg font-semibold text-slate-50">
+      Qui se cache derrière l&apos;audit ?
+    </h2>
+    <p className="text-sm text-slate-300">
+      L&apos;audit est réalisé par un praticien basé au Québec, qui travaille
+      au quotidien avec des PME, des OBNL et des organisations locales qui
+      n&apos;ont ni service juridique ni équipe TI dédiée… mais qui doivent malgré
+      tout rendre des comptes sur la protection des renseignements personnels.
+    </p>
+    <p className="text-xs text-slate-400">
+      Je viens du terrain numérique&nbsp;: sites web, formulaires, outils
+      d&apos;analyse, automatisation. Mon rôle n&apos;est pas de vous noyer dans le
+      jargon juridique, mais de traduire la Loi 25 en conséquences concrètes
+      sur votre site web&nbsp;: où ça coince, ce qui est acceptable, et ce qu&apos;il
+      est réaliste de corriger en premier avec vos ressources actuelles.
+    </p>
+    <p className="text-xs text-slate-400">
+      Concrètement, je vous aide à répondre à des questions très simples que
+      vos équipes se posent déjà&nbsp;: «&nbsp;Est‑ce qu&apos;on peut garder cet outil&nbsp;?&nbsp;»,
+      «&nbsp;Qu&apos;est‑ce qu&apos;on doit absolument changer sur le site&nbsp;?&nbsp;», «&nbsp;Comment
+      expliquer tout ça à la direction ou au conseil d&apos;administration&nbsp;?&nbsp;».
+    </p>
+  </div>
+  <div className="space-y-3 text-sm text-slate-300">
+    <h3 className="text-sm font-semibold text-slate-100">
+      Ce que vous pouvez attendre de la collaboration
+    </h3>
+    <ul className="space-y-2 text-xs sm:text-sm list-disc list-inside">
+      <li>Un langage simple, sans jargon inutile.</li>
+      <li>Une vision extérieure sur vos pratiques numériques.</li>
+      <li>
+        Des recommandations priorisées, faciles à transmettre à votre
+        équipe ou à votre fournisseur web.
+      </li>
+      <li>
+        Une posture de collaboration avec vos autres partenaires
+        (juristes, TI, agence, etc.).
+      </li>
+    </ul>
+  </div>
+</section>
 
           {/* FAQ */}
           <section className="md:col-span-2 mt-6 space-y-4 rounded-2xl bg-slate-950/70 p-6 ring-1 ring-slate-800">
