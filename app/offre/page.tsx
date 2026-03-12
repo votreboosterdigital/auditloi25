@@ -37,16 +37,14 @@ export default function OffrePage() {
   correctifs prioritaires et des conversations à avoir avec vos
   partenaires (TI, agence, juristes).
 </p>
-<p className="mt-2 text-xs text-sky-400 sm:text-sm">
-  Vous préférez d&apos;abord faire une vérification rapide par vous‑même&nbsp;?
-  Consultez notre{" "}
+<p className="mt-3">
   <Link
     href="/ressources/checklist-loi-25-site-web"
-    className="hover:text-sky-300"
+    className="inline-flex items-center gap-2 rounded-full bg-slate-900/70 px-4 py-2 text-xs font-semibold text-sky-300 ring-1 ring-sky-500/40 hover:bg-slate-900 hover:text-sky-200"
   >
-    checklist Loi 25 pour votre site web
+    <span>Voir la checklist Loi 25 pour votre site web</span>
+    <span className="text-[10px]">→</span>
   </Link>
-  .
 </p>
           </div>
 

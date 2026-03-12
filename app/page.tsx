@@ -99,15 +99,15 @@ export default function HomePage() {
                 les obligations publiées par la Commission d&apos;accès à
                 l&apos;information du Québec (CAI).
               </p>
-              <p className="mt-2 text-xs text-sky-400 sm:text-sm">
-  <a
+              <p className="mt-3">
+  <Link
     href="/ressources/checklist-loi-25-site-web"
-    className="hover:text-sky-300"
+    className="inline-flex items-center gap-2 text-xs font-semibold text-sky-300 hover:text-sky-200"
   >
-    Préparer votre site&nbsp;: voir la checklist Loi 25 pour votre site web
-  </a>
+    <span>Préparer votre site : voir la checklist Loi 25</span>
+    <span className="text-[10px]">→</span>
+  </Link>
 </p>
-
             </div>
 
             <div className="flex flex-wrap items-center gap-3 text-xs text-slate-300 sm:text-sm">
