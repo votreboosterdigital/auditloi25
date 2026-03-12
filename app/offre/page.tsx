@@ -32,11 +32,22 @@ export default function OffrePage() {
               Audit Loi 25 centré sur votre site web et vos parcours en ligne.
             </h1>
             <p className="text-sm text-slate-300 sm:text-base">
-              L&apos;objectif : partir de votre site et de vos outils numériques
-              pour vous donner une vue claire de vos risques Loi 25, des
-              correctifs prioritaires et des conversations à avoir avec vos
-              partenaires (TI, agence, juristes).
-            </p>
+  L&apos;objectif : partir de votre site et de vos outils numériques
+  pour vous donner une vue claire de vos risques Loi 25, des
+  correctifs prioritaires et des conversations à avoir avec vos
+  partenaires (TI, agence, juristes).
+</p>
+<p className="mt-2 text-xs text-sky-400 sm:text-sm">
+  Vous préférez d&apos;abord faire une vérification rapide par vous‑même&nbsp;?
+  Consultez notre{" "}
+  <Link
+    href="/ressources/checklist-loi-25-site-web"
+    className="hover:text-sky-300"
+  >
+    checklist Loi 25 pour votre site web
+  </Link>
+  .
+</p>
           </div>
 
           <div className="rounded-2xl border border-slate-800 bg-slate-950/90 p-5">
