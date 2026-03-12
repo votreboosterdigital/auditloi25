@@ -99,6 +99,15 @@ export default function HomePage() {
                 les obligations publiées par la Commission d&apos;accès à
                 l&apos;information du Québec (CAI).
               </p>
+              <p className="mt-2 text-xs text-sky-400 sm:text-sm">
+  <a
+    href="/ressources/checklist-loi-25-site-web"
+    className="hover:text-sky-300"
+  >
+    Préparer votre site&nbsp;: voir la checklist Loi 25 pour votre site web
+  </a>
+</p>
+
             </div>
 
             <div className="flex flex-wrap items-center gap-3 text-xs text-slate-300 sm:text-sm">
@@ -546,10 +555,16 @@ export default function HomePage() {
         <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-700/70 to-transparent" />
 
         <footer className="mt-4 border-t border-slate-800/70 pt-4 text-xs text-slate-500">
-          <p>
-            © {new Date().getFullYear()} auditloi25.ca – Tous droits réservés.
-          </p>
-        </footer>
+  <p>© {new Date().getFullYear()} auditloi25.ca – Tous droits réservés.</p>
+  <p className="mt-2">
+    <a
+      href="/ressources/checklist-loi-25-site-web"
+      className="text-sky-400 hover:text-sky-300"
+    >
+      Voir la checklist Loi 25 pour votre site web
+    </a>
+  </p>
+</footer>
       </div>
     </main>
   );
