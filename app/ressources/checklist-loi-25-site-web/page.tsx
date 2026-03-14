@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Checklist Loi 25 pour votre site web (cookies, formulaires, contenus) | auditloi25.ca",
@@ -202,11 +203,12 @@ export default function ChecklistLoi25Page() {
             les plus visibles et liste de correctifs priorisés, adaptée à vos ressources.
           </p>
           <div className="mt-4">
-            <a href="/#formulaire">
-              <span className="inline-flex items-center justify-center rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-emerald-400 hover:text-white">
-                Demander un pré-audit gratuit de mon site
-              </span>
-            </a>
+            <Link
+              href="/#formulaire"
+              className="inline-flex items-center justify-center rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-emerald-400 hover:text-white"
+            >
+              Demander un pré-audit gratuit de mon site
+            </Link>
           </div>
         </section>
 
