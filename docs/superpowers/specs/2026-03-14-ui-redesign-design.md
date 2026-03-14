@@ -145,7 +145,11 @@ Pattern: **Trust & Authority + Conversion** (ui-ux-pro-max skill recommendation 
 - **Left column:**
   - Badge pill: ShieldIcon + "Audit Loi 25 · Aligné CAI" (sky-400/15, ring sky-500/30)
   - H1 (ExtraBold, -0.02em): *"Votre site web est-il conforme à la Loi 25 ?"*
-  - Body (18px): 2-line subheading explaining the service
+  - Body (18px): 2-line subheading — use one of the 3 validated options below:
+    - **A (livrables):** `"Nous auditons vos pages clés, cookies et formulaires, puis vous livrons un rapport priorisé des corrections à apporter — adapté à la réalité des PME et OBNL québécois."`
+    - **B (douleur → solution):** `"Vous avez mis en place une bannière de cookies et une politique, mais impossible de savoir si c'est vraiment suffisant. L'audit vous donne un portrait clair de vos risques et les priorités concrètes à corriger."`
+    - **C (transmission):** `"Un audit structuré de votre site — cookies, formulaires, contenus légaux, consentement — et un plan d'action prêt à transmettre à votre équipe ou votre fournisseur web."`
+    - Recommendation: **A** for clarity, **C** for B2B decision-makers who need to delegate
   - CTA row: `[Demander mon pré-audit gratuit]` (emerald, glow shadow) + `"Voir l'offre détaillée →"` (sky link)
   - Trust pills: "Service indépendant" · "Pré-audit gratuit" · "Retour 48h"
   - Price note card: surface/70, ring slate-800 — "Pré-audit gratuit · Audit à partir de 450 $"
@@ -235,14 +239,16 @@ Pattern: **Trust & Authority + Conversion** (ui-ux-pro-max skill recommendation 
 - **H2:** "Les risques sont réels pour votre organisation"
 - **3 cards:**
 
-| Card | Icon | Stat | Content | Source |
-|------|------|------|---------|--------|
-| Amendes réelles | `ShieldAlert` sky | **25 M$** | ou 4 % du CA mondial pour les infractions les plus graves | Loi 25, art. 90-92 |
-| Confiance clients | `Users` sky | **81 %** | des consommateurs québécois préoccupés par l'usage de leurs données | Sondage CAI 2023 |
-| Obligation active | `Scale` sky | **Actif** | La CAI surveille les sites web — PME et OBNL ne sont pas exemptés | CAI, lignes directrices 2023 |
+| Card | Icon | Stat | Content | Source (reformulée) |
+|------|------|------|---------|---------------------|
+| Amendes réelles | `ShieldAlert` sky | **25 M$** | ou 4 % du CA mondial pour les infractions les plus graves | `Loi 25 (L.Q. 2021, c. 25), art. 90 et 92` |
+| Confiance clients | `Users` sky | **81 %** | des consommateurs québécois préoccupés par l'usage de leurs données personnelles | `Sondage sur la vie privée, CAI, 2023` |
+| Obligation active | `Scale` sky | **Actif** | La CAI surveille activement les sites web — PME et OBNL ne sont pas exemptés | `Lignes directrices de la CAI sur les témoins, 2023` |
 
 - Stat displayed in `sky-400` or `emerald-400`, large (28px bold)
-- Source: `text-xs slate-500` bottom of card
+- Source line: `text-xs slate-500`, format `"Source : [texte reformulé ci-dessus]"`
+- **"Voir les sources détaillées →"** link: `text-xs text-sky-400 hover:text-sky-300 underline-offset-2` placed below the 3 cards, centered. Links to `/ressources/sources-loi-25`.
+- New page to create: `app/ressources/sources-loi-25/page.tsx` (static, see Section 5)
 - **File:** `components/sections/why-act-now.tsx`
 
 ### 4.8 FAQ
@@ -263,6 +269,8 @@ Pattern: **Trust & Authority + Conversion** (ui-ux-pro-max skill recommendation 
 - **File:** `components/sections/cta-final.tsx`
 
 ### 4.10 Footer
+- **Micro "À propos" row** (top of footer, before divider): 1-2 sentences, `text-sm text-slate-400`, `max-w-2xl mx-auto text-center`. Placement rationale: in the footer keeps the main conversion flow uninterrupted, and users who scroll to the bottom are precisely those seeking credibility. Text:
+  > `"auditloi25.ca est opéré par un spécialiste en conformité numérique basé à Montréal, avec une expertise centrée sur les PME, OBNL et organismes locaux québécois qui doivent se conformer à la Loi 25 sans équipe juridique ou TI dédiée. Service privé et indépendant — non affilié au gouvernement du Québec ni à la CAI."`
 - Divider line gradient `via-slate-700/70`
 - Left: logo + "Service privé indépendant, basé à Montréal, Québec." + copyright
 - Right: nav links (Accueil · Offre · Checklist Loi 25 · Politique de confidentialité)
@@ -286,6 +294,9 @@ components/
     why-act-now.tsx                   (new)
     faq.tsx                           (new — extract + redesign)
     cta-final.tsx                     (new — extract)
+
+app/ressources/sources-loi-25/
+  page.tsx                            (new — static page listing sources for Pourquoi agir maintenant)
 ```
 
 ### Modified files
