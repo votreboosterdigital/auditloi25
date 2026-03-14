@@ -34,7 +34,36 @@ The existing page (`app/page.tsx`) contains functional content but lacks visual 
 
 ### 2.2 Typography — Plus Jakarta Sans
 
-Import: `@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap');`
+**Loading method: `next/font/google` (required for Next.js App Router)**
+
+Do NOT use a raw `@import url(...)` in `globals.css` — it conflicts with Tailwind v4's PostCSS pipeline. Use Next.js built-in font optimisation instead:
+
+```tsx
+// app/layout.tsx
+import { Plus_Jakarta_Sans } from 'next/font/google'
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-plus-jakarta',
+  display: 'swap',
+})
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="fr" className={plusJakarta.variable}>
+      ...
+    </html>
+  )
+}
+```
+
+```css
+/* app/globals.css — add after @import "tailwindcss" */
+@theme inline {
+  --font-sans: var(--font-plus-jakarta);
+}
+```
 
 | Role | Size (mobile → desktop) | Weight | Tracking |
 |------|--------------------------|--------|----------|
@@ -108,7 +137,7 @@ Pattern: **Trust & Authority + Conversion** (ui-ux-pro-max skill recommendation 
 - **Behavior:** Sticky, `bg-slate-950/80 backdrop-blur-md`, `border-b border-slate-800/60`
 - **Left:** ShieldIcon (20px, sky-400, glow) + "auditloi25.ca" (semibold slate-100)
 - **Right:** "Voir l'offre" (pill outline slate-700) + "Pré-audit gratuit" (pill emerald filled)
-- **Mobile:** hamburger menu, drawer full-width
+- **Mobile:** hamburger menu → full-screen overlay (not slide-in panel). `z-50`. State via `useState(isOpen)`. Close on backdrop click and on navigation. Hamburger button requires `aria-label="Ouvrir le menu"` and `aria-expanded={isOpen}`.
 - **File:** `components/navbar.tsx`
 
 ### 4.2 Hero
@@ -140,7 +169,8 @@ Pattern: **Trust & Authority + Conversion** (ui-ux-pro-max skill recommendation 
 ### 4.4 Comment ça marche
 - **Layout:** Left header column + right 3-step list (desktop), stacked (mobile)
 - **Steps:** Numbered circle (emerald/10, ring emerald/40) + title bold + description slate-400
-- **Connector:** dashed horizontal line `slate-700` between steps (desktop only, `::after` pseudo)
+- **Connector:** dashed horizontal line `slate-700` between steps (desktop only). Use Tailwind arbitrary variant on a `<span>` separator: `hidden md:block flex-1 border-t border-dashed border-slate-700 mt-3.5`
+- **Right column (form):** The lead capture form (4 fields: name, email, siteUrl, mainPages) lives as the **right column of this section**, co-located in `how-it-works.tsx`. It submits to `/api/lead` and redirects to `/merci`. Anchor `id="formulaire"` stays on this column so Hero and CTA Final `href="#formulaire"` links work.
 - **Footer note:** xs slate-500 disclaimer about scope vs legal advice
 - **File:** `components/sections/how-it-works.tsx`
 
@@ -174,6 +204,28 @@ Pattern: **Trust & Authority + Conversion** (ui-ux-pro-max skill recommendation 
 | CTA | "Demander" (outline sky) | "Commencer" (emerald filled) | "Nous contacter" (outline slate) |
 | Items | 3 | 5 | 6+ |
 
+**Feature list content per plan:**
+
+*Pré-audit (Gratuit)*
+- Analyse des cookies et scripts détectés
+- Vérification de la bannière de consentement
+- Premier portrait des zones à risque sur votre site
+
+*Audit complet (à partir de 450 $)*
+- Tout ce qui est inclus dans le pré-audit
+- Analyse approfondie des formulaires et parcours de consentement
+- Vérification des contenus légaux (politique, mentions)
+- Rapport synthèse avec score de risque par zone
+- Plan d'action priorisé adapté à vos ressources
+
+*Audit + Accompagnement (sur devis)*
+- Tout ce qui est inclus dans l'audit complet
+- Session de travail avec votre équipe ou fournisseur web
+- Révision des correctifs après mise en œuvre
+- Synthèse transmissible à votre direction ou conseil d'administration
+- Coordination avec vos partenaires juridiques ou TI
+- Suivi personnalisé selon vos échéances
+
 - **File:** `components/sections/pricing.tsx`
 
 ### 4.7 Pourquoi agir maintenant
@@ -196,7 +248,7 @@ Pattern: **Trust & Authority + Conversion** (ui-ux-pro-max skill recommendation 
 ### 4.8 FAQ
 - **5 questions**, accordion pattern, `useState` (no external lib)
 - Each item: `border-b border-slate-700`, H3 clickable + `ChevronDown` Lucide (rotates 180° on open, transition 200ms)
-- Answer: `slate-400`, expands with CSS max-height transition
+- Answer: `slate-400`, expands with CSS max-height transition. Use `max-h-0 overflow-hidden` (closed) → `max-h-[400px]` (open) with `transition-all duration-300`. The `400px` bound is sufficient for all FAQ answers; do not use `max-h-full` (no animation).
 - **Questions:**
   1. Est-ce que cet audit me rend « conforme Loi 25 » à lui seul ?
   2. Quels sont les risques si on ne fait rien ?
@@ -239,8 +291,11 @@ components/
 ### Modified files
 ```
 app/page.tsx                          (refactor: import sections, remove inline JSX)
-app/layout.tsx                        (add Plus Jakarta Sans font import)
-app/globals.css                       (add font-family token)
+app/layout.tsx                        (add Plus_Jakarta_Sans via next/font/google, apply variable to <html>)
+app/globals.css                       (add --font-plus-jakarta to @theme inline;
+                                       REMOVE: --font-sans: var(--font-geist-sans)
+                                       REMOVE: body { font-family: Arial, Helvetica, sans-serif }
+                                       REMOVE: @media (prefers-color-scheme: dark) block — dark only product)
 ```
 
 ### Existing (unchanged)
@@ -261,7 +316,7 @@ app/ressources/checklist-loi-25-site-web/page.tsx  (keep as-is)
 - [ ] Hover states: smooth transitions 150–300ms
 - [ ] Text contrast ≥ 4.5:1 (WCAG AA) on dark backgrounds
 - [ ] Focus rings visible for keyboard navigation
-- [ ] `prefers-reduced-motion` respected on animations
+- [ ] `prefers-reduced-motion` respected on animations — use Tailwind `motion-safe:transition-*` and `motion-reduce:transition-none` variants on all animated elements (FAQ accordion, card hovers, navbar backdrop)
 - [ ] Responsive: 375px · 768px · 1024px · 1440px
 - [ ] Touch targets ≥ 44px height on mobile
 - [ ] Form labels visible (not placeholder-only)
@@ -276,3 +331,4 @@ app/ressources/checklist-loi-25-site-web/page.tsx  (keep as-is)
 - Dark/light mode toggle (dark mode only)
 - Animations beyond CSS transitions (no Framer Motion)
 - CMS or data fetching for testimonials
+- **"À propos" section** — intentionally removed. Personal credibility content is replaced by the Trust Strip + "Pourquoi agir maintenant" factual cards, which convey authority without requiring a dedicated about section on the main page.
