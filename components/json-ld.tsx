@@ -58,6 +58,7 @@ const localBusinessSchema = {
   description:
     "Service d'audit de conformité Loi 25 pour sites web. Spécialisé PME, OBNL et organismes locaux québécois.",
   url: "https://auditloi25.ca",
+  image: "https://auditloi25.ca/opengraph-image",
   email: "votreboosterdigital@outlook.com",
   address: {
     "@type": "PostalAddress",

@@ -52,6 +52,18 @@ export function Footer() {
             Checklist Loi 25
           </Link>
           <Link
+            href="/ressources/banniere-cookies-loi-25"
+            className="text-slate-400 hover:text-slate-200 transition-colors"
+          >
+            Bannière de cookies
+          </Link>
+          <Link
+            href="/ressources/penalites-loi-25-entreprise"
+            className="text-slate-400 hover:text-slate-200 transition-colors"
+          >
+            Amendes Loi 25
+          </Link>
+          <Link
             href="/politique-de-confidentialite"
             className="text-slate-400 hover:text-slate-200 transition-colors"
           >
