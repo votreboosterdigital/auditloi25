@@ -46,8 +46,8 @@ const sources: Source[] = [
       "Commission d'accès à l'information du Québec (CAI). Lignes directrices sur les témoins de connexion (cookies), 2023.",
     note:
       "La CAI a publié des lignes directrices précisant les obligations des organisations québécoises en matière de témoins de connexion, applicables aux PME comme aux grandes organisations. Les organisations doivent notamment offrir la possibilité de refuser les témoins aussi facilement que de les accepter.",
-    url: "https://www.cai.gouv.qc.ca/protection-des-renseignements-personnels/temoins-de-connexion/",
-    urlLabel: "Lignes directrices sur les témoins — CAI",
+    url: "https://www.cai.gouv.qc.ca/uploads/pdfs/CAI_Criteres_Validite_Consentement.pdf?v=1705425983",
+    urlLabel: "Critères de validité du consentement (PDF) — CAI",
   },
 ];
 
