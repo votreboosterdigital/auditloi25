@@ -64,6 +64,12 @@ export function Footer() {
             Amendes Loi 25
           </Link>
           <Link
+            href="/a-propos"
+            className="text-slate-400 hover:text-slate-200 transition-colors"
+          >
+            À propos
+          </Link>
+          <Link
             href="/politique-de-confidentialite"
             className="text-slate-400 hover:text-slate-200 transition-colors"
           >
