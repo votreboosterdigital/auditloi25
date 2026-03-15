@@ -7,7 +7,7 @@ import { ShieldIcon } from "@/components/shield-icon";
 
 const navLinks = [
   { href: "/offre", label: "Voir l'offre" },
-  { href: "/ressources/checklist-loi-25-site-web", label: "Checklist Loi 25" },
+  { href: "/ressources", label: "Ressources" },
 ];
 
 export function Navbar() {

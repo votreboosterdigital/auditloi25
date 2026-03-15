@@ -45,6 +45,9 @@ export function Footer() {
           <Link href="/offre" className="text-slate-400 hover:text-slate-200 transition-colors">
             Offre
           </Link>
+          <Link href="/ressources" className="text-slate-400 hover:text-slate-200 transition-colors">
+            Ressources
+          </Link>
           <Link
             href="/ressources/checklist-loi-25-site-web"
             className="text-slate-400 hover:text-slate-200 transition-colors"
