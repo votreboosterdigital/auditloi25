@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/navbar";
+import { JsonLd } from "@/components/json-ld";
 import { Hero } from "@/components/sections/hero";
 import { TrustStrip } from "@/components/sections/trust-strip";
 import { HowItWorks } from "@/components/sections/how-it-works";
@@ -14,6 +15,7 @@ export default function HomePage() {
     <>
       {/* Sticky navbar — en dehors du flux de padding */}
       <Navbar />
+      <JsonLd />
 
       <main className="relative min-h-screen bg-slate-950 text-slate-50">
         {/* Fond décoratif global */}

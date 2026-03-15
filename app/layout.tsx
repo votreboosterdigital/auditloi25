@@ -10,10 +10,31 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+const siteUrl = "https://auditloi25.ca";
+const siteTitle = "Audit Loi 25 pour sites web | Pré-audit gratuit – PME et OBNL québécois";
+const siteDescription =
+  "Audit de conformité Loi 25 pour votre site web : cookies, formulaires, bannière et contenus légaux. Pré-audit gratuit pour PME et OBNL au Québec. Retour sous 48 h, sans engagement.";
+
 export const metadata: Metadata = {
-  title: "Audit Loi 25 pour sites web | Pré-audit gratuit – PME et OBNL québécois",
-  description:
-    "Audit de conformité Loi 25 pour votre site web : cookies, formulaires, bannière et contenus légaux. Pré-audit gratuit pour PME et OBNL au Québec. Retour sous 48 h, sans engagement.",
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
+  openGraph: {
+    type: "website",
+    locale: "fr_CA",
+    url: siteUrl,
+    siteName: "auditloi25.ca",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
 };
 
 export default function RootLayout({
