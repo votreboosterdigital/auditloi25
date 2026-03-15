@@ -17,29 +17,29 @@ type WhyCard = {
 const cards: WhyCard[] = [
   {
     icon: ShieldAlert,
-    title: "Amendes réelles",
+    title: "Amendes pénales prévues par la loi",
     stat: "25 M$",
     statColor: "sky",
     content:
-      "ou 4 % du chiffre d'affaires mondial pour les infractions les plus graves.",
+      "ou 4 % du chiffre d'affaires mondial pour les infractions les plus graves — aucune organisation n'est exemptée.",
     source: "Loi 25 (L.Q. 2021, c. 25), art. 90 et 92",
   },
   {
     icon: Users,
-    title: "Confiance clients",
+    title: "Perte de confiance mesurable",
     stat: "81 %",
     statColor: "emerald",
     content:
-      "des consommateurs québécois se disent préoccupés par l'usage de leurs données personnelles.",
+      "des consommateurs québécois se disent préoccupés par l'usage de leurs données — un site non conforme fragilise votre réputation.",
     source: "Sondage sur la vie privée, CAI, 2023",
   },
   {
     icon: Scale,
-    title: "Obligation active",
-    stat: "Actif",
+    title: "Surveillance active de la CAI",
+    stat: "Maintenant",
     statColor: "sky",
     content:
-      "La CAI surveille activement les sites web — les PME et OBNL ne sont pas exemptés.",
+      "La CAI surveille activement les sites web québécois. Attendre ne réduit pas le risque — ça l'augmente.",
     source: "Lignes directrices de la CAI sur les témoins, 2023",
   },
 ];
@@ -59,7 +59,7 @@ export function WhyActNow() {
           id="why-act-heading"
           className="mt-2 text-2xl font-bold tracking-tight text-slate-50"
         >
-          Les risques sont réels pour votre organisation
+          Ces risques concernent votre organisation — quelle que soit sa taille
         </h2>
       </header>
 

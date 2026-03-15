@@ -12,19 +12,19 @@ type FormState = {
 
 const steps = [
   {
-    title: "Vous remplissez le formulaire.",
+    title: "Remplissez le formulaire — 2 minutes.",
     description:
-      "Vous indiquez votre site, vos pages clés et le type d'organisation (PME, OBNL, municipal, etc.).",
+      "Indiquez votre site, vos pages clés et le type d'organisation. Pas de jargon, pas de préparation requise.",
   },
   {
-    title: "Pré-audit et retour initial.",
+    title: "Vous recevez votre pré-audit gratuit.",
     description:
-      "À partir de vos informations, nous réalisons un pré-audit de votre site (témoins, formulaires, pages clés) et vous envoyons un premier retour avec les zones à risque.",
+      "Nous réalisons le pré-audit Loi 25 de votre site — cookies, formulaires et pages principales — et vous envoyons un bilan clair des zones à risque sous 48 heures ouvrables.",
   },
   {
-    title: "Audit complet et plan d'action (optionnel).",
+    title: "Audit complet sur mesure (si vous le souhaitez).",
     description:
-      "Si vous le souhaitez, nous réalisons un audit complet avec rapport détaillé, priorisation des correctifs et accompagnement possible avec votre équipe ou vos fournisseurs.",
+      "Sur la base du pré-audit, nous vous proposons un devis précis. Rapport détaillé, plan d'action priorisé, accompagnement avec votre équipe ou vos fournisseurs — vous choisissez l'étendue.",
   },
 ];
 
@@ -75,18 +75,18 @@ export function HowItWorks() {
       <div className="space-y-6">
         <header>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-400">
-            Processus
+            Comment ça marche
           </p>
           <h2
             id="process-heading"
             className="mt-2 text-2xl font-bold tracking-tight text-slate-50"
           >
-            Comment se déroule l&apos;audit de votre site
+            Votre pré-audit Loi&nbsp;25 gratuit en 3 étapes — sans équipe TI ni avocat requis
           </h2>
           <p className="mt-2 max-w-xl text-base text-slate-300">
-            Un processus pensé pour les organisations qui jonglent déjà avec
-            mille priorités et n&apos;ont ni service juridique ni équipe TI
-            dédiée pour «&nbsp;gérer la Loi&nbsp;25&nbsp;».
+            Conçu pour les PME et OBNL québécois qui veulent un premier audit
+            Loi&nbsp;25 de leur site sans se perdre dans des démarches
+            complexes. Vous nous donnez les informations, on fait le reste.
           </p>
         </header>
 
@@ -120,12 +120,12 @@ export function HowItWorks() {
         className="rounded-2xl bg-slate-900/70 p-6 shadow-lg ring-1 ring-slate-800"
       >
         <h2 className="text-lg font-semibold text-slate-50">
-          Demander un pré-audit gratuit
+          Recevoir mon pré-audit gratuit
         </h2>
         <p className="mt-1 text-xs text-slate-400">
-          Vous recevez un court retour par courriel avec les principaux points à
-          corriger sur votre site, ainsi qu&apos;une estimation du temps et du
-          budget pour un audit complet.
+          En 2 minutes, vous nous donnez les informations essentielles. Nous
+          revenons vers vous sous 48 h avec un premier bilan de votre site —
+          zones à risque, points prioritaires, estimation pour l&apos;audit complet.
         </p>
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-4" noValidate>
@@ -208,12 +208,12 @@ export function HowItWorks() {
             type="submit"
             className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-slate-950 shadow-[0_0_16px_rgba(16,185,129,0.2)] transition-colors duration-200 hover:bg-emerald-400 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
           >
-            Recevoir mon pré-audit
+            Envoyer ma demande — c&apos;est gratuit
           </button>
 
           <p className="text-[11px] text-slate-500">
-            Le pré-audit est gratuit et sans engagement. Vous décidez ensuite
-            si vous souhaitez aller plus loin avec un audit complet.
+            Aucun engagement. Vous recevez votre pré-audit gratuitement, puis
+            vous décidez si vous souhaitez aller plus loin.
           </p>
         </form>
       </div>

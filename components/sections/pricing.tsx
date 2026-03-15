@@ -15,45 +15,45 @@ const plans: Plan[] = [
   {
     name: "Pré-audit",
     price: "Gratuit",
-    priceNote: null,
+    priceNote: "Idéal pour un premier état des lieux",
     badge: null,
     highlighted: false,
-    cta: { label: "Demander", href: "#formulaire", variant: "sky" },
+    cta: { label: "Commencer gratuitement", href: "#formulaire", variant: "sky" },
     features: [
-      "Analyse des cookies et scripts détectés",
-      "Vérification de la bannière de consentement",
-      "Premier portrait des zones à risque sur votre site",
+      "Détection des cookies et scripts tiers actifs sur votre site",
+      "Vérification de la présence et du comportement de la bannière de consentement",
+      "Premier portrait des zones à risque les plus visibles",
     ],
   },
   {
     name: "Audit complet",
     price: "À partir de 450 $",
-    priceNote: "selon la taille du site",
+    priceNote: "selon la taille du site · devis après pré-audit",
     badge: "Le plus populaire",
     highlighted: true,
-    cta: { label: "Commencer", href: "#formulaire", variant: "emerald" },
+    cta: { label: "Démarrer mon audit", href: "#formulaire", variant: "emerald" },
     features: [
       "Tout ce qui est inclus dans le pré-audit",
-      "Analyse approfondie des formulaires et parcours de consentement",
-      "Vérification des contenus légaux (politique, mentions)",
-      "Rapport synthèse avec score de risque par zone",
-      "Plan d'action priorisé adapté à vos ressources",
+      "Analyse approfondie de chaque formulaire et du parcours de consentement",
+      "Vérification complète des contenus légaux : politique, mentions, droits",
+      "Rapport synthèse avec score de risque par zone et par priorité",
+      "Plan d'action classé par effort réaliste, adapté à vos ressources",
     ],
   },
   {
     name: "Audit + Accompagnement",
     price: "Sur devis",
-    priceNote: "adapté à vos besoins",
+    priceNote: "adapté à votre organisation",
     badge: "Sur mesure",
     highlighted: false,
-    cta: { label: "Nous contacter", href: "#formulaire", variant: "slate" },
+    cta: { label: "Discuter de mon projet", href: "#formulaire", variant: "slate" },
     features: [
       "Tout ce qui est inclus dans l'audit complet",
-      "Session de travail avec votre équipe ou fournisseur web",
-      "Révision des correctifs après mise en œuvre",
-      "Synthèse transmissible à votre direction ou CA",
+      "Session de travail avec votre équipe ou votre fournisseur web",
+      "Révision des correctifs une fois mis en œuvre",
+      "Synthèse claire transmissible à votre direction ou CA",
       "Coordination avec vos partenaires juridiques ou TI",
-      "Suivi personnalisé selon vos échéances",
+      "Suivi personnalisé selon vos délais et contraintes",
     ],
   },
 ];
@@ -80,11 +80,12 @@ export function Pricing() {
           id="pricing-heading"
           className="mt-2 text-2xl font-bold tracking-tight text-slate-50"
         >
-          Un parcours clair, du pré-audit à l&apos;accompagnement
+          Commencez gratuitement — avancez à votre rythme
         </h2>
         <p className="mt-2 max-w-xl text-base text-slate-300">
-          Commencez gratuitement. Passez à l&apos;étape suivante seulement si
-          vous le souhaitez — sans engagement.
+          Le pré-audit Loi&nbsp;25 est gratuit et sans engagement. Vous
+          passez à l&apos;étape suivante seulement si vous le souhaitez, sur
+          la base d&apos;un devis précis.
         </p>
       </header>
 
@@ -153,7 +154,7 @@ export function Pricing() {
           href="/offre"
           className="text-sky-400 underline underline-offset-4 decoration-sky-400/40 hover:text-sky-300"
         >
-          Voir l&apos;offre détaillée →
+          Voir le détail de l&apos;offre d&apos;audit →
         </Link>
       </p>
     </section>

@@ -19,13 +19,13 @@ const features: Feature[] = [
     icon: Cookie,
     title: "Cookies & scripts tiers",
     description:
-      "Identification et catégorisation des témoins de connexion et des outils tiers actifs sur votre site.",
+      "Identification et catégorisation des cookies et scripts tiers actifs — une obligation centrale de l'audit Loi 25 pour votre site web.",
   },
   {
     icon: FileText,
     title: "Formulaires & consentement",
     description:
-      "Analyse des formulaires de contact, d'inscription et des parcours de collecte de données personnelles.",
+      "Analyse de la conformité Loi 25 de vos formulaires de contact, d'inscription et des parcours de collecte de données personnelles.",
   },
   {
     icon: BookOpen,
@@ -37,7 +37,7 @@ const features: Feature[] = [
     icon: ToggleLeft,
     title: "Bannière de cookies",
     description:
-      "Évaluation de la bannière de consentement : présence, clarté et facilité de refus équivalente à l'acceptation.",
+      "Évaluation de la bannière de consentement selon les critères Loi 25 : présence, clarté et facilité de refus équivalente à l'acceptation.",
   },
   {
     icon: Activity,
@@ -67,11 +67,11 @@ export function Features() {
           id="features-heading"
           className="mt-2 text-2xl font-bold tracking-tight text-slate-50"
         >
-          Six zones auditées sur votre site
+          Six zones vérifiées dans chaque audit Loi&nbsp;25 de votre site
         </h2>
         <p className="mt-2 max-w-xl text-base text-slate-300">
-          Chaque zone correspond à des exigences clés mises de l&apos;avant par
-          la CAI pour les sites web québécois.
+          Chaque zone correspond à des exigences clés de la conformité
+          Loi&nbsp;25 mises de l&apos;avant par la CAI pour les sites web québécois.
         </p>
       </header>
 

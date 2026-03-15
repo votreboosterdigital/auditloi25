@@ -11,9 +11,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Audit cookies & Loi 25 – auditloi25.ca",
+  title: "Audit Loi 25 pour sites web | Pré-audit gratuit – PME et OBNL québécois",
   description:
-    "Audit cookies et conformité Loi 25 pour sites web de PME et OBNL au Québec.",
+    "Audit de conformité Loi 25 pour votre site web : cookies, formulaires, bannière et contenus légaux. Pré-audit gratuit pour PME et OBNL au Québec. Retour sous 48 h, sans engagement.",
 };
 
 export default function RootLayout({

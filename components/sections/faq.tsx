@@ -10,29 +10,29 @@ type FaqItem = {
 
 const faqs: FaqItem[] = [
   {
-    question: "Est-ce que cet audit me rend « conforme Loi 25 » à lui seul ?",
+    question: "Le pré-audit est vraiment gratuit ? Qu'est-ce que vous attendez en retour ?",
     answer:
-      "Non. L'audit se concentre sur votre site web (cookies, formulaires, contenus) et vous aide à corriger les risques les plus visibles. La conformité globale Loi 25 inclut aussi vos processus internes, vos contrats, votre gouvernance des données et d'autres aspects qui dépassent le seul site web.",
+      "Oui, entièrement gratuit — aucune carte de crédit, aucun engagement. Le pré-audit nous permet de vous montrer concrètement ce que nous faisons. Si vous souhaitez aller plus loin avec un audit complet, vous recevrez un devis précis. Vous décidez librement.",
   },
   {
-    question: "Quels sont les risques si on ne fait rien ?",
+    question: "On n'a pas d'équipe TI ni de responsable juridique — est-ce que ça nous convient quand même ?",
     answer:
-      "Au-delà de l'image et de la confiance des clients, la Loi 25 prévoit des amendes administratives pouvant aller jusqu'à 10 M$ (ou 2 % du chiffre d'affaires mondial) et des amendes pénales pouvant atteindre 25 M$ (ou 4 % du CA) pour les infractions les plus graves.",
+      "C'est exactement pour vous. Notre service est conçu pour les organisations sans équipe dédiée. Vous n'avez pas besoin de comprendre les rouages techniques ou juridiques : on vous explique clairement ce qui pose problème et comment le corriger, en termes accessibles.",
   },
   {
-    question: "Combien de temps prend un pré-audit et un audit complet ?",
+    question: "On n'a pas encore été contacté par la CAI — est-ce vraiment urgent ?",
     answer:
-      "Le pré-audit basé sur ce formulaire permet un premier retour en quelques jours ouvrables pour un site typique de PME ou d'OBNL. Un audit complet se planifie ensuite selon la taille du site et vos échéances.",
+      "Ne pas avoir reçu d'avis ne signifie pas être conforme. La CAI peut agir sur plainte ou de sa propre initiative. Les obligations liées aux cookies et au consentement sont actives depuis 2023 — chaque mois qui passe représente une période d'exposition au risque.",
   },
   {
-    question: "À qui s'adresse ce service ?",
-    answer:
-      "Aux PME de services, OBNL, organismes locaux, fédérations et petites municipalités québécoises qui doivent se structurer face à la Loi 25 avec des ressources limitées, sans équipe juridique ou TI dédiée.",
-  },
-  {
-    question: "Quelle est la différence entre un pré-audit et un audit complet ?",
+    question: "Quelle est la différence entre le pré-audit et l'audit complet ?",
     answer:
       "Le pré-audit est gratuit : à partir du formulaire, nous produisons un premier portrait des zones à risque sur votre site. L'audit complet est une analyse approfondie avec rapport détaillé, score de risque par zone et plan d'action priorisé. Le pré-audit vous permet d'évaluer la pertinence de l'audit complet avant de vous engager.",
+  },
+  {
+    question: "Est-ce que cet audit me rend entièrement « conforme Loi 25 » ?",
+    answer:
+      "Non — et nous le disons clairement. L'audit porte sur votre site web (cookies, formulaires, contenus légaux) et couvre les obligations les plus visibles et les plus vérifiées. La conformité globale inclut aussi vos processus internes, vos contrats et votre gouvernance des données, qui dépassent le périmètre du site.",
   },
 ];
 
@@ -48,7 +48,7 @@ export function Faq() {
         id="faq-heading"
         className="mb-6 text-2xl font-bold tracking-tight text-slate-50"
       >
-        Questions fréquentes
+        Questions posées avant de commencer
       </h2>
 
       <dl className="divide-y divide-slate-700/60">
