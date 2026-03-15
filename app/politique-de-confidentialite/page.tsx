@@ -312,6 +312,13 @@ export default function PolitiqueConfidentialitePage() {
                 sur le lien «&nbsp;Préférences cookies&nbsp;» présent en bas de
                 page.
               </p>
+              <div className="mt-4">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
+                  Liste des témoins détectés sur ce site
+                </p>
+                {/* CookieYes génère automatiquement ce tableau à partir des cookies détectés */}
+                <div className="cky-audit-table-element" />
+              </div>
             </section>
 
             {/* 8 */}
