@@ -67,10 +67,10 @@ export default function PolitiqueConfidentialitePage() {
                 <p className="mt-1 text-slate-400">
                   Courriel&nbsp;:{" "}
                   <a
-                    href="mailto:confidentialite@auditloi25.ca"
+                    href="mailto:votreboosterdigital@outlook.com"
                     className="text-sky-400 hover:text-sky-300 underline underline-offset-4 decoration-sky-400/40"
                   >
-                    confidentialite@auditloi25.ca
+                    votreboosterdigital@outlook.com
                   </a>
                 </p>
                 <p className="text-slate-400">Montréal (Québec), Canada</p>
@@ -266,10 +266,10 @@ export default function PolitiqueConfidentialitePage() {
               <p className="mt-3">
                 Pour exercer l&apos;un de ces droits, écrivez-nous à{" "}
                 <a
-                  href="mailto:confidentialite@auditloi25.ca"
+                  href="mailto:votreboosterdigital@outlook.com"
                   className="text-sky-400 hover:text-sky-300 underline underline-offset-4 decoration-sky-400/40"
                 >
-                  confidentialite@auditloi25.ca
+                  votreboosterdigital@outlook.com
                 </a>
                 . Nous répondrons dans un délai de 30 jours.
               </p>
@@ -371,10 +371,10 @@ export default function PolitiqueConfidentialitePage() {
                 <p className="font-medium text-slate-200">auditloi25.ca</p>
                 <p className="mt-1 text-slate-400">
                   <a
-                    href="mailto:confidentialite@auditloi25.ca"
+                    href="mailto:votreboosterdigital@outlook.com"
                     className="text-sky-400 hover:text-sky-300 underline underline-offset-4 decoration-sky-400/40"
                   >
-                    confidentialite@auditloi25.ca
+                    votreboosterdigital@outlook.com
                   </a>
                 </p>
               </div>
