@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Heart, Users, CheckCircle2, AlertTriangle, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Loi 25 et OBNL québécois : obligations, audit et conformité de votre site web | auditloi25.ca",
+  title: "Loi 25 et OBNL : ce que votre organisme doit vérifier sur son site | auditloi25.ca",
   description:
-    "La Loi 25 s'applique aussi aux OBNL québécois. Découvrez les obligations spécifiques à votre site web : formulaires de dons, infolettres, témoins de connexion et politique de confidentialité.",
+    "La Loi 25 s'applique aux OBNL québécois autant qu'aux entreprises. Voici ce que votre organisme doit vérifier sur son site web — formulaires de dons, inscriptions, infolettres.",
 };
 
 export default function AuditLoi25ObnlPage() {
@@ -13,221 +13,202 @@ export default function AuditLoi25ObnlPage() {
     <main className="min-h-screen bg-slate-950 text-slate-50">
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
 
+        {/* Navbar minimale */}
+        <div className="mb-10 flex items-center justify-between">
+          <Link href="/" className="text-sm font-semibold text-slate-100 hover:text-white transition-colors">
+            auditloi25.ca
+          </Link>
+        </div>
+
         {/* Breadcrumb */}
         <nav aria-label="Fil d'Ariane" className="mb-8 text-xs text-slate-500">
           <Link href="/" className="transition-colors hover:text-slate-300">Accueil</Link>
           <span className="mx-2" aria-hidden="true">·</span>
-          <Link href="/ressources/checklist-loi-25-site-web" className="transition-colors hover:text-slate-300">Ressources Loi 25</Link>
+          <Link href="/ressources/checklist-loi-25-site-web" className="transition-colors hover:text-slate-300">Ressources</Link>
           <span className="mx-2" aria-hidden="true">·</span>
           <span className="text-slate-400">Loi 25 et OBNL</span>
         </nav>
 
         {/* En-tête */}
-        <header className="mb-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-400">
-            Guide pratique · OBNL et organismes à but non lucratif
-          </p>
-          <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-50 sm:text-4xl">
-            Loi 25 et OBNL québécois : ce que votre site web doit respecter
+        <header className="mb-12">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-sky-400/10 px-3 py-1 text-xs font-semibold text-sky-300 ring-1 ring-sky-500/30">
+            <Heart size={11} aria-hidden="true" />
+            Pour les organismes sans but lucratif
+          </span>
+          <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-50 sm:text-4xl">
+            Loi&nbsp;25 et OBNL : votre organisme est-il vraiment à l&apos;abri&nbsp;?
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-slate-300">
-            Une idée reçue circule dans le milieu des organismes à but non lucratif : la
-            Loi 25 ne s'appliquerait qu'aux grandes entreprises privées. C'est faux. Si
-            votre OBNL a un site web avec des formulaires, une infolettre, un module de
-            dons ou des outils d'analyse, vous êtes concerné.
+          <p className="mt-4 text-lg leading-relaxed text-slate-300">
+            Beaucoup de directeurs d&apos;OBNL pensent que la Loi 25, c&apos;est pour les grandes entreprises. C&apos;est une idée reçue qui peut coûter cher — en réputation, en confiance, et en énergie.
           </p>
+          <p className="mt-3 text-xs text-slate-500">5 min de lecture</p>
         </header>
 
-        {/* Section 1 */}
-        <section className="mb-10 space-y-4">
-          <h2 className="text-xl font-bold text-slate-50">
-            La Loi 25 s'applique aux OBNL — sans exception de taille
+        {/* Section 1 — Hook storytelling */}
+        <section className="mb-12" aria-labelledby="section-hook">
+          <h2 id="section-hook" className="mb-4 text-xl font-bold text-slate-50">
+            « On est un OBNL, pas une entreprise — ça ne nous touche pas, non ? »
           </h2>
-          <p className="text-sm leading-relaxed text-slate-300">
-            La Loi sur la protection des renseignements personnels dans le secteur privé
-            (Loi 25) couvre toutes les entreprises et organisations qui collectent,
-            utilisent ou communiquent des renseignements personnels dans le cadre de leurs
-            activités — y compris les organismes à but non lucratif, les associations, les
-            coopératives et les fondations.
-          </p>
-          <div className="rounded-xl bg-sky-500/5 p-5 ring-1 ring-sky-500/20 text-sm text-slate-300">
-            <p className="font-medium text-sky-300">Ce que ça signifie pour votre OBNL :</p>
-            <p className="mt-2">
-              Dès que votre site web collecte un nom, un courriel ou toute autre information
-              permettant d'identifier une personne (via un formulaire de contact, un module
-              de dons, une inscription à une activité ou une infolettre), la Loi 25 s'applique.
+          <div className="rounded-2xl bg-slate-900/70 p-6 ring-1 ring-slate-700/50 text-sm leading-relaxed text-slate-300 space-y-4">
+            <p>
+              Imaginez une coordonnatrice d&apos;un organisme communautaire de Laval. Son site accepte les dons en ligne depuis trois ans. Elle reçoit un courriel d&apos;un donateur qui lui demande pourquoi son adresse courriel a été ajoutée à la liste d&apos;infolettre de l&apos;organisme sans qu&apos;il l&apos;ait demandé.
+            </p>
+            <p>
+              Elle vérifie le formulaire de don : aucune case à cocher, aucune mention que l&apos;adresse sera utilisée pour les communications. C&apos;était automatique — standard dans l&apos;outil de collecte de dons utilisé. Ce n&apos;était pas malveillant. Juste pas conforme.
+            </p>
+            <p className="font-medium text-slate-200">
+              La Loi 25 s&apos;applique à tous les organismes qui collectent des renseignements personnels au Québec — sans exception de taille, de mission ou de statut légal.
             </p>
           </div>
         </section>
 
-        {/* Section 2 — Zones à risque spécifiques aux OBNL */}
-        <section className="mb-10">
-          <h2 className="mb-6 text-xl font-bold text-slate-50">
-            Les 5 zones à risque spécifiques aux sites d'OBNL
+        {/* Section 2 — Ce que dit la loi */}
+        <section className="mb-12" aria-labelledby="section-loi">
+          <h2 id="section-loi" className="mb-6 text-xl font-bold text-slate-50">
+            Ce que la Loi&nbsp;25 dit sur les OBNL
           </h2>
-          <ol className="space-y-4">
+          <div className="space-y-3">
             {[
               {
-                num: "1",
-                titre: "Formulaires de dons et de collecte de fonds",
-                desc: "Les pages de dons collectent des informations financières et personnelles (nom, courriel, montant, adresse). Votre politique de confidentialité doit expliquer comment ces données sont utilisées, stockées et, le cas échéant, transmises à votre plateforme de paiement.",
+                texte: "Le mot « organisme » dans la loi inclut les associations, fondations, coopératives et organismes communautaires — pas seulement les entreprises commerciales.",
               },
               {
-                num: "2",
-                titre: "Infolettre et liste de diffusion",
-                desc: "L'inscription à une infolettre doit être accompagnée d'une mention claire sur l'usage des données et d'un mécanisme de désabonnement facile. La case d'inscription ne peut pas être précochée.",
+                texte: "C'est la collecte de renseignements personnels qui déclenche les obligations — nom, courriel, numéro de téléphone, adresse, historique de dons.",
               },
               {
-                num: "3",
-                titre: "Formulaires d'inscription aux activités",
-                desc: "Si vos bénévoles, participants ou membres remplissent des formulaires d'inscription en ligne, vous collectez des renseignements personnels. Chaque formulaire doit afficher une mention sur l'usage prévu des données.",
+                texte: "Il n'y a pas de seuil de taille. Un organisme de 3 bénévoles avec un formulaire de contact en ligne est concerné.",
               },
               {
-                num: "4",
-                titre: "Outils d'analyse et cookies tiers",
-                desc: "Google Analytics, Facebook Pixel, widgets de partage social — ces outils sont courants sur les sites d'OBNL et déposent des cookies. Votre bannière de consentement doit couvrir ces outils, et ils ne doivent pas se déclencher avant le consentement.",
+                texte: "Vos donateurs, bénévoles et participants ont les mêmes droits que les clients d'une entreprise : savoir quelles données sont collectées, pourquoi, et par qui.",
               },
-              {
-                num: "5",
-                titre: "Politique de confidentialité absente ou générique",
-                desc: "Beaucoup d'OBNL n'ont pas de politique de confidentialité, ou utilisent un modèle générique qui ne correspond pas à leur réalité. La Loi 25 exige une politique accessible, à jour, et qui décrit précisément les pratiques de votre organisation.",
-              },
-            ].map((item) => (
-              <li
-                key={item.num}
-                className="flex gap-4 rounded-2xl bg-slate-900/70 p-5 ring-1 ring-slate-700/50"
-              >
-                <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-400/10 text-xs font-semibold text-sky-300 ring-1 ring-sky-500/30">
-                  {item.num}
-                </span>
-                <div>
-                  <p className="font-semibold text-slate-100">{item.titre}</p>
-                  <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{item.desc}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </section>
-
-        {/* Section 3 */}
-        <section className="mb-10 space-y-4">
-          <h2 className="text-xl font-bold text-slate-50">
-            Les obligations concrètes pour votre site web
-          </h2>
-          <p className="text-sm leading-relaxed text-slate-300">
-            Voici les actions que la Loi 25 impose directement sur votre site web, quel que
-            soit le type ou la taille de votre OBNL :
-          </p>
-          <ul className="space-y-3 text-sm text-slate-300">
-            {[
-              {
-                titre: "Désigner un responsable",
-                desc: "Identifier une personne responsable de la protection des renseignements personnels dans votre organisation — et rendre cette information accessible sur votre site.",
-              },
-              {
-                titre: "Politique de confidentialité à jour",
-                desc: "Publier une politique de confidentialité qui décrit les données collectées, les finalités, la durée de conservation et les droits des personnes.",
-              },
-              {
-                titre: "Consentement valide pour les cookies",
-                desc: "Mettre en place une bannière de cookies conforme qui bloque les scripts non essentiels avant le consentement.",
-              },
-              {
-                titre: "Mentions sur les formulaires",
-                desc: "Chaque formulaire qui collecte des renseignements personnels doit expliquer clairement pourquoi ces informations sont demandées et comment elles seront utilisées.",
-              },
-              {
-                titre: "Droit d'accès et de rectification",
-                desc: "Prévoir un mécanisme (courriel dédié ou formulaire) pour que les personnes puissent exercer leurs droits d'accès, de rectification et de retrait du consentement.",
-              },
-            ].map((item) => (
-              <div key={item.titre} className="rounded-xl bg-slate-900/70 p-4 ring-1 ring-slate-700/50">
-                <p className="font-medium text-slate-100">{item.titre}</p>
-                <p className="mt-1 leading-relaxed text-slate-400">{item.desc}</p>
+            ].map((item, i) => (
+              <div key={i} className="flex gap-3 rounded-xl bg-slate-900/60 p-4 ring-1 ring-slate-700/40">
+                <Users size={15} className="mt-0.5 shrink-0 text-sky-400" aria-hidden="true" />
+                <p className="text-sm leading-relaxed text-slate-300">{item.texte}</p>
               </div>
             ))}
-          </ul>
-        </section>
-
-        {/* Section 4 */}
-        <section className="mb-10 space-y-4">
-          <h2 className="text-xl font-bold text-slate-50">
-            « On n'a pas d'équipe TI ni de juriste — par où commencer ? »
-          </h2>
-          <p className="text-sm leading-relaxed text-slate-300">
-            C'est la réalité de la plupart des OBNL québécois. La bonne nouvelle : les
-            obligations les plus importantes et les plus vérifiées par la CAI concernent
-            principalement votre site web — et elles sont adressables sans expertise
-            juridique ou technique avancée.
-          </p>
-          <p className="text-sm leading-relaxed text-slate-300">
-            Un audit Loi 25 de votre site web permet de commencer par l'essentiel :
-            identifier les cookies actifs, vérifier la conformité de votre bannière,
-            évaluer vos formulaires et vous donner une liste de correctifs priorisés —
-            adaptée à vos ressources réelles.
-          </p>
-        </section>
-
-        {/* CTA */}
-        <section className="mb-10 rounded-2xl bg-gradient-to-br from-sky-500/10 via-slate-950/80 to-emerald-500/10 p-6 ring-1 ring-sky-500/30">
-          <h2 className="text-lg font-semibold text-slate-50">
-            Pré-audit Loi 25 gratuit pour votre OBNL
-          </h2>
-          <p className="mt-2 text-sm leading-relaxed text-slate-300">
-            Notre service est conçu pour les organisations sans équipe TI ni juridique.
-            Vous nous donnez l'URL de votre site et vos pages principales — on s'occupe
-            du reste. Résultat sous 48 h, sans engagement.
-          </p>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link
-              href="/#formulaire"
-              className="inline-flex items-center justify-center rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-emerald-400 hover:text-white"
-            >
-              Demander un pré-audit gratuit
-            </Link>
-            <Link
-              href="/offre"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-sky-300 transition-colors hover:text-sky-200"
-            >
-              Voir l'offre d'audit Loi 25
-              <ArrowRight size={14} aria-hidden="true" />
-            </Link>
           </div>
         </section>
 
-        {/* Liens ressources */}
-        <nav aria-label="Autres ressources" className="mb-10">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-slate-500">À lire aussi</p>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/ressources/banniere-cookies-loi-25" className="text-sky-400 underline underline-offset-4 decoration-sky-400/30 hover:text-sky-300">
-                Bannière de cookies et Loi 25 : ce que votre site doit respecter
-              </Link>
-            </li>
-            <li>
-              <Link href="/ressources/penalites-loi-25-entreprise" className="text-sky-400 underline underline-offset-4 decoration-sky-400/30 hover:text-sky-300">
-                Amendes et pénalités Loi 25 pour les entreprises québécoises
-              </Link>
-            </li>
-            <li>
-              <Link href="/ressources/checklist-loi-25-site-web" className="text-sky-400 underline underline-offset-4 decoration-sky-400/30 hover:text-sky-300">
-                Checklist Loi 25 pour votre site web
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        {/* Section 3 — 4 situations typiques */}
+        <section className="mb-12" aria-labelledby="section-situations">
+          <h2 id="section-situations" className="mb-6 text-xl font-bold text-slate-50">
+            Les 4 situations typiques d&apos;un OBNL qui collecte des données
+          </h2>
+          <div className="space-y-4">
+            {[
+              {
+                icon: <Heart size={18} className="text-emerald-400" aria-hidden="true" />,
+                titre: "Formulaire de don en ligne",
+                texte: "Vous collectez le nom, le courriel, parfois l'adresse du donateur. Est-ce que vous expliquez clairement comment ces données sont utilisées ? Sont-elles partagées avec votre plateforme de paiement (Stripe, PayPal, Zeffy) sans que le donateur le sache ?",
+                question: "À vérifier : y a-t-il une mention visible sur l'usage des données dans votre formulaire de don ?",
+              },
+              {
+                icon: <Users size={18} className="text-sky-400" aria-hidden="true" />,
+                titre: "Inscriptions à des activités ou formations",
+                texte: "Ces formulaires collectent parfois des informations plus sensibles — situation familiale, condition de santé pour certains services communautaires. Ces données ont-elles une durée de conservation définie ? Sont-elles supprimées après la fin de l'activité ?",
+                question: "À vérifier : savez-vous combien de temps ces données sont conservées et où elles sont stockées ?",
+              },
+              {
+                icon: <CheckCircle2 size={18} className="text-emerald-400" aria-hidden="true" />,
+                titre: "Infolettre et communications",
+                texte: "Vos abonnés savent-ils explicitement qu'ils s'inscrivent à votre liste ? Est-ce que se désabonner est aussi facile que s'abonner — un seul clic, sans démarches supplémentaires ?",
+                question: "À vérifier : le consentement à l'infolettre est-il distinct du consentement au formulaire principal ?",
+              },
+              {
+                icon: <AlertTriangle size={18} className="text-amber-400" aria-hidden="true" />,
+                titre: "Cookies et outils de suivi",
+                texte: "Votre site utilise probablement Google Analytics, un pixel de partage social, ou un outil de formulaire tiers. Ces outils collectent des données sur vos visiteurs. Sont-ils déclarés dans une bannière de consentement conforme — avec la possibilité de refuser ?",
+                question: "À vérifier : votre bannière de cookies permet-elle de refuser aussi facilement qu'accepter ?",
+              },
+            ].map((item, i) => (
+              <div key={i} className="rounded-xl bg-slate-900/70 p-6 ring-1 ring-slate-700/50">
+                <div className="flex items-center gap-2 mb-3">
+                  {item.icon}
+                  <h3 className="font-semibold text-slate-100">{item.titre}</h3>
+                </div>
+                <p className="text-sm leading-relaxed text-slate-300">{item.texte}</p>
+                <p className="mt-3 rounded-lg bg-slate-800/60 px-3 py-2 text-xs text-slate-400 ring-1 ring-slate-700/30">
+                  {item.question}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
 
-        <footer className="mb-4 border-t border-slate-800/70 pt-4 text-xs text-slate-500">
-          <p>
-            Ce guide est fourni à titre informatif. Il ne constitue pas un avis juridique
-            et doit être adapté à la réalité de votre organisation.
+        {/* Section 4 — Checklist */}
+        <section className="mb-12" aria-labelledby="section-checklist">
+          <h2 id="section-checklist" className="mb-6 text-xl font-bold text-slate-50">
+            Ce que vous devez vérifier en priorité sur votre site
+          </h2>
+          <div className="rounded-2xl bg-slate-900/70 p-6 ring-1 ring-slate-700/50 space-y-3">
+            {[
+              "Votre bannière de cookies permet de refuser aussi facilement qu'accepter",
+              "Vos formulaires expliquent pourquoi vous collectez les données et comment elles sont utilisées",
+              "Vous avez une politique de confidentialité à jour, accessible depuis toutes les pages",
+              "Vos donateurs savent que leur courriel sera ajouté à votre liste d'envoi — si c'est le cas",
+              "Votre site indique comment contacter le responsable de la protection des renseignements personnels",
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <div className="mt-0.5 h-4 w-4 shrink-0 rounded border border-slate-600 bg-slate-800" aria-hidden="true" />
+                <p className="text-sm text-slate-300">{item}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-xs text-slate-500">
+            Pour aller plus loin :{" "}
+            <Link href="/ressources/checklist-loi-25-site-web" className="text-sky-400 underline underline-offset-2 hover:text-sky-300">
+              Checklist Loi 25 complète pour votre site
+            </Link>
           </p>
-        </footer>
+        </section>
 
-        <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-sky-300 transition-colors hover:text-sky-200">
-          <ArrowLeft size={14} aria-hidden="true" />
-          Retour à l'accueil
-        </Link>
+        {/* Section 5 — Service adapté aux OBNL */}
+        <section className="mb-12" aria-labelledby="section-service">
+          <h2 id="section-service" className="mb-4 text-xl font-bold text-slate-50">
+            Un service pensé pour les organismes sans équipe TI
+          </h2>
+          <div className="rounded-2xl bg-slate-900/70 p-6 ring-1 ring-slate-700/50 text-sm leading-relaxed text-slate-300 space-y-3">
+            <p>
+              Le pré-audit gratuit d&apos;auditloi25.ca a été conçu pour les organisations qui n&apos;ont ni juriste ni équipe technique interne — et les OBNL québécois en font partie.
+            </p>
+            <p>
+              À partir du formulaire, on analyse les pages les plus critiques de votre site — formulaire de don, inscription, contact — et on vous remet un rapport clair sur les zones à risque. Pas de jargon. Pas de rapport de 40 pages. Juste ce que vous devez corriger, dans l&apos;ordre.
+            </p>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <div className="mb-12 rounded-2xl bg-slate-900 p-8 ring-1 ring-slate-700 text-center">
+          <p className="text-lg font-bold text-slate-50">
+            Votre organisme collecte des données. Vous méritez de savoir si c&apos;est fait dans les règles.
+          </p>
+          <p className="mt-2 text-sm text-slate-400">
+            Pré-audit gratuit · Résultats sous 48 h · Aucun engagement, aucune carte requise
+          </p>
+          <a
+            href="/#formulaire"
+            className="mt-6 inline-flex items-center justify-center rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_24px_rgba(16,185,129,0.25)] transition-colors hover:bg-emerald-400 hover:text-white"
+          >
+            Obtenir mon pré‑audit gratuit
+          </a>
+          <div className="mt-3">
+            <Link href="/offre" className="text-xs text-sky-400 hover:text-sky-300 transition-colors">
+              Voir l&apos;offre d&apos;audit Loi 25 pour OBNL →
+            </Link>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-slate-800 pt-8 text-xs text-slate-500">
+          <Link href="/" className="inline-flex items-center gap-2 text-sky-300 hover:text-sky-200 transition-colors font-medium">
+            <ArrowLeft size={13} aria-hidden="true" />
+            Retour à l&apos;accueil
+          </Link>
+          <Link href="/ressources/checklist-loi-25-site-web" className="text-slate-400 hover:text-slate-200 transition-colors">
+            Checklist Loi 25 pour votre site →
+          </Link>
+        </div>
 
       </div>
     </main>
