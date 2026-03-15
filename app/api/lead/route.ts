@@ -23,8 +23,8 @@ export async function POST(request: Request) {
       source: "auditloi25.ca",
     };
 
-    // Log local pour debug
-    console.log("Nouveau lead audit Loi 25:", payload);
+    // Log sans données personnelles
+    console.log("Nouveau lead reçu — site:", siteUrl, "— à:", payload.receivedAt);
 
     // Envoi optionnel vers un webhook externe (Make, autre)
     if (WEBHOOK_URL) {

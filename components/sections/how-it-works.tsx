@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type FormState = {
   name: string;
@@ -202,6 +203,19 @@ export function HowItWorks() {
           <p className="flex items-center gap-1.5 text-xs text-slate-500">
             <span aria-hidden="true">⏱</span>
             2 minutes pour remplir · Retour sous 48h · Sans engagement
+          </p>
+
+          <p className="rounded-lg bg-slate-800/50 px-3 py-2.5 text-[11px] leading-relaxed text-slate-400 ring-1 ring-slate-700/50">
+            Vos renseignements (nom, courriel, URL du site) sont collectés
+            uniquement pour réaliser votre pré-audit Loi&nbsp;25 et vous
+            transmettre le résultat par courriel. Aucune utilisation
+            commerciale.{" "}
+            <Link
+              href="/politique-de-confidentialite"
+              className="text-sky-400 underline underline-offset-2 hover:text-sky-300"
+            >
+              Politique de confidentialité
+            </Link>
           </p>
 
           <button
