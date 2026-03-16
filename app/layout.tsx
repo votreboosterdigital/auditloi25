@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -53,6 +54,7 @@ export default function RootLayout({
       </head>
       <body className="bg-slate-950 text-slate-50">
         {children}
+        <StickyMobileCta />
       </body>
     </html>
   );

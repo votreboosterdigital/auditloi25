@@ -34,6 +34,36 @@ const faqs: FaqItem[] = [
     answer:
       "Non — et nous le disons clairement. L'audit porte sur votre site web (cookies, formulaires, contenus légaux) et couvre les obligations les plus visibles et les plus vérifiées. La conformité globale inclut aussi vos processus internes, vos contrats et votre gouvernance des données, qui dépassent le périmètre du site.",
   },
+  {
+    question: "Qui s'occupe de corriger les problèmes trouvés ?",
+    answer:
+      "C'est vous ou votre équipe web qui effectuez les corrections. Notre rapport priorise les actions avec des instructions claires et adaptées à votre contexte. Si vous avez besoin d'aide pour l'implémentation, notre offre Audit + Accompagnement couvre cet aspect.",
+  },
+  {
+    question: "Combien de temps faut-il pour se mettre en conformité ?",
+    answer:
+      "Les corrections prioritaires — bannière de cookies et formulaires de consentement — se règlent généralement en 1 à 3 jours avec un développeur. Une mise en conformité complète prend en moyenne 2 à 4 semaines selon la complexité du site.",
+  },
+  {
+    question: "Est-ce que le pré-audit suffit pour être conforme à la Loi 25 ?",
+    answer:
+      "Non. Le pré-audit identifie vos principales zones à risque et vous donne une première vision claire. Seul l'audit complet couvre l'ensemble des obligations Loi 25 avec un plan d'action détaillé et des recommandations priorisées.",
+  },
+  {
+    question: "Que se passe-t-il si on n'est pas d'accord avec les résultats ?",
+    answer:
+      "Chaque point de notre rapport est appuyé sur une source officielle — texte de loi, guides de la CAI ou jurisprudence. Nous vous invitons à discuter de tout résultat qui vous semble incorrect : cette révision est incluse dans le service.",
+  },
+  {
+    question: "Travaillez-vous avec des organismes à but non lucratif (OBNL) ?",
+    answer:
+      "Oui. Les OBNL sont soumis à la Loi 25 au même titre que les entreprises privées. Nous offrons une approche adaptée à leur réalité. Consultez notre page dédiée pour en savoir plus.",
+  },
+  {
+    question: "Pouvez-vous auditer plusieurs sites en même temps ?",
+    answer:
+      "Oui, nous proposons des forfaits multi-sites pour les organisations qui gèrent plusieurs propriétés web. Contactez-nous pour discuter d'un devis personnalisé.",
+  },
 ];
 
 export function Faq() {

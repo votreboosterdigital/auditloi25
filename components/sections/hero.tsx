@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ShieldIcon } from "@/components/shield-icon";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, TriangleAlert, Shield, Clock } from "lucide-react";
 
 const heroSubtitle =
   "Nous analysons votre site — cookies, formulaires, bannière, contenus légaux — et vous livrons un rapport clair avec les corrections prioritaires. Pas de jargon, pas de flou : juste ce que vous devez corriger, dans l'ordre.";
@@ -34,6 +34,14 @@ export function Hero() {
           <span className="inline-flex w-fit items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-300 ring-1 ring-emerald-500/40">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
             Audit indépendant
+          </span>
+        </div>
+
+        {/* Alerte pill */}
+        <div className="flex justify-center md:justify-start">
+          <span className="inline-flex items-center rounded-full border border-amber-700 bg-amber-950 px-3 py-1.5 text-xs font-medium text-amber-300">
+            <TriangleAlert size={14} className="mr-1.5 shrink-0" aria-hidden="true" />
+            La CAI peut inspecter votre site sans préavis — amendes jusqu&apos;à 25&nbsp;M$
           </span>
         </div>
 
@@ -73,13 +81,15 @@ export function Hero() {
         {/* Trust pills */}
         <div className="flex flex-wrap items-center gap-3 text-xs text-slate-300 sm:text-sm">
           <span className="inline-flex items-center gap-2 rounded-full bg-slate-950/80 px-3 py-1 ring-1 ring-slate-700">
-            <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
-            Audit indépendant · Québec
+            <Shield size={12} className="shrink-0 text-slate-400" aria-hidden="true" />
+            Basé sur le Guide officiel de la CAI
           </span>
-          <span className="rounded-full bg-slate-950/70 px-3 py-1 ring-1 ring-slate-700">
-            Pré‑audit 100 % gratuit
+          <span className="inline-flex items-center gap-2 rounded-full bg-slate-950/70 px-3 py-1 ring-1 ring-slate-700">
+            <CheckCircle2 size={12} className="shrink-0 text-slate-400" aria-hidden="true" />
+            Pré‑audit gratuit — aucun engagement
           </span>
-          <span className="rounded-full bg-slate-950/70 px-3 py-1 ring-1 ring-slate-700">
+          <span className="inline-flex items-center gap-2 rounded-full bg-slate-950/70 px-3 py-1 ring-1 ring-slate-700">
+            <Clock size={12} className="shrink-0 text-slate-400" aria-hidden="true" />
             Retour sous 48 h
           </span>
         </div>

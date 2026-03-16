@@ -1,10 +1,10 @@
-import { Shield, MapPin, CheckCircle, Zap } from "lucide-react";
+import { ShieldCheck, ListChecks, BarChart2, Clock } from "lucide-react";
 
 const items = [
-  { icon: Shield, label: "Service privé indépendant" },
-  { icon: MapPin, label: "Basé au Québec" },
-  { icon: CheckCircle, label: "Aligné exigences CAI" },
-  { icon: Zap, label: "Pré-audit gratuit" },
+  { icon: ShieldCheck, label: "Méthode basée sur les 5 obligations CAI pour les sites web" },
+  { icon: ListChecks, label: "Rapport structuré avec priorisation claire des corrections" },
+  { icon: BarChart2, label: "Bannière non conforme détectée dans la majorité des sites audités" },
+  { icon: Clock, label: "Pré-audit livré en 48h — garanti" },
 ];
 
 export function TrustStrip() {
