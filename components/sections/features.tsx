@@ -1,3 +1,5 @@
+"use client";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   Cookie,
   FileText,
@@ -12,6 +14,16 @@ type Feature = {
   icon: LucideIcon;
   title: string;
   description: string;
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const } },
+};
+
+const container = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
 };
 
 const features: Feature[] = [
@@ -54,47 +66,60 @@ const features: Feature[] = [
 ];
 
 export function Features() {
-  return (
-    <section
-      aria-labelledby="features-heading"
-      className="mt-16"
-    >
-      <header className="mb-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-400">
-          Ce qu&apos;on analyse
-        </p>
-        <h2
-          id="features-heading"
-          className="mt-2 text-2xl font-bold tracking-tight text-slate-50"
-        >
-          Six zones vérifiées dans chaque audit Loi&nbsp;25 de votre site
-        </h2>
-        <p className="mt-2 max-w-xl text-base text-slate-300">
-          Chaque zone correspond à des exigences clés de la conformité
-          Loi&nbsp;25 mises de l&apos;avant par la CAI pour les sites web québécois.
-        </p>
-      </header>
+  const prefersReducedMotion = useReducedMotion();
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map((feature) => {
-          const Icon = feature.icon;
-          return (
-            <div
-              key={feature.title}
-              className="group rounded-2xl bg-slate-900/70 p-5 ring-1 ring-slate-700/50 motion-safe:transition-shadow motion-safe:duration-200 hover:ring-sky-500/30 hover:shadow-[0_8px_32px_rgba(56,189,248,0.08)]"
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-sky-400/10">
-                <Icon size={20} className="text-sky-400" aria-hidden="true" />
-              </div>
-              <h3 className="mt-4 text-[15px] font-semibold text-slate-100">
-                {feature.title}
-              </h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-400">
-                {feature.description}
-              </p>
-            </div>
-          );
-        })}
+  return (
+    <section aria-labelledby="features-heading" className="py-20 sm:py-28">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <motion.div
+          variants={fadeUp}
+          initial={prefersReducedMotion ? undefined : "hidden"}
+          whileInView={prefersReducedMotion ? undefined : "visible"}
+          viewport={{ once: true, margin: "-80px" }}
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-400">
+            Ce qu&apos;on analyse
+          </p>
+          <h2
+            id="features-heading"
+            className="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl"
+          >
+            Six zones vérifiées dans chaque audit Loi&nbsp;25 de votre site
+          </h2>
+          <p className="mt-3 text-slate-400">
+            Chaque zone correspond à des exigences clés de la conformité
+            Loi&nbsp;25 mises de l&apos;avant par la CAI pour les sites web québécois.
+          </p>
+        </motion.div>
+
+        <motion.ul
+          className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          variants={container}
+          initial={prefersReducedMotion ? undefined : "hidden"}
+          whileInView={prefersReducedMotion ? undefined : "visible"}
+          viewport={{ once: true }}
+        >
+          {features.map((feature) => {
+            const Icon = feature.icon;
+            return (
+              <motion.li
+                key={feature.title}
+                variants={fadeUp}
+                className="group rounded-xl border border-white/8 bg-[#0d1526] p-6 ring-1 ring-white/5 transition-all hover:ring-sky-500/30 hover:shadow-[0_8px_32px_rgba(56,189,248,0.1)]"
+                whileHover={prefersReducedMotion ? undefined : { scale: 1.02 }}
+                whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
+              >
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-sky-500/10">
+                  <Icon className="h-5 w-5 text-sky-400" aria-hidden="true" />
+                </div>
+                <h3 className="font-semibold text-white">{feature.title}</h3>
+                <p className="mt-1 text-sm text-slate-400 leading-relaxed">
+                  {feature.description}
+                </p>
+              </motion.li>
+            );
+          })}
+        </motion.ul>
       </div>
     </section>
   );
