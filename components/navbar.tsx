@@ -15,34 +15,34 @@ export function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-slate-800/60 bg-slate-950/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-10">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#020817]/80 backdrop-blur-md border-b border-white/5">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 text-sm font-semibold tracking-tight text-slate-100"
+            className="flex items-center gap-2"
           >
             <ShieldIcon
               size={20}
               className="shrink-0 text-sky-400 drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]"
             />
-            auditloi25.ca
+            <span className="text-sm font-semibold text-slate-200 tracking-tight">auditloi25.ca</span>
           </Link>
 
           {/* Desktop nav */}
-          <nav aria-label="Navigation principale" className="hidden items-center gap-4 text-xs text-slate-300 sm:flex">
+          <nav aria-label="Navigation principale" className="hidden items-center gap-4 sm:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-full bg-slate-900/60 px-3 py-1 font-medium ring-1 ring-slate-700 transition-colors hover:bg-slate-900 hover:text-slate-50"
+                className="text-sm text-slate-400 hover:text-slate-100 transition-colors"
               >
                 {link.label}
               </Link>
             ))}
             <a
               href="#formulaire"
-              className="inline-flex cursor-pointer items-center justify-center rounded-full bg-emerald-500 px-4 py-1.5 text-xs font-semibold text-slate-950 shadow-sm transition-colors hover:bg-emerald-400 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+              className="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-[0_0_20px_rgba(16,185,129,0.25)] transition-all hover:bg-emerald-400 hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]"
             >
               Pré‑audit gratuit
             </a>
@@ -55,34 +55,34 @@ export function Navbar() {
             aria-expanded={isOpen}
             aria-controls="mobile-nav-overlay"
             onClick={() => setIsOpen(true)}
-            className="cursor-pointer rounded-md p-1.5 text-slate-300 hover:text-slate-50 sm:hidden"
+            className="text-slate-400 hover:text-slate-100 transition-colors md:hidden"
           >
             <Menu size={22} aria-hidden="true" />
           </button>
         </div>
       </header>
 
-      {/* Mobile overlay — full-screen, z-50 */}
+      {/* Mobile overlay — full-screen, z-40 */}
       {isOpen && (
         <div
           id="mobile-nav-overlay"
-          className="fixed inset-0 z-50 flex flex-col bg-slate-950 px-6 py-6"
+          className="fixed inset-0 z-40 bg-[#020817]/95 backdrop-blur-md flex flex-col p-6 md:hidden"
         >
           {/* Header overlay */}
           <div className="flex items-center justify-between">
             <Link
               href="/"
               onClick={() => setIsOpen(false)}
-              className="flex items-center gap-2 text-sm font-semibold text-slate-100"
+              className="flex items-center gap-2"
             >
               <ShieldIcon size={18} className="text-sky-400" />
-              auditloi25.ca
+              <span className="text-sm font-semibold text-slate-200 tracking-tight">auditloi25.ca</span>
             </Link>
             <button
               type="button"
               aria-label="Fermer le menu"
               onClick={() => setIsOpen(false)}
-              className="cursor-pointer rounded-md p-1.5 text-slate-300 hover:text-slate-50"
+              className="text-slate-400 hover:text-slate-100 transition-colors"
             >
               <X size={22} aria-hidden="true" />
             </button>
@@ -95,7 +95,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="rounded-xl bg-slate-900 px-4 py-3 text-sm font-medium text-slate-100 ring-1 ring-slate-800 hover:bg-slate-800"
+                className="text-lg font-medium text-slate-300 hover:text-white transition-colors py-2"
               >
                 {link.label}
               </Link>
@@ -103,7 +103,7 @@ export function Navbar() {
             <a
               href="#formulaire"
               onClick={() => setIsOpen(false)}
-              className="mt-2 inline-flex cursor-pointer items-center justify-center rounded-xl bg-emerald-500 px-4 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-emerald-400"
+              className="mt-4 inline-flex items-center justify-center rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:bg-emerald-400 transition-colors"
             >
               Demander un pré‑audit gratuit
             </a>
