@@ -1,4 +1,27 @@
+"use client";
+import { motion, useReducedMotion } from "framer-motion";
 import { ShieldCheck, ListChecks, BarChart2, Clock } from "lucide-react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 const items = [
   { icon: ShieldCheck, label: "Méthode basée sur les 5 obligations CAI pour les sites web" },
@@ -8,27 +31,39 @@ const items = [
 ];
 
 export function TrustStrip() {
+  const prefersReducedMotion = useReducedMotion();
+  const animProps = prefersReducedMotion
+    ? {}
+    : { variants: fadeUp, initial: "hidden", whileInView: "visible", viewport: { once: true, margin: "-80px" } };
+
   return (
     <div
       aria-label="Indicateurs de confiance"
-      className="mt-10 border-y border-slate-800/60 bg-slate-900/50 py-4"
+      className="border-y border-white/5 bg-[#0d1526]/50 py-6"
     >
-      <ul className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-6 gap-y-2 px-4 sm:px-6 lg:px-10">
-        {items.map((item, index) => {
+      <motion.div
+        className="mx-auto flex max-w-5xl flex-wrap justify-center gap-x-10 gap-y-4 px-4 sm:px-6"
+        {...(!prefersReducedMotion && {
+          variants: container,
+          initial: "hidden",
+          whileInView: "visible",
+          viewport: { once: true },
+        })}
+      >
+        {items.map((item) => {
           const Icon = item.icon;
           return (
-            <li key={item.label} className="flex items-center gap-2 text-[13px] text-slate-300">
-              <Icon size={14} className="shrink-0 text-sky-400" aria-hidden="true" />
-              {item.label}
-              {index < items.length - 1 && (
-                <span className="ml-6 hidden text-slate-700 sm:inline" aria-hidden="true">
-                  |
-                </span>
-              )}
-            </li>
+            <motion.div
+              key={item.label}
+              {...animProps}
+              className="flex items-center gap-2 text-sm text-slate-400"
+            >
+              <Icon className="h-4 w-4 shrink-0 text-sky-400" />
+              <span>{item.label}</span>
+            </motion.div>
           );
         })}
-      </ul>
+      </motion.div>
     </div>
   );
 }
