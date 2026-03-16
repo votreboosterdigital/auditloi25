@@ -63,7 +63,7 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
       </head>
-      <body className="bg-slate-950 text-slate-50">
+      <body className="bg-base text-slate-50">
         {children}
         <StickyMobileCta />
       </body>

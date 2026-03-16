@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-plus-jakarta);
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-geist);
+  --font-mono: var(--font-geist-mono);
+
+  /* Colors */
+  --color-base: #020817;
+  --color-surface: #0d1526;
+  --color-raised: #111827;
+  --color-border: rgba(255,255,255,0.08);
+  --color-primary: #38bdf8;
+  --color-cta: #10b981;
+  --color-muted: #64748b;
+}
+
+body {
+  background-color: #020817;
+  color: #f8fafc;
 }
