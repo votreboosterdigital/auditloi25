@@ -23,10 +23,10 @@ export function StickyMobileCta() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
+    <div className="fixed bottom-0 inset-x-0 z-50 bg-[#020817]/90 backdrop-blur-md border-t border-white/5 px-4 py-3 md:hidden">
       <a
         href="#formulaire"
-        className="flex h-14 w-full cursor-pointer items-center justify-center bg-sky-600 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-sky-500"
+        className="w-full inline-flex items-center justify-center rounded-lg bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-slate-950 shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-colors hover:bg-emerald-400"
       >
         Obtenir mon pré-audit gratuit →
       </a>
