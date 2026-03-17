@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { Plus } from "lucide-react";
 
 type FaqItem = {
   question: string;
@@ -66,60 +67,72 @@ const faqs: FaqItem[] = [
   },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+  },
+};
+
 export function Faq() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [open, setOpen] = useState<number | null>(null);
+  const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section
-      aria-labelledby="faq-heading"
-      className="mt-16 rounded-3xl bg-slate-950/70 p-6 ring-1 ring-slate-800 md:p-8"
-    >
-      <h2
-        id="faq-heading"
-        className="mb-6 text-2xl font-bold tracking-tight text-slate-50"
-      >
-        Questions posées avant de commencer
-      </h2>
+    <section aria-labelledby="faq-heading" className="py-20 sm:py-28">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6">
+        <motion.div
+          variants={fadeUp}
+          initial={prefersReducedMotion ? undefined : "hidden"}
+          whileInView={prefersReducedMotion ? undefined : "visible"}
+          viewport={{ once: true, margin: "-80px" }}
+        >
+          <h2
+            id="faq-heading"
+            className="text-3xl font-black tracking-tight text-white sm:text-4xl"
+          >
+            Questions posées avant de commencer
+          </h2>
+        </motion.div>
 
-      <dl className="divide-y divide-slate-700/60">
-        {faqs.map((faq, index) => {
-          const isOpen = openIndex === index;
-          return (
-            <div key={faq.question} className="py-4">
-              <dt>
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
-                  aria-expanded={isOpen}
-                  className="flex w-full cursor-pointer items-start justify-between gap-4 text-left"
-                >
-                  <span className="text-sm font-medium text-slate-100">
-                    {faq.question}
-                  </span>
-                  <ChevronDown
-                    size={16}
-                    aria-hidden="true"
-                    className={[
-                      "mt-0.5 shrink-0 text-slate-400 motion-safe:transition-transform motion-safe:duration-200",
-                      isOpen ? "rotate-180" : "",
-                    ].join(" ")}
-                  />
-                </button>
-              </dt>
-              <dd
-                className={[
-                  "overflow-hidden motion-safe:transition-all motion-safe:duration-300 motion-reduce:transition-none",
-                  isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0",
-                ].join(" ")}
+        <div className="mt-8 divide-y divide-white/8">
+          {faqs.map((faq, index) => (
+            <div key={index} className="py-4">
+              <button
+                onClick={() => setOpen(open === index ? null : index)}
+                className="flex w-full items-center justify-between gap-4 text-left"
+                aria-expanded={open === index}
               >
-                <p className="pt-3 text-sm leading-relaxed text-slate-400">
-                  {faq.answer}
-                </p>
-              </dd>
+                <span className="font-medium text-slate-200">{faq.question}</span>
+                <motion.span
+                  animate={{ rotate: open === index ? 45 : 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="shrink-0 text-sky-400"
+                >
+                  <Plus className="h-5 w-5" />
+                </motion.span>
+              </button>
+
+              <AnimatePresence initial={false}>
+                {open === index && (
+                  <motion.div
+                    key="answer"
+                    initial={prefersReducedMotion ? undefined : { height: 0, opacity: 0 }}
+                    animate={prefersReducedMotion ? undefined : { height: "auto", opacity: 1 }}
+                    exit={prefersReducedMotion ? undefined : { height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
+                    className="overflow-hidden"
+                  >
+                    <p className="pt-3 text-sm text-slate-400 leading-relaxed">{faq.answer}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-          );
-        })}
-      </dl>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
