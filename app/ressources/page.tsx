@@ -147,12 +147,12 @@ export default function RessourcesPage() {
           <p className="mt-2 text-sm text-slate-400">
             Le pré-audit est gratuit. On analyse vos pages et on vous remet un rapport clair sous 48 h.
           </p>
-          <a
+          <Link
             href="/#formulaire"
             className="mt-6 inline-flex items-center justify-center rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_24px_rgba(16,185,129,0.25)] transition-colors hover:bg-emerald-400 hover:text-white"
           >
             Obtenir mon pré‑audit gratuit
-          </a>
+          </Link>
           <p className="mt-3 text-xs text-slate-500">Sans engagement · Retour sous 48 h</p>
         </div>
 

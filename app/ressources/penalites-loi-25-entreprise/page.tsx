@@ -203,12 +203,12 @@ export default function PenalitesLoi25Page() {
           <p className="mt-2 text-sm text-slate-400">
             Notre pré-audit gratuit analyse votre site et vous indique clairement les zones à risque — sans jargon, sans engagement.
           </p>
-          <a
+          <Link
             href="/#formulaire"
             className="mt-6 inline-flex items-center justify-center rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_24px_rgba(16,185,129,0.25)] transition-colors hover:bg-emerald-400 hover:text-white"
           >
             Obtenir mon pré‑audit gratuit
-          </a>
+          </Link>
           <p className="mt-3 text-xs text-slate-500">Retour sous 48 h · Sans engagement · Aucune carte requise</p>
         </div>
 

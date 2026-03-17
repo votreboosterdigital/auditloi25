@@ -50,10 +50,10 @@ export default function BanniereCookiesLoi25Page() {
           </h2>
           <div className="rounded-2xl bg-slate-900/70 p-6 ring-1 ring-slate-700/50 text-sm leading-relaxed text-slate-300 space-y-4">
             <p>
-              Imaginez une directrice d&apos;un organisme communautaire de Montréal. Il y a deux ans, son webmestre a installé une bannière sur le site : <em className="text-slate-200">"Nous utilisons des cookies pour améliorer votre expérience. [OK]"</em>. Elle a coché la case dans sa tête. Problème réglé.
+              Imaginez une directrice d&apos;un organisme communautaire de Montréal. Il y a deux ans, son webmestre a installé une bannière sur le site : <em className="text-slate-200">&quot;Nous utilisons des cookies pour améliorer votre expérience. [OK]&quot;</em>. Elle a coché la case dans sa tête. Problème réglé.
             </p>
             <p>
-              Mais en 2023, la Commission d&apos;accès à l&apos;information (CAI) a précisé ses attentes : cette bannière-là ne suffit plus. Pourquoi ? Parce que donner son accord doit être un vrai choix — et <strong className="text-slate-100">refuser les cookies doit être aussi facile qu&apos;accepter</strong>. Un seul bouton "OK" ne laisse aucune option.
+              Mais en 2023, la Commission d&apos;accès à l&apos;information (CAI) a précisé ses attentes : cette bannière-là ne suffit plus. Pourquoi ? Parce que donner son accord doit être un vrai choix — et <strong className="text-slate-100">refuser les cookies doit être aussi facile qu&apos;accepter</strong>. Un seul bouton &quot;OK&quot; ne laisse aucune option.
             </p>
             <p>
               Ce n&apos;est pas une subtilité technique réservée aux grandes entreprises. C&apos;est une exigence concrète qui s&apos;applique à votre site, maintenant.
@@ -221,12 +221,12 @@ export default function BanniereCookiesLoi25Page() {
           <p className="mt-2 text-sm text-slate-400">
             On analyse votre site et on vous remet un premier bilan clair — cookies actifs, comportement de la bannière, zones à corriger.
           </p>
-          <a
+          <Link
             href="/#formulaire"
             className="mt-6 inline-flex items-center justify-center rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_24px_rgba(16,185,129,0.25)] transition-colors hover:bg-emerald-400 hover:text-white"
           >
             Obtenir mon pré‑audit gratuit
-          </a>
+          </Link>
           <p className="mt-3 text-xs text-slate-500">Retour sous 48 h · Sans engagement · Aucune carte requise</p>
         </div>
 

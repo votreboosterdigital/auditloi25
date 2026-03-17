@@ -186,12 +186,12 @@ export default function AuditLoi25ObnlPage() {
           <p className="mt-2 text-sm text-slate-400">
             Pré-audit gratuit · Résultats sous 48 h · Aucun engagement, aucune carte requise
           </p>
-          <a
+          <Link
             href="/#formulaire"
             className="mt-6 inline-flex items-center justify-center rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_24px_rgba(16,185,129,0.25)] transition-colors hover:bg-emerald-400 hover:text-white"
           >
             Obtenir mon pré‑audit gratuit
-          </a>
+          </Link>
           <div className="mt-3">
             <Link href="/offre" className="text-xs text-sky-400 hover:text-sky-300 transition-colors">
               Voir l&apos;offre d&apos;audit Loi 25 pour OBNL →
