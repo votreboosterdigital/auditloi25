@@ -3,10 +3,9 @@ import { ShieldIcon } from "@/components/shield-icon";
 
 export function Footer() {
   return (
-    <footer className="mt-16">
-      {/* ── Micro À propos — signature discrète ── */}
-      {/* AFTER: ajouté AVANT le séparateur, BEFORE: séparateur seul */}
-      <div className="px-4 pb-8 text-center">
+    <footer className="mt-16 border-t border-white/5">
+      {/* Micro À propos */}
+      <div className="px-4 pb-8 pt-10 text-center">
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-slate-400">
           auditloi25.ca est opéré par un spécialiste en conformité numérique
           basé à Montréal, avec une expertise centrée sur les PME, OBNL et
@@ -19,66 +18,71 @@ export function Footer() {
         </p>
       </div>
 
-      {/* Séparateur */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-700/70 to-transparent" />
+      {/* Separator */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       {/* Nav + copyright */}
-      <div className="mt-4 flex flex-col gap-4 border-t border-slate-800/70 pt-4 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-        <div className="space-y-1">
-          <div className="flex items-center gap-2">
-            <ShieldIcon
-              size={14}
-              className="shrink-0 text-sky-400"
-              aria-hidden="true"
-            />
-            <p className="font-semibold text-slate-200">auditloi25.ca</p>
+      <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          {/* Logo + copyright block */}
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <ShieldIcon
+                size={14}
+                className="shrink-0 text-sky-400"
+                aria-hidden="true"
+              />
+              <span className="text-sm font-semibold text-slate-200">auditloi25.ca</span>
+            </div>
+            <p className="text-xs text-slate-500">Service privé indépendant, basé à Montréal, Québec.</p>
+            <p className="text-xs text-slate-500">
+              © {new Date().getFullYear()} auditloi25.ca – Tous droits réservés.
+            </p>
           </div>
-          <p>Service privé indépendant, basé à Montréal, Québec.</p>
-          <p>
-            © {new Date().getFullYear()} auditloi25.ca – Tous droits réservés.
-          </p>
+
+          {/* Nav links */}
+          <nav aria-label="Liens du pied de page" className="flex flex-wrap gap-x-5 gap-y-2">
+            <Link href="/" className="text-[11px] text-slate-500 hover:text-slate-300 transition-colors sm:text-xs">
+              Accueil
+            </Link>
+            <Link href="/offre" className="text-[11px] text-slate-500 hover:text-slate-300 transition-colors sm:text-xs">
+              Offre
+            </Link>
+            <Link href="/ressources" className="text-[11px] text-slate-500 hover:text-slate-300 transition-colors sm:text-xs">
+              Ressources
+            </Link>
+            <Link
+              href="/ressources/checklist-loi-25-site-web"
+              className="text-[11px] text-slate-500 hover:text-slate-300 transition-colors sm:text-xs"
+            >
+              Checklist Loi 25
+            </Link>
+            <Link
+              href="/ressources/banniere-cookies-loi-25"
+              className="text-[11px] text-slate-500 hover:text-slate-300 transition-colors sm:text-xs"
+            >
+              Bannière de cookies
+            </Link>
+            <Link
+              href="/ressources/penalites-loi-25-entreprise"
+              className="text-[11px] text-slate-500 hover:text-slate-300 transition-colors sm:text-xs"
+            >
+              Amendes Loi 25
+            </Link>
+            <Link
+              href="/a-propos"
+              className="text-[11px] text-slate-500 hover:text-slate-300 transition-colors sm:text-xs"
+            >
+              À propos
+            </Link>
+            <Link
+              href="/politique-de-confidentialite"
+              className="text-[11px] text-slate-500 hover:text-slate-300 transition-colors sm:text-xs"
+            >
+              Politique de confidentialité
+            </Link>
+          </nav>
         </div>
-        <nav aria-label="Liens du pied de page" className="flex flex-wrap gap-4 text-[11px] sm:text-xs">
-          <Link href="/" className="text-slate-400 hover:text-slate-200 transition-colors">
-            Accueil
-          </Link>
-          <Link href="/offre" className="text-slate-400 hover:text-slate-200 transition-colors">
-            Offre
-          </Link>
-          <Link href="/ressources" className="text-slate-400 hover:text-slate-200 transition-colors">
-            Ressources
-          </Link>
-          <Link
-            href="/ressources/checklist-loi-25-site-web"
-            className="text-slate-400 hover:text-slate-200 transition-colors"
-          >
-            Checklist Loi 25
-          </Link>
-          <Link
-            href="/ressources/banniere-cookies-loi-25"
-            className="text-slate-400 hover:text-slate-200 transition-colors"
-          >
-            Bannière de cookies
-          </Link>
-          <Link
-            href="/ressources/penalites-loi-25-entreprise"
-            className="text-slate-400 hover:text-slate-200 transition-colors"
-          >
-            Amendes Loi 25
-          </Link>
-          <Link
-            href="/a-propos"
-            className="text-slate-400 hover:text-slate-200 transition-colors"
-          >
-            À propos
-          </Link>
-          <Link
-            href="/politique-de-confidentialite"
-            className="text-slate-400 hover:text-slate-200 transition-colors"
-          >
-            Politique de confidentialité
-          </Link>
-        </nav>
       </div>
     </footer>
   );
