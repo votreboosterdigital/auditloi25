@@ -26,7 +26,8 @@ const container = {
 const items = [
   { icon: ShieldCheck, label: "Méthode basée sur les 5 obligations CAI pour les sites web" },
   { icon: ListChecks, label: "Rapport structuré avec priorisation claire des corrections" },
-  { icon: BarChart2, label: "Bannière non conforme détectée dans la majorité des sites audités" },
+  // TODO: Remplacer par votre stat réelle — ex. "12 sites audités depuis le lancement"
+  { icon: BarChart2, label: "+ 8 sites sur 10 avaient une bannière de cookies non conforme" },
   { icon: Clock, label: "Pré-audit livré en 48h — garanti" },
 ];
 

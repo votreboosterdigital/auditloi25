@@ -75,6 +75,10 @@ export function HowItWorks() {
         alert("Une erreur est survenue lors de l'envoi du formulaire. Merci de réessayer.");
         return;
       }
+      // Plausible custom event (graceful — window.plausible may not be loaded yet)
+      if (typeof window !== "undefined" && typeof (window as Window & { plausible?: (e: string) => void }).plausible === "function") {
+        (window as Window & { plausible?: (e: string) => void }).plausible!("form_submitted");
+      }
       router.push("/merci");
     } catch (error) {
       console.error("Erreur réseau lead:", error);

@@ -116,6 +116,30 @@ const serviceSchema = {
   url: "https://auditloi25.ca/offre",
 };
 
+/** Breadcrumb JSON-LD pour les pages ressources */
+export function BreadcrumbJsonLd({
+  items,
+}: {
+  items: { name: string; href: string }[];
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: `https://auditloi25.ca${item.href}`,
+    })),
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 export function JsonLd() {
   return (
     <>

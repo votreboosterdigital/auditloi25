@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Heart, Users, CheckCircle2, AlertTriangle, ArrowLeft } from "lucide-react";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "Loi 25 et OBNL : ce que votre organisme doit vérifier sur son site | auditloi25.ca",
@@ -11,6 +12,11 @@ export const metadata: Metadata = {
 export default function AuditLoi25ObnlPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
+      <BreadcrumbJsonLd items={[
+        { name: "Accueil", href: "/" },
+        { name: "Ressources", href: "/ressources" },
+        { name: "Loi 25 et OBNL", href: "/ressources/audit-loi-25-obnl" },
+      ]} />
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
 
         {/* Navbar minimale */}

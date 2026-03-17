@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "Checklist Loi 25 pour votre site web (cookies, formulaires, contenus) | auditloi25.ca",
@@ -10,6 +11,11 @@ export const metadata: Metadata = {
 export default function ChecklistLoi25Page() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
+      <BreadcrumbJsonLd items={[
+        { name: "Accueil", href: "/" },
+        { name: "Ressources", href: "/ressources" },
+        { name: "Checklist Loi 25 pour votre site web", href: "/ressources/checklist-loi-25-site-web" },
+      ]} />
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
         <header className="mb-8">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-400">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldAlert, CheckCircle2, AlertTriangle, ArrowLeft } from "lucide-react";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "Amendes Loi 25 pour les PME : ce que risque votre organisation | auditloi25.ca",
@@ -11,6 +12,11 @@ export const metadata: Metadata = {
 export default function PenalitesLoi25Page() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
+      <BreadcrumbJsonLd items={[
+        { name: "Accueil", href: "/" },
+        { name: "Ressources", href: "/ressources" },
+        { name: "Amendes et sanctions Loi 25", href: "/ressources/penalites-loi-25-entreprise" },
+      ]} />
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
 
         {/* Navbar minimale */}
@@ -196,7 +202,7 @@ export default function PenalitesLoi25Page() {
         </section>
 
         {/* CTA */}
-        <div className="mb-12 rounded-2xl bg-slate-900 p-8 ring-1 ring-slate-700 text-center">
+        <div className="mb-6 rounded-2xl bg-slate-900 p-8 ring-1 ring-slate-700 text-center">
           <p className="text-lg font-bold text-slate-50">
             Vous ne savez pas où vous en êtes avec la Loi&nbsp;25&nbsp;?
           </p>
@@ -210,6 +216,24 @@ export default function PenalitesLoi25Page() {
             Obtenir mon pré‑audit gratuit
           </Link>
           <p className="mt-3 text-xs text-slate-500">Retour sous 48 h · Sans engagement · Aucune carte requise</p>
+        </div>
+
+        {/* Lien vers l'offre complète */}
+        <div className="mb-12 rounded-xl border border-sky-500/20 bg-sky-500/5 px-6 py-5 flex items-start justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold text-slate-200">
+              Vous voulez savoir précisément où vous en êtes avant une enquête CAI&nbsp;?
+            </p>
+            <p className="mt-1 text-xs text-slate-400">
+              L&apos;audit complet vous donne un rapport détaillé avec score de risque par zone et plan de correction priorisé — à partir de 450&nbsp;$.
+            </p>
+          </div>
+          <Link
+            href="/offre"
+            className="shrink-0 inline-flex items-center gap-1 text-sm font-medium text-sky-400 hover:text-sky-300 transition-colors"
+          >
+            Voir l&apos;offre →
+          </Link>
         </div>
 
         {/* Footer */}

@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/hero";
 import { TrustStrip } from "@/components/sections/trust-strip";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { Features } from "@/components/sections/features";
+import { Testimonials } from "@/components/sections/testimonials";
 import { Pricing } from "@/components/sections/pricing";
 import { WhyActNow } from "@/components/sections/why-act-now";
 import { Faq } from "@/components/sections/faq";
@@ -33,6 +34,7 @@ export default function HomePage() {
           <Hero />
           <HowItWorks />
           <Features />
+          <Testimonials />
           <Pricing />
           <WhyActNow />
           <Faq />

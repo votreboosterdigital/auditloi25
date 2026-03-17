@@ -62,6 +62,17 @@ export default function RootLayout({
           src="https://cdn-cookieyes.com/client_data/d679772db3cc8c691b75a6eb6ee182af/script.js"
           strategy="beforeInteractive"
         />
+        {/* Plausible Analytics — cookieless, Loi 25 compliant, pas de consentement requis */}
+        <Script
+          id="plausible"
+          defer
+          data-domain="auditloi25.ca"
+          src="https://plausible.io/js/script.outbound-links.file-downloads.js"
+          strategy="afterInteractive"
+        />
+        <Script id="plausible-init" strategy="afterInteractive">{`
+          window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+        `}</Script>
       </head>
       <body className="bg-base text-slate-50">
         {children}

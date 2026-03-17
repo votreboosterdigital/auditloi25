@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldIcon } from "@/components/shield-icon";
 import { ExternalLink, ArrowLeft } from "lucide-react";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "Sources — Loi 25 et conformité web | auditloi25.ca",
@@ -54,6 +55,11 @@ const sources: Source[] = [
 export default function SourcesPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
+      <BreadcrumbJsonLd items={[
+        { name: "Accueil", href: "/" },
+        { name: "Ressources", href: "/ressources" },
+        { name: "Sources Loi 25", href: "/ressources/sources-loi-25" },
+      ]} />
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
 
         {/* Navbar minimale */}

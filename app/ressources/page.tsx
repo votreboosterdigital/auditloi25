@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, CheckSquare, ToggleLeft, ShieldAlert, Heart, BookOpen } from "lucide-react";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "Ressources Loi 25 pour PME et OBNL | auditloi25.ca",
@@ -74,6 +75,10 @@ const ressources = [
 export default function RessourcesPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
+      <BreadcrumbJsonLd items={[
+        { name: "Accueil", href: "/" },
+        { name: "Ressources", href: "/ressources" },
+      ]} />
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
 
         {/* Navbar minimale */}
