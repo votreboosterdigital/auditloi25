@@ -8,9 +8,6 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const FROM_EMAIL = process.env.FROM_EMAIL ?? "noreply@auditloi25.ca";
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL ?? "votreboosterdigital@outlook.com";
 
-// Next.js App Router : désactiver le body parser pour lire le raw body
-export const config = { api: { bodyParser: false } };
-
 export async function POST(request: Request) {
   const body = await request.text();
   const signature = request.headers.get("stripe-signature");
