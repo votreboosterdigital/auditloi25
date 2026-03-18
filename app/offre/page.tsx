@@ -126,8 +126,75 @@ const pricingRows = [
 ];
 
 export default function OffrePage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Qu'est-ce que je reçois exactement dans le rapport d'audit complet ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Le rapport est un document PDF structuré en quatre parties : (1) cartographie de tous les cookies et scripts tiers actifs sur votre site, (2) analyse de chaque formulaire et du parcours de consentement, (3) revue de vos contenus légaux (politique de confidentialité, mentions), et (4) plan d'action avec chaque correctif classé par priorité et par niveau d'effort. Une séance de restitution à distance est incluse pour passer en revue les points clés et répondre à vos questions.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Combien de temps dure l'audit une fois commandé ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Pour un site vitrine ou un OBNL typique (jusqu'à 30 pages), le délai de livraison est généralement de 5 à 10 jours ouvrables après la confirmation de la commande et le cadrage de la portée. Pour un site plus complexe (boutique, espace membres, sous-domaines multiples), le délai est précisé dans le devis. Les délais sont toujours confirmés avant de commencer.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Est-ce que vous accédez à notre site ou à nos serveurs ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Non. L'audit est entièrement réalisé en lecture seule, côté utilisateur : nous analysons votre site tel qu'un visiteur le voit, sans accès à votre hébergement, à votre CMS ni à vos bases de données. Les correctifs proposés dans le rapport sont ensuite appliqués par votre équipe ou votre agence web.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Notre site a été construit par une agence — l'audit est-il quand même possible ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Oui, et c'est même la situation la plus courante. L'audit ne nécessite aucun accès technique de votre part. Le rapport inclut des recommandations formulées de façon à être directement transmissibles à votre agence ou à votre développeur, avec les corrections concrètes à apporter.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Le rapport peut-il être partagé avec notre direction, notre CA ou nos bailleurs ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Oui. Le rapport est conçu pour être lisible par des non-spécialistes et peut être partagé librement en interne. Si vous avez besoin d'un format adapté à une présentation spécifique (CA, rapport annuel, financement), signalez-le lors du cadrage et nous ajusterons le livrable en conséquence.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Comment se calcule le prix d'un audit complet ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Le prix dépend principalement du nombre de pages analysées, du nombre de formulaires et de la complexité des scripts tiers en place. Pour la majorité des sites vitrines et des OBNL, l'audit complet se situe entre 450 $ et 900 $. Le devis précis vous est remis après le pré-audit gratuit — vous avez donc déjà une vision des enjeux avant de vous engager financièrement.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Que se passe-t-il si on modifie notre site après l'audit ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Le rapport couvre l'état de votre site au moment de l'audit. Si des changements importants sont apportés après livraison (refonte, ajout de formulaires, migration d'outils), nous pouvons réaliser un audit de suivi ciblé sur les nouvelles zones, à un tarif réduit. Les conditions sont précisées dans le devis initial.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Navbar />
 
       <main className="relative min-h-screen bg-slate-950 text-slate-50">

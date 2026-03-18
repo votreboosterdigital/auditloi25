@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
@@ -47,6 +47,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#020817",
 };
 
 export default function RootLayout({

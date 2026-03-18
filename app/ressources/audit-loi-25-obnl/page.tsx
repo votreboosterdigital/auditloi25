@@ -10,8 +10,36 @@ export const metadata: Metadata = {
 };
 
 export default function AuditLoi25ObnlPage() {
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Loi 25 et OBNL : ce que votre organisme doit vérifier sur son site",
+    description:
+      "La Loi 25 s'applique aux OBNL québécois autant qu'aux entreprises. Voici ce que votre organisme doit vérifier sur son site web — formulaires de dons, inscriptions, infolettres.",
+    datePublished: "2026-03-01",
+    dateModified: "2026-03-18",
+    author: {
+      "@type": "Organization",
+      name: "auditloi25.ca",
+      url: "https://auditloi25.ca",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "auditloi25.ca",
+      url: "https://auditloi25.ca",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://auditloi25.ca/ressources/audit-loi-25-obnl",
+    },
+  };
+
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <BreadcrumbJsonLd items={[
         { name: "Accueil", href: "/" },
         { name: "Ressources", href: "/ressources" },

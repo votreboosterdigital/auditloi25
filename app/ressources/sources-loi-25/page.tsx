@@ -53,8 +53,36 @@ const sources: Source[] = [
 ];
 
 export default function SourcesPage() {
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Sources — Loi 25 et conformité web",
+    description:
+      "Références légales et institutionnelles citées sur auditloi25.ca : Loi 25, Commission d'accès à l'information (CAI), sondages.",
+    datePublished: "2026-03-01",
+    dateModified: "2026-03-18",
+    author: {
+      "@type": "Organization",
+      name: "auditloi25.ca",
+      url: "https://auditloi25.ca",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "auditloi25.ca",
+      url: "https://auditloi25.ca",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://auditloi25.ca/ressources/sources-loi-25",
+    },
+  };
+
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <BreadcrumbJsonLd items={[
         { name: "Accueil", href: "/" },
         { name: "Ressources", href: "/ressources" },

@@ -8,6 +8,7 @@ import { ShieldIcon } from "@/components/shield-icon";
 const navLinks = [
   { href: "/offre", label: "Voir l'offre" },
   { href: "/ressources", label: "Ressources" },
+  { href: "/actualites", label: "Actualités" },
 ];
 
 export function Navbar() {

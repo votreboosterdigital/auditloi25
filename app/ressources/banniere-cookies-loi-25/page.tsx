@@ -10,8 +10,36 @@ export const metadata: Metadata = {
 };
 
 export default function BanniereCookiesLoi25Page() {
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Bannière de cookies et Loi 25 : est-ce que la vôtre est vraiment conforme ?",
+    description:
+      "Votre bannière de cookies est-elle conforme à la Loi 25 ? Découvrez ce qu'exige la CAI pour les PME et OBNL québécois — expliqué clairement, sans jargon.",
+    datePublished: "2026-03-01",
+    dateModified: "2026-03-18",
+    author: {
+      "@type": "Organization",
+      name: "auditloi25.ca",
+      url: "https://auditloi25.ca",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "auditloi25.ca",
+      url: "https://auditloi25.ca",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://auditloi25.ca/ressources/banniere-cookies-loi-25",
+    },
+  };
+
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <BreadcrumbJsonLd items={[
         { name: "Accueil", href: "/" },
         { name: "Ressources", href: "/ressources" },

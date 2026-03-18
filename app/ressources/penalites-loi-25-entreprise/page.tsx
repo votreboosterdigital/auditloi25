@@ -10,8 +10,36 @@ export const metadata: Metadata = {
 };
 
 export default function PenalitesLoi25Page() {
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Amendes Loi 25 pour les PME : ce que risque votre organisation",
+    description:
+      "Quelles sont les vraies sanctions prévues par la Loi 25 pour les PME québécoises ? On vous explique ce qui peut déclencher une enquête de la CAI — et comment l'éviter.",
+    datePublished: "2026-03-01",
+    dateModified: "2026-03-18",
+    author: {
+      "@type": "Organization",
+      name: "auditloi25.ca",
+      url: "https://auditloi25.ca",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "auditloi25.ca",
+      url: "https://auditloi25.ca",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://auditloi25.ca/ressources/penalites-loi-25-entreprise",
+    },
+  };
+
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <BreadcrumbJsonLd items={[
         { name: "Accueil", href: "/" },
         { name: "Ressources", href: "/ressources" },
