@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle, ArrowRight, Mail } from "lucide-react";
+import { CheckCircle, ArrowRight, Mail, CreditCard } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Merci — Votre pré-audit est en route | auditloi25.ca",
@@ -31,12 +31,41 @@ const coverageItems = [
   "Traceurs, balises et outils d\u2019analyse",
 ];
 
-export default function MerciPage() {
+export default async function MerciPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ session_id?: string }>;
+}) {
+  const { session_id } = await searchParams;
+  const isPaid = Boolean(session_id);
+
   return (
     <main className="min-h-screen bg-base">
       <div className="mx-auto flex min-h-screen max-w-2xl flex-col gap-10 px-4 py-20 sm:px-6">
 
-        {/* Bloc 1 — Confirmation */}
+        {/* Bloc paiement confirmé */}
+        {isPaid && (
+          <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-6 text-center">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/10 ring-1 ring-emerald-500/30 mb-4">
+              <CreditCard size={28} className="text-emerald-400" aria-hidden="true" />
+            </div>
+            <h1 className="text-2xl font-black tracking-tight text-white">
+              Paiement reçu — merci&nbsp;!
+            </h1>
+            <p className="mt-2 text-slate-400 text-sm">
+              Votre audit complet Loi 25 est confirmé. Vous recevrez votre rapport complet sous 48 heures ouvrables à l&apos;adresse indiquée lors du paiement.
+            </p>
+            <p className="mt-3 text-xs text-slate-500">
+              Un reçu vous a été envoyé par Stripe. Des questions ? Écrivez à{" "}
+              <a href="mailto:votreboosterdigital@outlook.com" className="text-emerald-400 underline underline-offset-2">
+                votreboosterdigital@outlook.com
+              </a>
+            </p>
+          </div>
+        )}
+
+        {/* Blocs pré-audit (si pas de paiement) */}
+        {!isPaid && (<>
         <div className="text-center">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 ring-1 ring-emerald-500/30">
             <CheckCircle size={32} className="text-emerald-400" aria-hidden="true" />
@@ -157,6 +186,7 @@ export default function MerciPage() {
             ← Retour à l&apos;accueil
           </Link>
         </div>
+        </>)}
 
       </div>
     </main>

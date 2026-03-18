@@ -4,6 +4,7 @@ import { Check, ShieldCheck, FileSearch, FileText, BarChart2 } from "lucide-reac
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { OfferFaq } from "@/components/offer/offer-faq";
+import { StripeCheckoutButton } from "@/components/stripe-checkout-button";
 
 export const metadata: Metadata = {
   title:
@@ -476,13 +477,7 @@ export default function OffrePage() {
               >
                 Obtenir mon pré‑audit gratuit
               </Link>
-              <Link
-                href="/ressources/checklist-loi-25-site-web"
-                className="inline-flex cursor-pointer items-center gap-2 text-sm font-semibold text-sky-200 transition-colors hover:text-sky-100"
-              >
-                Checklist Loi&nbsp;25 pour votre site web
-                <span className="text-[11px]" aria-hidden="true">→</span>
-              </Link>
+              <StripeCheckoutButton />
             </div>
           </section>
 
