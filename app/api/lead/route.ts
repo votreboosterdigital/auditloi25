@@ -56,6 +56,7 @@ export async function POST(request: Request) {
         resend.emails.send({
           from: FROM_EMAIL,
           to: email,
+          replyTo: NOTIFY_EMAIL,
           subject: "Votre pré-audit Loi 25 est en route — réponse sous 48 h",
           html: confirmationHtml(name, siteUrl),
         }),
@@ -63,6 +64,7 @@ export async function POST(request: Request) {
         resend.emails.send({
           from: FROM_EMAIL,
           to: NOTIFY_EMAIL,
+          replyTo: NOTIFY_EMAIL,
           subject: `Nouveau lead pré-audit — ${siteUrl}`,
           html: notificationHtml(name, email, siteUrl, mainPages),
         }),
