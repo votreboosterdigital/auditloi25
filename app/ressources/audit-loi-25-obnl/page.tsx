@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Loi 25 et OBNL : ce que votre organisme doit vérifier sur son site | auditloi25.ca",
   description:
     "La Loi 25 s'applique aux OBNL québécois autant qu'aux entreprises. Voici ce que votre organisme doit vérifier sur son site web — formulaires de dons, inscriptions, infolettres.",
+  alternates: { canonical: "https://auditloi25.ca/ressources/audit-loi-25-obnl" },
 };
 
 export default function AuditLoi25ObnlPage() {

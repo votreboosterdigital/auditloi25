@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ShieldIcon } from "@/components/shield-icon";
 import { CheckCircle2, TriangleAlert, Shield, Clock } from "lucide-react";
+import { fireOfferClickConversion } from "@/lib/gtag";
 import { motion, useReducedMotion } from "framer-motion";
 
 const fadeUp = {
@@ -106,6 +107,7 @@ export function Hero() {
               </a>
               <Link
                 href="/offre"
+                onClick={fireOfferClickConversion}
                 className="inline-flex cursor-pointer items-center justify-center rounded-lg border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-slate-300 backdrop-blur-sm transition-colors hover:border-white/20 hover:text-white"
               >
                 Voir l&apos;offre d&apos;audit Loi&nbsp;25
@@ -142,6 +144,7 @@ export function Hero() {
               </p>
               <Link
                 href="/offre"
+                onClick={fireOfferClickConversion}
                 className="mt-2 inline-flex text-xs text-sky-400 hover:text-sky-300"
               >
                 Voir l&apos;offre d&apos;audit Loi&nbsp;25 →

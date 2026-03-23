@@ -94,5 +94,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      url: `${base}/actualites/banniere-cookies-loi-25-site-web`,
+      lastModified: "2026-03-23",
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${base}/actualites/loi-25-obnl-quebec-obligations`,
+      lastModified: "2026-03-23",
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${base}/actualites/cout-audit-loi-25-entreprise`,
+      lastModified: "2026-03-23",
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
 }

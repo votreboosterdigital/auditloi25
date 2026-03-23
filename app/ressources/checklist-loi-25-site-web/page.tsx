@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Checklist Loi 25 pour votre site web (cookies, formulaires, contenus) | auditloi25.ca",
   description:
     "Vérifiez rapidement si votre site web respecte les exigences clés de la Loi 25 : cookies, formulaires, infolettre, politiques, droits des personnes et sécurité.",
+  alternates: { canonical: "https://auditloi25.ca/ressources/checklist-loi-25-site-web" },
 };
 
 export default function ChecklistLoi25Page() {

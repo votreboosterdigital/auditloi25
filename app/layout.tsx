@@ -66,6 +66,45 @@ export default function RootLayout({
           src="https://cdn-cookieyes.com/client_data/d679772db3cc8c691b75a6eb6ee182af/script.js"
           strategy="beforeInteractive"
         />
+
+        {/* Google Consent Mode v2 — défaut refusé, AVANT le chargement de gtag.js */}
+        <Script id="gtag-consent-default" strategy="beforeInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            ad_storage: 'denied',
+            analytics_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            wait_for_update: 500
+          });
+        `}</Script>
+
+        {/* Google Ads gtag.js */}
+        <Script
+          id="gtag-lib"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GADS_ID ?? "AW-XXXXXXXXX"}`}
+          strategy="afterInteractive"
+        />
+
+        {/* gtag config + mise à jour consentement via CookieYes */}
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GADS_ID ?? "AW-XXXXXXXXX"}');
+
+          window.addEventListener('cookieyes_consent_update', function(event) {
+            var accepted = (event.detail && event.detail.accepted) || [];
+            gtag('consent', 'update', {
+              ad_storage: accepted.indexOf('advertisement') !== -1 ? 'granted' : 'denied',
+              analytics_storage: accepted.indexOf('analytics') !== -1 ? 'granted' : 'denied',
+              ad_user_data: accepted.indexOf('advertisement') !== -1 ? 'granted' : 'denied',
+              ad_personalization: accepted.indexOf('advertisement') !== -1 ? 'granted' : 'denied'
+            });
+          });
+        `}</Script>
+
         {/* Plausible Analytics — cookieless, Loi 25 compliant, pas de consentement requis */}
         <Script
           id="plausible"

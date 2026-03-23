@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Amendes Loi 25 pour les PME : ce que risque votre organisation | auditloi25.ca",
   description:
     "Quelles sont les vraies sanctions prévues par la Loi 25 pour les PME québécoises ? On vous explique ce qui peut déclencher une enquête de la CAI — et comment l'éviter.",
+  alternates: { canonical: "https://auditloi25.ca/ressources/penalites-loi-25-entreprise" },
 };
 
 export default function PenalitesLoi25Page() {

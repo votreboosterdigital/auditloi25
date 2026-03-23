@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Ressources Loi 25 pour PME et OBNL | auditloi25.ca",
   description:
     "Guides pratiques sur la conformité Loi 25 pour votre site web : bannière de cookies, amendes, checklist, obligations des OBNL. Expliqués clairement, sans jargon.",
+  alternates: { canonical: "https://auditloi25.ca/ressources" },
 };
 
 const ressources = [

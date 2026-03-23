@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Politique de confidentialité – auditloi25.ca",
   description:
     "Comment auditloi25.ca collecte, utilise et protège vos renseignements personnels, conformément à la Loi 25 (Loi sur la protection des renseignements personnels dans le secteur privé).",
+  alternates: { canonical: "https://auditloi25.ca/politique-de-confidentialite" },
 };
 
 export default function PolitiqueConfidentialitePage() {

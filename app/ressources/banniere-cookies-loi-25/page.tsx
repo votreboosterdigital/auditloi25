@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Bannière de cookies et Loi 25 : est-ce que la vôtre est vraiment conforme ? | auditloi25.ca",
   description:
     "Votre bannière de cookies est-elle conforme à la Loi 25 ? Découvrez ce qu'exige la CAI pour les PME et OBNL québécois — expliqué clairement, sans jargon.",
+  alternates: { canonical: "https://auditloi25.ca/ressources/banniere-cookies-loi-25" },
 };
 
 export default function BanniereCookiesLoi25Page() {

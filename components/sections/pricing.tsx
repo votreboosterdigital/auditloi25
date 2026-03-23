@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { fireOfferClickConversion } from "@/lib/gtag";
 import { CheckCircle2 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 
@@ -183,6 +184,7 @@ export function Pricing() {
           Devis précis fourni après le pré-audit, sans engagement.{" "}
           <Link
             href="/offre"
+            onClick={fireOfferClickConversion}
             className="text-sky-400 underline underline-offset-4 decoration-sky-400/40 hover:text-sky-300"
           >
             Voir le détail de l&apos;offre d&apos;audit →

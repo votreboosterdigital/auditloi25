@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Sources — Loi 25 et conformité web | auditloi25.ca",
   description:
     "Références légales et institutionnelles citées sur auditloi25.ca : Loi 25, Commission d'accès à l'information (CAI), sondages.",
+  alternates: { canonical: "https://auditloi25.ca/ressources/sources-loi-25" },
 };
 
 type Source = {

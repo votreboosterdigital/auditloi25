@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { fireSubmitConversion } from "@/lib/gtag";
 import { motion, useReducedMotion } from "framer-motion";
 
 type FormState = {
@@ -79,6 +80,8 @@ export function HowItWorks() {
       if (typeof window !== "undefined" && typeof (window as Window & { plausible?: (e: string) => void }).plausible === "function") {
         (window as Window & { plausible?: (e: string) => void }).plausible!("form_submitted");
       }
+      // Google Ads — conversion principale (après réponse 200 confirmée)
+      fireSubmitConversion();
       router.push("/merci");
     } catch (error) {
       console.error("Erreur réseau lead:", error);

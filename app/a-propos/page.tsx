@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "À propos — Qui est derrière auditloi25.ca | auditloi25.ca",
   description:
     "auditloi25.ca est opéré par un spécialiste en conformité numérique basé à Montréal. Découvrez l'approche, les valeurs et pourquoi ce service a été créé pour les PME et OBNL québécois.",
+  alternates: { canonical: "https://auditloi25.ca/a-propos" },
 };
 
 export default function AProposPage() {

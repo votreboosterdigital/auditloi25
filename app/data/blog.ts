@@ -202,4 +202,198 @@ export const BLOG_POSTS: BlogPost[] = [
 <p>Une politique de confidentialité conforme à la Loi 25 n'est pas un document de 40 pages rédigé par un juriste — c'est un texte clair, honnête et à jour, qui reflète exactement ce que vous faites avec les données de vos visiteurs. Si vous n'êtes pas certain que la vôtre est à jour, un audit de votre site peut rapidement identifier les lacunes à corriger.</p>
 `,
   },
+  {
+    slug: "banniere-cookies-loi-25-site-web",
+    titre: "Bannière cookies Loi 25 : ce que la CAI exige exactement",
+    description:
+      "Bannière cookies Loi 25 : découvrez les 6 critères exigés par la CAI pour être conforme et les erreurs à corriger sur votre site web québécois.",
+    date: "2026-03-23",
+    tempsLecture: 5,
+    contenu: `
+<h2>Ce que la Loi 25 exige pour les cookies (L.Q. 2021, c. 25)</h2>
+<p>Depuis septembre 2023, la <em>Loi modernisant des dispositions législatives en matière de protection des renseignements personnels</em> (L.Q. 2021, c. 25) impose un cadre strict pour l'utilisation des témoins de connexion (cookies) sur tout site web québécois. L'article 8 de la Loi 25 est clair : le consentement doit être libre, éclairé, donné à des fins spécifiques, et manifeste avant la collecte de renseignements personnels — y compris via les cookies non essentiels.</p>
+<p>En pratique, cela signifie qu'aucun cookie d'analyse, de publicité ou de réseaux sociaux ne peut être déposé sur l'appareil d'un visiteur avant qu'il ait explicitement consenti. Ce principe s'applique que vous soyez une PME de 3 employés ou une entreprise de 500 personnes.</p>
+<p>La Commission d'accès à l'information (CAI), l'organisme chargé de surveiller l'application de la Loi 25, a publié des lignes directrices précises sur ce que doit comporter une bannière de consentement valide. Votre bannière actuelle — si vous en avez une — est-elle vraiment conforme ?</p>
+
+<h2>Les 6 critères d'une bannière conforme selon la CAI</h2>
+<p>La CAI a établi six exigences fondamentales pour qu'une bannière de cookies soit considérée comme conforme à la Loi 25 :</p>
+<ol>
+  <li><strong>Un bouton « Refuser » aussi visible que le bouton « Accepter » :</strong> les deux options doivent avoir le même poids visuel. Un bouton vert « Accepter » en évidence et un lien gris discret « Refuser » ne constitue pas un choix équitable.</li>
+  <li><strong>Le blocage préalable des cookies non essentiels :</strong> les scripts d'analyse (Google Analytics, etc.), les pixels publicitaires (Meta Pixel, Google Ads) et les outils de réseaux sociaux doivent être complètement bloqués jusqu'à ce que l'utilisateur ait fait son choix.</li>
+  <li><strong>Une bannière en français :</strong> la Loi 25 s'applique au Québec. Votre bannière doit être rédigée en français, dans un langage clair et accessible à un non-spécialiste.</li>
+  <li><strong>Un lien vers votre politique de confidentialité :</strong> la bannière doit permettre à l'utilisateur de consulter votre politique complète avant de donner son consentement.</li>
+  <li><strong>La possibilité de modifier ses préférences :</strong> l'utilisateur doit pouvoir revenir sur son choix à tout moment — via un lien dans le pied de page ou dans la politique de confidentialité.</li>
+  <li><strong>Une granularité du consentement :</strong> idéalement, l'utilisateur doit pouvoir accepter certaines catégories de cookies (ex. : analytics) et en refuser d'autres (ex. : publicité), plutôt qu'un choix tout-ou-rien.</li>
+</ol>
+
+<h2>Les erreurs fréquentes sur les sites québécois</h2>
+<p>Après l'analyse de centaines de sites web québécois, voici les cinq erreurs les plus récurrentes :</p>
+<ul>
+  <li><strong>Bannière sans bouton de refus :</strong> le cas le plus fréquent. Un seul bouton « J'accepte » ou « OK, compris » ne constitue pas un consentement valide selon l'article 8 de la L.Q. 2021, c. 25. Le refus doit être aussi facile que l'acceptation.</li>
+  <li><strong>Cookies qui se chargent avant le consentement :</strong> la bannière s'affiche, mais les scripts sont déjà actifs en arrière-plan. C'est l'erreur technique la plus grave — et la plus facile à détecter lors d'une inspection CAI.</li>
+  <li><strong>Bannière en anglais ou dans un français approximatif :</strong> les gabarits de plateformes comme WordPress ou Shopify sont souvent configurés en anglais par défaut. La personnalisation est obligatoire.</li>
+  <li><strong>Lien vers une politique de confidentialité absente ou périmée :</strong> la bannière renvoie vers une page vide, une erreur 404, ou un document rédigé avant 2022 — donc non conforme à la Loi 25.</li>
+  <li><strong>Absence de mécanisme de révocation :</strong> une fois le choix fait, l'utilisateur n'a aucun moyen de modifier ses préférences. L'absence de ce mécanisme est un manquement explicite aux exigences de la CAI.</li>
+</ul>
+
+<h2>Comment corriger votre bannière en 4 étapes</h2>
+<p>Si votre bannière présente l'une ou plusieurs de ces lacunes, voici les étapes à suivre pour vous mettre en conformité :</p>
+<ol>
+  <li><strong>Inventoriez tous vos cookies et scripts tiers.</strong> Utilisez les outils de développement de votre navigateur (onglet « Application » dans Chrome) ou un outil comme Cookie Scanner pour lister tous les cookies déposés sur votre site, essentiels et non essentiels.</li>
+  <li><strong>Choisissez une solution de gestion du consentement (CMP) fiable.</strong> Des outils comme CookieYes, Axeptio ou Usercentrics permettent de mettre en place une bannière conforme sans développement sur mesure. Configurez-les en français, avec les deux boutons visibles et le blocage préalable activé.</li>
+  <li><strong>Mettez à jour votre politique de confidentialité.</strong> Ajoutez-y une section dédiée aux cookies, listant les outils utilisés par catégorie et expliquant comment l'utilisateur peut gérer ses préférences. Rendez-la accessible depuis la bannière et le pied de page.</li>
+  <li><strong>Ajoutez un lien « Gérer mes préférences » dans votre pied de page.</strong> Ce lien doit permettre à tout visiteur de modifier ou révoquer son consentement à tout moment, même après avoir fermé la bannière initiale.</li>
+</ol>
+<p>Une fois ces étapes complétées, effectuez un test complet : videz votre cache, visitez votre site en mode navigation privée et vérifiez que aucun cookie non essentiel n'est déposé avant votre choix. Consultez aussi votre site sur mobile — les bannières mal adaptées aux écrans de téléphone sont une source fréquente de non-conformité.</p>
+<p>Si vous avez un doute sur la conformité de votre site après ces vérifications, un regard externe spécialisé peut vous éviter des mois d'incertitude — et les conséquences d'une plainte à la CAI. Notre <a href="/offre">audit de conformité</a> couvre la bannière, la politique, les formulaires et les outils tiers, et vous livre un rapport complet sous 48 heures.</p>
+
+<div class="cta-block">
+  <p><strong>Vous n'êtes pas certain que votre bannière est conforme ?</strong></p>
+  <p>Obtenez un premier bilan clair sous 48 heures — sans jargon, sans engagement.</p>
+  <a href="/#formulaire" class="cta-link">Demander mon pré-audit gratuit →</a>
+</div>
+`,
+  },
+  {
+    slug: "loi-25-obnl-quebec-obligations",
+    titre: "Loi 25 et OBNL québécois : vos obligations expliquées simplement",
+    description:
+      "Loi 25 OBNL Québec : découvrez si votre organisme est concerné, vos obligations concrètes et les erreurs typiques à éviter pour rester conforme.",
+    date: "2026-03-23",
+    tempsLecture: 5,
+    contenu: `
+<h2>Les OBNL sont-ils vraiment soumis à la Loi 25 ?</h2>
+<p>C'est la question que posent en premier la plupart des dirigeants d'organismes à but non lucratif au Québec. La réponse est sans ambiguïté : <strong>oui</strong>. La <em>Loi modernisant des dispositions législatives en matière de protection des renseignements personnels</em> (L.Q. 2021, c. 25) s'applique explicitement aux organisations qui collectent, utilisent ou communiquent des renseignements personnels dans le cadre d'une activité commerciale <em>ou à but non lucratif</em>.</p>
+<p>Cette précision — « à but non lucratif » — est inscrite dans le texte même de la loi. Il ne s'agit pas d'une interprétation : si votre OBNL a un site web avec un formulaire d'inscription, une boutique en ligne, un système de don, ou simplement un formulaire de contact, vous collectez des renseignements personnels et vous êtes soumis aux obligations de la Loi 25.</p>
+<p>Les amendes prévues en cas de manquement sont identiques pour tous : jusqu'à <strong>25 millions de dollars ou 4 % du chiffre d'affaires mondial</strong> pour les personnes morales. Le statut d'OBNL ne constitue pas une exemption.</p>
+
+<h2>Vos obligations concrètes en tant qu'OBNL</h2>
+<p>Voici les quatre obligations principales qui s'appliquent à la quasi-totalité des OBNL québécois disposant d'une présence web :</p>
+
+<h3>1. Une bannière de cookies conforme</h3>
+<p>Si votre site utilise des outils tiers — Google Analytics, pixels de réseaux sociaux, outils de formulaire, widgets de don — vous devez afficher une bannière de consentement aux cookies conforme aux exigences de la Commission d'accès à l'information (CAI). Cette bannière doit offrir un vrai bouton de refus, bloquer les cookies non essentiels avant le consentement, et être rédigée en français.</p>
+
+<h3>2. Une politique de confidentialité à jour</h3>
+<p>Votre politique de confidentialité doit être accessible depuis toutes les pages de votre site, rédigée en français clair, et couvrir les renseignements collectés, les finalités, la durée de conservation, les droits des personnes, et les transferts à des tiers. Un document générique copié en ligne ne suffit pas — il doit refléter vos pratiques réelles.</p>
+
+<h3>3. Des formulaires transparents</h3>
+<p>Chaque formulaire d'inscription, de don, de bénévolat ou de contact doit indiquer pourquoi ces renseignements sont demandés et comment ils seront utilisés. Les cases liées à l'infolettre ne doivent pas être pré-cochées.</p>
+
+<h3>4. Un responsable désigné</h3>
+<p>Votre OBNL doit désigner une personne responsable de la protection des renseignements personnels — souvent le directeur général ou un administrateur. Le nom ou le titre de cette personne doit être publié sur votre site web.</p>
+
+<h2>Exemples concrets par type d'organisme</h2>
+<p>Les obligations sont les mêmes pour tous, mais la mise en œuvre varie selon votre type d'organisme :</p>
+
+<h3>Association sportive</h3>
+<p>Vous gérez des inscriptions en ligne (nom, date de naissance, coordonnées des parents pour les mineurs). Ces données sont particulièrement sensibles. Votre formulaire d'inscription doit expliquer leur usage, votre politique doit préciser leur durée de conservation, et votre bannière doit bloquer tout pixel publicitaire de vos partenaires avant consentement.</p>
+
+<h3>Fondation caritative</h3>
+<p>Votre formulaire de don collecte des informations financières et personnelles. En plus des obligations habituelles, vous devez être particulièrement vigilant sur les transferts à des tiers (plateforme de paiement, CanaDon, etc.) et les mentionner dans votre politique. Si vous utilisez des outils de marketing par courriel pour les campagnes de financement, le consentement à la communication doit être distinct du don lui-même.</p>
+
+<h3>Regroupement professionnel</h3>
+<p>Vous gérez un répertoire de membres, souvent avec des données professionnelles (numéro de permis, spécialité, coordonnées). Ces données ne peuvent être partagées avec des tiers sans consentement explicite. La politique de confidentialité doit couvrir clairement qui a accès au répertoire et dans quelles conditions.</p>
+
+<h3>OBNL culturel</h3>
+<p>Billetterie en ligne, listes de diffusion, partenariats médias : les OBNL culturels utilisent souvent de nombreux outils tiers. Chaque outil doit être déclaré dans votre politique de confidentialité et ses cookies correspondants gérés par votre bannière de consentement.</p>
+
+<h2>Les 4 erreurs typiques des OBNL</h2>
+<ul>
+  <li><strong>Croire que la loi ne s'applique pas aux OBNL :</strong> c'est l'erreur la plus fréquente et la plus dangereuse. La L.Q. 2021, c. 25 est explicite sur ce point.</li>
+  <li><strong>Utiliser une politique de confidentialité copiée d'un modèle générique :</strong> les modèles trouvés en ligne ne reflètent pas vos pratiques réelles et ne mentionnent pas vos outils spécifiques (plateforme de don, billetterie, etc.).</li>
+  <li><strong>Négliger les formulaires d'inscription :</strong> les formulaires pour les activités, les bénévoles ou les membres collectent souvent des données sensibles (coordonnées de mineurs, informations médicales pour les activités sportives) qui nécessitent un traitement particulier.</li>
+  <li><strong>Ne pas désigner de responsable :</strong> cette obligation est en vigueur depuis septembre 2022. Beaucoup d'OBNL ont simplement oublié de nommer quelqu'un et de le publier sur leur site.</li>
+</ul>
+<p>Si votre OBNL est actuellement en situation de non-conformité, il n'est pas trop tard pour agir. Un <a href="/offre">audit de conformité</a> vous permet d'identifier rapidement les lacunes à corriger et d'obtenir un plan d'action concret — avant qu'une plainte à la CAI ne force votre main.</p>
+
+<div class="cta-block">
+  <p><strong>Vous n'êtes pas certain que votre OBNL est conforme à la Loi 25 ?</strong></p>
+  <p>Obtenez un premier bilan clair sous 48 heures — sans jargon, sans engagement.</p>
+  <a href="/#formulaire" class="cta-link">Demander mon pré-audit gratuit →</a>
+</div>
+`,
+  },
+  {
+    slug: "cout-audit-loi-25-entreprise",
+    titre: "Coût d'un audit Loi 25 : pourquoi attendre revient plus cher",
+    description:
+      "Coût audit Loi 25 : comparez le prix d'un audit de conformité aux amendes CAI potentielles et découvrez le ROI concret pour votre entreprise québécoise.",
+    date: "2026-03-23",
+    tempsLecture: 5,
+    contenu: `
+<h2>Ce que risque votre entreprise sans conformité</h2>
+<p>La <em>Loi modernisant des dispositions législatives en matière de protection des renseignements personnels</em> (L.Q. 2021, c. 25) prévoit des sanctions parmi les plus sévères en Amérique du Nord. Pour les personnes morales — c'est-à-dire les entreprises, OBNL et organisations de toute taille — les amendes administratives peuvent atteindre <strong>25 millions de dollars ou 4 % du chiffre d'affaires mondial</strong>, selon le montant le plus élevé.</p>
+<p>Ces chiffres ne sont pas théoriques. La Commission d'accès à l'information (CAI) a reçu des centaines de plaintes depuis l'entrée en vigueur des premières dispositions en 2022 et dispose désormais de pouvoirs d'inspection élargis. Une plainte d'un visiteur, d'un client ou d'un concurrent peut déclencher une enquête formelle — sans préavis.</p>
+<p>Au-delà des amendes directes, une non-conformité expose votre entreprise à :</p>
+<ul>
+  <li>Une atteinte à votre réputation auprès de vos clients et partenaires</li>
+  <li>Des coûts de mise en conformité en urgence, souvent plus élevés que s'ils avaient été planifiés</li>
+  <li>Des délais d'arrêt ou de restriction d'activités numériques pendant la période corrective</li>
+  <li>Des frais juridiques si la situation dégénère en procédure formelle devant la CAI</li>
+</ul>
+
+<h2>Ce que comprend un audit de conformité Loi 25</h2>
+<p>Un audit de conformité Loi 25 est une évaluation structurée de votre présence numérique par rapport aux exigences de la L.Q. 2021, c. 25. Il couvre typiquement :</p>
+<ul>
+  <li><strong>La bannière de cookies :</strong> présence, fonctionnalité, bouton de refus, blocage préalable des scripts non essentiels, langue.</li>
+  <li><strong>La politique de confidentialité :</strong> existence, accessibilité, conformité aux 8 éléments obligatoires selon la CAI, date de mise à jour.</li>
+  <li><strong>Les formulaires :</strong> mentions d'information, absence de cases pré-cochées, consentement distinct pour les communications marketing.</li>
+  <li><strong>Les outils tiers :</strong> inventaire des scripts et cookies déposés, déclaration dans la politique, gestion via la bannière de consentement.</li>
+  <li><strong>Le responsable désigné :</strong> nomination et publication sur le site.</li>
+  <li><strong>Un rapport de conformité :</strong> synthèse des lacunes identifiées, niveau de risque pour chaque point, recommandations priorisées et plan d'action.</li>
+</ul>
+<p>Notre <a href="/offre">audit complet auditloi25.ca</a> couvre l'ensemble de ces éléments et vous livre un rapport détaillé sous 48 heures, avec un plan d'action concret et priorisé.</p>
+
+<h2>Comparaison chiffrée : coût audit vs coût d'une amende CAI</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Scénario</th>
+      <th>Coût estimé</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Audit de conformité Loi 25 (auditloi25.ca)</td>
+      <td><strong>450 $</strong></td>
+    </tr>
+    <tr>
+      <td>Mise en conformité suite à l'audit (estimé PME typique)</td>
+      <td>500 $ – 2 000 $</td>
+    </tr>
+    <tr>
+      <td>Mise en conformité en urgence après plainte CAI</td>
+      <td>2 000 $ – 10 000 $</td>
+    </tr>
+    <tr>
+      <td>Frais juridiques en cas de procédure formelle</td>
+      <td>5 000 $ – 25 000 $+</td>
+    </tr>
+    <tr>
+      <td>Amende administrative CAI (personne morale)</td>
+      <td>Jusqu'à 25 000 000 $ ou 4 % du CA mondial</td>
+    </tr>
+  </tbody>
+</table>
+<p>La comparaison parle d'elle-même. L'audit n'est pas une dépense — c'est une assurance contre des risques financiers et réputationnels disproportionnés.</p>
+
+<h2>ROI concret : 3 exemples de PME types</h2>
+
+<h3>Exemple 1 — Cabinet de services professionnels (comptable, notaire, consultant)</h3>
+<p>Un cabinet de 4 personnes avec un site web incluant un formulaire de prise de rendez-vous et Google Analytics. Risque identifié : cookies non essentiels actifs avant consentement, politique de confidentialité absente. Coût de l'audit : 450 $. Corrections apportées : bannière conforme installée (CookieYes, ~120 $/an), politique rédigée et publiée. Investissement total : ~570 $. Risque évité : plainte CAI, frais juridiques estimés à 8 000 $, atteinte à la réputation professionnelle. <strong>ROI : 14x.</strong></p>
+
+<h3>Exemple 2 — Boutique en ligne (commerce local)</h3>
+<p>Une boutique Shopify avec Meta Pixel, Google Analytics et une infolettre Mailchimp. Les données de commande incluent noms, adresses et informations de paiement. Risque identifié : politique incomplète, formulaire d'infolettre sans mention de finalité, pixels actifs sans consentement. Coût de l'audit : 450 $. Corrections : CMP configuré, politique mise à jour, formulaire corrigé. Investissement total : ~900 $. Risque évité : amende CAI + perte de confiance client. <strong>ROI : 10x et plus.</strong></p>
+
+<h3>Exemple 3 — Association ou OBNL</h3>
+<p>Une association régionale avec formulaires d'inscription en ligne pour des activités impliquant des mineurs. Risque identifié : données sensibles sans politique adéquate, aucun responsable désigné publié. Coût de l'audit : 450 $. Corrections : responsable désigné et publié, politique complète, formulaires mis à jour. Investissement total : ~700 $. Risque évité : plainte à la CAI, enquête formelle, coûts de gestion de crise. <strong>ROI : incalculable sur le plan réputationnel.</strong></p>
+<p>Dans les trois cas, l'audit de conformité représente la dépense la plus faible du cycle. Attendre qu'une plainte survienne multiplie les coûts par 10 à 50 — sans compter les impacts indirects sur la réputation et la relation client.</p>
+
+<div class="cta-block">
+  <p><strong>Prêt à régulariser votre situation ?</strong></p>
+  <p>Notre audit complet vous livre un rapport détaillé et un plan d'action concret sous 48 heures.</p>
+  <a href="/offre" class="cta-link">Voir l'audit complet à 450$ →</a>
+</div>
+`,
+  },
 ];

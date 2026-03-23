@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     "Offre d'audit Loi 25 pour site web | Prix et livrables – auditloi25.ca",
   description:
     "Découvrez notre offre d'audit de conformité Loi 25 pour PME et OBNL québécois : livrables détaillés, tarifs transparents, processus clair. Pré-audit gratuit — audit complet à partir de 450 $.",
+  alternates: { canonical: "https://auditloi25.ca/offre" },
 };
 
 // ── Livrables ────────────────────────────────────────────────────────────────
