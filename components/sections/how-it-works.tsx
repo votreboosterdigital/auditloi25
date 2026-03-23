@@ -48,6 +48,7 @@ export function HowItWorks() {
     siteUrl: "",
     mainPages: "",
   });
+  const [isScanning, setIsScanning] = useState(false);
   const router = useRouter();
   const prefersReducedMotion = useReducedMotion();
 
@@ -64,6 +65,37 @@ export function HowItWorks() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setIsScanning(true);
+    try {
+      // 1. Scan automatique → rapport immédiat
+      const scanRes = await fetch("/api/scan", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (scanRes.ok) {
+        const { id } = await scanRes.json();
+        // Plausible
+        if (typeof window !== "undefined" && typeof (window as Window & { plausible?: (e: string) => void }).plausible === "function") {
+          (window as Window & { plausible?: (e: string) => void }).plausible!("form_submitted");
+        }
+        // Google Ads conversion
+        fireSubmitConversion();
+        // Envoyer aussi au lead handler (email de confirmation) sans attendre
+        fetch("/api/lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        }).catch(() => null);
+        router.push(`/rapport/${id}`);
+        return;
+      }
+    } catch {
+      // Si /api/scan échoue, fallback vers /api/lead classique
+    }
+
+    // 2. Fallback — lead classique + /merci
     try {
       const res = await fetch("/api/lead", {
         method: "POST",
@@ -76,16 +108,16 @@ export function HowItWorks() {
         alert("Une erreur est survenue lors de l'envoi du formulaire. Merci de réessayer.");
         return;
       }
-      // Plausible custom event (graceful — window.plausible may not be loaded yet)
       if (typeof window !== "undefined" && typeof (window as Window & { plausible?: (e: string) => void }).plausible === "function") {
         (window as Window & { plausible?: (e: string) => void }).plausible!("form_submitted");
       }
-      // Google Ads — conversion principale (après réponse 200 confirmée)
       fireSubmitConversion();
       router.push("/merci");
     } catch (error) {
       console.error("Erreur réseau lead:", error);
       alert("Impossible de joindre le serveur. Vérifiez votre connexion et réessayez.");
+    } finally {
+      setIsScanning(false);
     }
   };
 
@@ -218,8 +250,8 @@ export function HowItWorks() {
             </div>
 
             <p className="flex items-center gap-1.5 text-xs text-slate-500">
-              <span aria-hidden="true">⏱</span>
-              2 minutes pour remplir · Retour sous 48h · Sans engagement
+              <span aria-hidden="true">⚡</span>
+              Rapport généré instantanément · Sans engagement · Gratuit
             </p>
 
             <p className="rounded-lg bg-slate-800/50 px-3 py-2.5 text-[11px] leading-relaxed text-slate-400 ring-1 ring-slate-700/50">
@@ -237,14 +269,25 @@ export function HowItWorks() {
 
             <button
               type="submit"
-              className="w-full rounded-lg bg-emerald-500 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_30px_rgba(16,185,129,0.3)] transition-all hover:bg-emerald-400 hover:shadow-[0_0_50px_rgba(16,185,129,0.5)] disabled:opacity-50"
+              disabled={isScanning}
+              className="relative w-full overflow-hidden rounded-lg bg-emerald-500 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_30px_rgba(16,185,129,0.3)] transition-all hover:bg-emerald-400 hover:shadow-[0_0_50px_rgba(16,185,129,0.5)] disabled:cursor-not-allowed disabled:opacity-70"
             >
-              Envoyer ma demande — c&apos;est gratuit
+              {isScanning ? (
+                <span className="flex items-center justify-center gap-2">
+                  <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                  </svg>
+                  Analyse en cours… (~15 secondes)
+                </span>
+              ) : (
+                "Obtenir mon rapport gratuit maintenant"
+              )}
             </button>
 
             <p className="text-xs text-slate-500">
-              Aucun engagement. Vous recevez votre pré-audit gratuitement, puis
-              vous décidez si vous souhaitez aller plus loin.
+              Votre rapport de conformité Loi 25 est généré automatiquement en quelques secondes.
+              Aucun engagement — vous décidez si vous souhaitez aller plus loin.
             </p>
           </form>
         </div>
