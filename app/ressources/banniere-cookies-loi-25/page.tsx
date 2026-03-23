@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, XCircle, AlertTriangle, ArrowLeft } from "lucide-react";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { RelatedArticles } from "@/components/related-articles";
 
 export const metadata: Metadata = {
   title: "Bannière de cookies et Loi 25 : est-ce que la vôtre est vraiment conforme ? | auditloi25.ca",
@@ -282,6 +283,14 @@ export default function BanniereCookiesLoi25Page() {
             Voir l&apos;offre →
           </Link>
         </div>
+
+        <RelatedArticles
+          slugs={[
+            "banniere-cookies-loi-25-site-web",
+            "cookies-consentement-loi-25-2026",
+          ]}
+          heading="Articles liés"
+        />
 
         {/* Footer */}
         <div className="flex flex-wrap items-center justify-between gap-4 border-t border-slate-800 pt-8 text-xs text-slate-500">

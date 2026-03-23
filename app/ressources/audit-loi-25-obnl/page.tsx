@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Heart, Users, CheckCircle2, AlertTriangle, ArrowLeft } from "lucide-react";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { RelatedArticles } from "@/components/related-articles";
 
 export const metadata: Metadata = {
   title: "Loi 25 et OBNL : ce que votre organisme doit vérifier sur son site | auditloi25.ca",
@@ -233,6 +234,14 @@ export default function AuditLoi25ObnlPage() {
             </Link>
           </div>
         </div>
+
+        <RelatedArticles
+          slugs={[
+            "loi-25-obnl-quebec-obligations",
+            "cout-audit-loi-25-entreprise",
+          ]}
+          heading="Articles liés"
+        />
 
         {/* Footer */}
         <div className="flex flex-wrap items-center justify-between gap-4 border-t border-slate-800 pt-8 text-xs text-slate-500">

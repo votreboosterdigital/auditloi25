@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldAlert, CheckCircle2, AlertTriangle, ArrowLeft } from "lucide-react";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { RelatedArticles } from "@/components/related-articles";
 
 export const metadata: Metadata = {
   title: "Amendes Loi 25 pour les PME : ce que risque votre organisation | auditloi25.ca",
@@ -264,6 +265,14 @@ export default function PenalitesLoi25Page() {
             Voir l&apos;offre →
           </Link>
         </div>
+
+        <RelatedArticles
+          slugs={[
+            "cout-audit-loi-25-entreprise",
+            "cai-inspection-site-web-comment-se-preparer",
+          ]}
+          heading="Articles liés"
+        />
 
         {/* Footer */}
         <div className="flex flex-wrap items-center justify-between gap-4 border-t border-slate-800 pt-8 text-xs text-slate-500">

@@ -10,6 +10,7 @@ import { Pricing } from "@/components/sections/pricing";
 import { WhyActNow } from "@/components/sections/why-act-now";
 import { Faq } from "@/components/sections/faq";
 import { CtaFinal } from "@/components/sections/cta-final";
+import { LatestArticles } from "@/components/sections/latest-articles";
 import { Footer } from "@/components/footer";
 
 export default function HomePage() {
@@ -40,6 +41,7 @@ export default function HomePage() {
           <Pricing />
           <WhyActNow />
           <Faq />
+          <LatestArticles />
           <CtaFinal />
           <Footer />
         </div>

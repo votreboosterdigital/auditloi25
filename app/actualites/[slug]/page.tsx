@@ -51,7 +51,9 @@ export default async function ActualiteArticlePage({ params }: Props) {
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) notFound();
 
-  const relatedPosts = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 3);
+  const relatedPosts = (post.relatedSlugs ?? [])
+    .map((s) => BLOG_POSTS.find((p) => p.slug === s))
+    .filter((p): p is NonNullable<typeof p> => p !== undefined);
 
   const articleJsonLd = {
     "@context": "https://schema.org",

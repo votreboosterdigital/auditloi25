@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ShieldIcon } from "@/components/shield-icon";
 import { ExternalLink, ArrowLeft } from "lucide-react";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { RelatedArticles } from "@/components/related-articles";
 
 export const metadata: Metadata = {
   title: "Sources — Loi 25 et conformité web | auditloi25.ca",
@@ -177,6 +178,26 @@ export default function SourcesPage() {
             conformité spécifique à votre organisation, consultez un
             professionnel du droit qualifié.
           </p>
+        </div>
+
+        <RelatedArticles
+          slugs={["loi-25-quest-ce-que-cest-guide-pme"]}
+          heading="Pour approfondir"
+        />
+
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          <Link
+            href="/#formulaire"
+            className="inline-flex items-center justify-center rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-emerald-400 hover:text-white"
+          >
+            Demander mon pré-audit gratuit
+          </Link>
+          <Link
+            href="/offre"
+            className="text-sm text-sky-400 hover:text-sky-300 transition-colors"
+          >
+            Voir l&apos;audit complet à 450$ →
+          </Link>
         </div>
 
         {/* Lien retour */}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { RelatedArticles } from "@/components/related-articles";
 
 export const metadata: Metadata = {
   title: "Checklist Loi 25 pour votre site web (cookies, formulaires, contenus) | auditloi25.ca",
@@ -246,6 +247,23 @@ export default function ChecklistLoi25Page() {
             </Link>
           </div>
         </section>
+
+        <RelatedArticles
+          slugs={[
+            "loi-25-quest-ce-que-cest-guide-pme",
+            "cai-inspection-site-web-comment-se-preparer",
+          ]}
+          heading="Articles liés"
+        />
+
+        <div className="mt-4 text-center">
+          <Link
+            href="/offre"
+            className="text-sm text-sky-400 hover:text-sky-300 transition-colors"
+          >
+            Voir le détail de l&apos;audit complet Loi 25 →
+          </Link>
+        </div>
 
         <footer className="mb-4 border-t border-slate-800/70 pt-4 text-xs text-slate-500">
           <p>

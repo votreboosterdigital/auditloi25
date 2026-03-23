@@ -4,6 +4,7 @@ export type BlogPost = {
   description: string;
   date: string;
   tempsLecture: number;
+  relatedSlugs: string[];
   contenu: string; // HTML
 };
 
@@ -15,6 +16,11 @@ export const BLOG_POSTS: BlogPost[] = [
       "Tout ce que les PME québécoises doivent savoir sur la Loi 25 : obligations, échéances et premières actions à poser.",
     date: "2026-03-18",
     tempsLecture: 6,
+    relatedSlugs: [
+      "cookies-consentement-loi-25-2026",
+      "cai-inspection-site-web-comment-se-preparer",
+      "politique-confidentialite-loi-25-rediger",
+    ],
     contenu: `
 <h2>Qu'est-ce que la Loi 25 ?</h2>
 <p>La Loi 25 — officiellement intitulée <em>Loi modernisant des dispositions législatives en matière de protection des renseignements personnels</em> (L.Q. 2021, c. 25) — est la réforme la plus importante en matière de protection des données personnelles au Québec depuis les années 1990. Elle est entrée en vigueur progressivement entre 2022 et 2023 et s'applique à toutes les organisations qui collectent, utilisent ou communiquent des renseignements personnels dans le cadre de l'exercice d'une activité commerciale ou à but non lucratif au Québec.</p>
@@ -63,6 +69,11 @@ export const BLOG_POSTS: BlogPost[] = [
       "La Loi 25 impose des règles strictes sur les cookies et le consentement des visiteurs. Voici ce que votre bannière doit vraiment faire.",
     date: "2026-03-18",
     tempsLecture: 5,
+    relatedSlugs: [
+      "banniere-cookies-loi-25-site-web",
+      "loi-25-quest-ce-que-cest-guide-pme",
+      "cai-inspection-site-web-comment-se-preparer",
+    ],
     contenu: `
 <h2>Les cookies, au cœur de la conformité Loi 25</h2>
 <p>Depuis septembre 2023, les exigences de la Loi 25 en matière de témoins de connexion (cookies) sont pleinement en vigueur. La Commission d'accès à l'information (CAI) a publié des lignes directrices claires sur ce que doit faire votre bannière — et ce qu'elle ne peut pas faire.</p>
@@ -114,6 +125,11 @@ export const BLOG_POSTS: BlogPost[] = [
       "La Commission d'accès à l'information peut inspecter votre site. Voici comment être prêt et éviter les sanctions.",
     date: "2026-03-18",
     tempsLecture: 5,
+    relatedSlugs: [
+      "cout-audit-loi-25-entreprise",
+      "loi-25-quest-ce-que-cest-guide-pme",
+      "banniere-cookies-loi-25-site-web",
+    ],
     contenu: `
 <h2>La CAI peut inspecter votre site sans préavis</h2>
 <p>La Commission d'accès à l'information du Québec (CAI) dispose de pouvoirs d'inspection et d'enquête élargis depuis l'entrée en vigueur de la Loi 25. Elle peut ouvrir un dossier à la suite d'une plainte d'un visiteur ou de sa propre initiative, sans avoir à vous en aviser à l'avance. Pour votre site web, cela signifie que tout ce qui est visible publiquement peut être analysé et documenté par la CAI à tout moment.</p>
@@ -157,6 +173,11 @@ export const BLOG_POSTS: BlogPost[] = [
       "Les 8 éléments obligatoires d'une politique de confidentialité conforme à la Loi 25 selon la CAI.",
     date: "2026-03-18",
     tempsLecture: 4,
+    relatedSlugs: [
+      "loi-25-quest-ce-que-cest-guide-pme",
+      "cookies-consentement-loi-25-2026",
+      "cai-inspection-site-web-comment-se-preparer",
+    ],
     contenu: `
 <h2>Pourquoi votre politique de confidentialité est-elle insuffisante ?</h2>
 <p>La majorité des PME et OBNL québécois ont une politique de confidentialité sur leur site — mais peu d'entre elles sont réellement conformes à la Loi 25. Soit elles ont été copiées d'un modèle générique trouvé en ligne, soit elles ont été rédigées avant 2022 et n'ont jamais été mises à jour. La CAI est explicite : une politique de confidentialité conforme à la Loi 25 doit couvrir huit éléments précis.</p>
@@ -209,6 +230,11 @@ export const BLOG_POSTS: BlogPost[] = [
       "Bannière cookies Loi 25 : découvrez les 6 critères exigés par la CAI pour être conforme et les erreurs à corriger sur votre site web québécois.",
     date: "2026-03-23",
     tempsLecture: 5,
+    relatedSlugs: [
+      "cookies-consentement-loi-25-2026",
+      "cai-inspection-site-web-comment-se-preparer",
+      "loi-25-quest-ce-que-cest-guide-pme",
+    ],
     contenu: `
 <h2>Ce que la Loi 25 exige pour les cookies (L.Q. 2021, c. 25)</h2>
 <p>Depuis septembre 2023, la <em>Loi modernisant des dispositions législatives en matière de protection des renseignements personnels</em> (L.Q. 2021, c. 25) impose un cadre strict pour l'utilisation des témoins de connexion (cookies) sur tout site web québécois. L'article 8 de la Loi 25 est clair : le consentement doit être libre, éclairé, donné à des fins spécifiques, et manifeste avant la collecte de renseignements personnels — y compris via les cookies non essentiels.</p>
@@ -261,6 +287,11 @@ export const BLOG_POSTS: BlogPost[] = [
       "Loi 25 OBNL Québec : découvrez si votre organisme est concerné, vos obligations concrètes et les erreurs typiques à éviter pour rester conforme.",
     date: "2026-03-23",
     tempsLecture: 5,
+    relatedSlugs: [
+      "cout-audit-loi-25-entreprise",
+      "loi-25-quest-ce-que-cest-guide-pme",
+      "cai-inspection-site-web-comment-se-preparer",
+    ],
     contenu: `
 <h2>Les OBNL sont-ils vraiment soumis à la Loi 25 ?</h2>
 <p>C'est la question que posent en premier la plupart des dirigeants d'organismes à but non lucratif au Québec. La réponse est sans ambiguïté : <strong>oui</strong>. La <em>Loi modernisant des dispositions législatives en matière de protection des renseignements personnels</em> (L.Q. 2021, c. 25) s'applique explicitement aux organisations qui collectent, utilisent ou communiquent des renseignements personnels dans le cadre d'une activité commerciale <em>ou à but non lucratif</em>.</p>
@@ -320,6 +351,11 @@ export const BLOG_POSTS: BlogPost[] = [
       "Coût audit Loi 25 : comparez le prix d'un audit de conformité aux amendes CAI potentielles et découvrez le ROI concret pour votre entreprise québécoise.",
     date: "2026-03-23",
     tempsLecture: 5,
+    relatedSlugs: [
+      "loi-25-quest-ce-que-cest-guide-pme",
+      "cai-inspection-site-web-comment-se-preparer",
+      "loi-25-obnl-quebec-obligations",
+    ],
     contenu: `
 <h2>Ce que risque votre entreprise sans conformité</h2>
 <p>La <em>Loi modernisant des dispositions législatives en matière de protection des renseignements personnels</em> (L.Q. 2021, c. 25) prévoit des sanctions parmi les plus sévères en Amérique du Nord. Pour les personnes morales — c'est-à-dire les entreprises, OBNL et organisations de toute taille — les amendes administratives peuvent atteindre <strong>25 millions de dollars ou 4 % du chiffre d'affaires mondial</strong>, selon le montant le plus élevé.</p>
