@@ -187,7 +187,7 @@ export default function AProposPage() {
             Prêt à faire le point sur votre site&nbsp;?
           </p>
           <p className="mt-2 text-sm text-slate-400">
-            Le pré-audit est gratuit, prend 2 minutes à remplir, et vous donne un premier portrait clair sous 48 h.
+            Le pré-audit est gratuit, prend 2 minutes à remplir, et vous donne un premier portrait clair instantanément.
           </p>
           <Link
             href="/#formulaire"
@@ -195,7 +195,7 @@ export default function AProposPage() {
           >
             Obtenir mon pré‑audit gratuit
           </Link>
-          <p className="mt-3 text-xs text-slate-500">Sans engagement · Aucune carte requise · Retour sous 48 h</p>
+          <p className="mt-3 text-xs text-slate-500">Sans engagement · Aucune carte requise · Rapport instantané</p>
         </div>
 
         {/* Footer */}

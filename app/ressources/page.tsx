@@ -151,7 +151,7 @@ export default function RessourcesPage() {
             Prêt à vérifier votre site&nbsp;?
           </p>
           <p className="mt-2 text-sm text-slate-400">
-            Le pré-audit est gratuit. On analyse vos pages et on vous remet un rapport clair sous 48 h.
+            Le pré-audit est gratuit. On analyse vos pages et on vous remet un rapport clair instantanément.
           </p>
           <Link
             href="/#formulaire"
@@ -159,7 +159,7 @@ export default function RessourcesPage() {
           >
             Obtenir mon pré‑audit gratuit
           </Link>
-          <p className="mt-3 text-xs text-slate-500">Sans engagement · Retour sous 48 h</p>
+          <p className="mt-3 text-xs text-slate-500">Sans engagement · Rapport instantané</p>
         </div>
 
         {/* Footer */}

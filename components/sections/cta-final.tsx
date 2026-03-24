@@ -34,7 +34,7 @@ export function CtaFinal() {
             Votre pré‑audit Loi&nbsp;25 est gratuit — et ça prend 2 minutes
           </h2>
           <p className="mt-4 text-lg text-slate-400">
-            Remplissez le formulaire maintenant. Sous 48 heures, vous recevez un premier bilan clair de votre site — zones à risque, points prioritaires, estimation pour l&apos;audit complet. Sans engagement.
+            Remplissez le formulaire maintenant. Vous recevez instantanément un premier bilan clair de votre site — zones à risque, points prioritaires, estimation pour l&apos;audit complet. Sans engagement.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

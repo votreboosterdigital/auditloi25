@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 ~/.agents/skills/ui-ux-pro-max/scripts/search.py \"SaaS compliance legal privacy Quebec SMB professional trust\" --design-system -p \"auditloi25\")",
+      "Bash(python ~/.agents/skills/ui-ux-pro-max/scripts/search.py \"SaaS compliance legal privacy Quebec SMB professional trust\" --design-system -p \"auditloi25\")",
+      "Read(//c/Users/Admin/Documents/dev/auditloi25/$USERPROFILE/.agents/skills/ui-ux-pro-max/**)",
+      "Bash(python \"$USERPROFILE/.agents/skills/ui-ux-pro-max/scripts/search.py\" --help)",
+      "Bash(cmd /c \"dir C:\\\\Users\\\\Admin\\\\.agents\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\\")",
+      "Bash(cmd /c \"dir C:\\\\Users\\\\Admin\\\\.agents\\\\skills\\\\ui-ux-pro-max\\\\\")",
+      "Bash(cmd /c \"dir /s C:\\\\Users\\\\Admin\\\\.agents\"\")"
+    ]
+  }
+}

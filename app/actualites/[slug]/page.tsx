@@ -156,7 +156,7 @@ export default async function ActualiteArticlePage({ params }: Props) {
             Vous voulez vérifier la conformité de votre site&nbsp;?
           </p>
           <p className="mt-2 text-sm text-slate-400">
-            Pré-audit gratuit — un premier bilan clair sous 48 heures, sans
+            Pré-audit gratuit — un premier bilan clair instantanément, sans
             engagement.
           </p>
           <Link
@@ -166,7 +166,7 @@ export default async function ActualiteArticlePage({ params }: Props) {
             Obtenir mon pré-audit gratuit
           </Link>
           <p className="mt-3 text-xs text-slate-500">
-            Retour sous 48 h · Sans engagement · Aucune carte requise
+            Rapport instantané · Sans engagement · Aucune carte requise
           </p>
         </div>
 

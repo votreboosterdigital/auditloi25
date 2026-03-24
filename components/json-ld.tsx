@@ -101,7 +101,7 @@ const serviceSchema = {
       price: "0",
       priceCurrency: "CAD",
       description:
-        "Premier portrait des zones à risque sur votre site web. Gratuit, sans engagement, retour sous 48 h ouvrables.",
+        "Premier portrait des zones à risque sur votre site web. Gratuit, sans engagement, rapport généré instantanément.",
     },
     {
       "@type": "Offer",

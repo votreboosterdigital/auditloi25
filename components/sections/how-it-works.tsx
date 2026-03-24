@@ -10,7 +10,6 @@ type FormState = {
   name: string;
   email: string;
   siteUrl: string;
-  mainPages: string;
 };
 
 const fadeUp = {
@@ -32,7 +31,7 @@ const steps = [
   {
     title: "Vous recevez votre pré-audit gratuit.",
     description:
-      "Nous réalisons le pré-audit Loi 25 de votre site — cookies, formulaires et pages principales — et vous envoyons un bilan clair des zones à risque sous 48 heures ouvrables.",
+      "Nous réalisons le pré-audit Loi 25 de votre site — cookies, formulaires et pages principales — et vous envoyons un bilan clair des zones à risque instantanément.",
   },
   {
     title: "Audit complet sur mesure (si vous le souhaitez).",
@@ -46,7 +45,6 @@ export function HowItWorks() {
     name: "",
     email: "",
     siteUrl: "",
-    mainPages: "",
   });
   const [isScanning, setIsScanning] = useState(false);
   const router = useRouter();
@@ -174,7 +172,7 @@ export function HowItWorks() {
           </h2>
           <p className="mt-1 text-xs text-slate-400">
             En 2 minutes, vous nous donnez les informations essentielles. Nous
-            revenons vers vous sous 48 h avec un premier bilan de votre site —
+            générons instantanément un premier bilan de votre site —
             zones à risque, points prioritaires, estimation pour l&apos;audit complet.
           </p>
 
@@ -228,25 +226,6 @@ export function HowItWorks() {
                 className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:border-sky-500/50 focus:outline-none focus:ring-1 focus:ring-sky-500/30 transition-colors"
                 placeholder="https://www.votresite.ca"
               />
-            </div>
-
-            <div>
-              <label htmlFor="mainPages" className="block text-sm font-medium text-slate-300 mb-1">
-                Pages principales à analyser
-              </label>
-              <textarea
-                id="mainPages"
-                name="mainPages"
-                rows={3}
-                value={form.mainPages}
-                onChange={handleChange}
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:border-sky-500/50 focus:outline-none focus:ring-1 focus:ring-sky-500/30 transition-colors"
-                placeholder="Ex. Accueil, Services, Formulaire de contact, Donation, Boutique..."
-              />
-              <p className="text-[11px] text-slate-500 mt-1">
-                Ajoutez les pages avec formulaires, paiement, inscriptions,
-                infolettre, dons, etc.
-              </p>
             </div>
 
             <p className="flex items-center gap-1.5 text-xs text-slate-500">

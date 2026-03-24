@@ -72,7 +72,7 @@ export default function Image() {
             marginBottom: "48px",
           }}
         >
-          Pré-audit gratuit · Rapport sous 48 h · Sans engagement
+          Pré-audit gratuit · Rapport instantané · Sans engagement
         </div>
 
         {/* Domaine */}

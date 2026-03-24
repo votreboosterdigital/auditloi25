@@ -19,7 +19,7 @@ create table if not exists rapports (
   scan_error text,
 
   -- Analyse Claude
-  analyse jsonb not null default '{}'
+  "analyse" jsonb not null default '{}'
 );
 
 -- Index pour récupérer un rapport par id rapidement (déjà couvert par PK)

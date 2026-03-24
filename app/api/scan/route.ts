@@ -72,8 +72,8 @@ export async function POST(request: Request) {
     // 2. Analyse déterministe instantanée (remplace Claude)
     const analyse: Analyse = scanResult.error || scanResult.zones.length === 0
       ? {
-          resume: `Le scan de ${siteUrl.replace(/^https?:\/\/(www\.)?/, "").split("/")[0]} a rencontré une difficulté d'accès. Votre rapport manuel sera envoyé sous 48 h.`,
-          priorites: ["Vérification manuelle en cours — résultats sous 48 h ouvrables"],
+          resume: `Le scan de ${siteUrl.replace(/^https?:\/\/(www\.)?/, "").split("/")[0]} a rencontré une difficulté d'accès. Notre équipe prend le relais pour analyser votre site.`,
+          priorites: ["Vérification manuelle en cours — notre équipe vous contacte rapidement"],
           contexte: "Notre équipe prend le relais pour analyser votre site en détail.",
         }
       : buildAnalyse(scanResult.url, scanResult.zones, scanResult.score);

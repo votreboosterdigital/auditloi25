@@ -118,7 +118,7 @@ export default function ActualitesPage() {
             Vous voulez savoir où en est votre site&nbsp;?
           </p>
           <p className="mt-2 text-sm text-slate-400">
-            Pré-audit gratuit — un premier bilan clair sous 48 heures, sans
+            Pré-audit gratuit — un premier bilan clair instantanément, sans
             engagement.
           </p>
           <Link

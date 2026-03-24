@@ -59,7 +59,7 @@ export const BLOG_POSTS: BlogPost[] = [
 <p>Votre organisation doit désigner un responsable de la protection des renseignements personnels — souvent le dirigeant principal dans les PME. Ce nom doit être accessible sur votre site.</p>
 
 <h2>Par où commencer ?</h2>
-<p>Si vous ne savez pas par où commencer, la meilleure première étape est d'évaluer l'état actuel de votre site web : bannière de cookies, formulaires, politique de confidentialité. C'est précisément ce que permet notre pré-audit gratuit — un premier bilan clair, sans jargon, sous 48 heures.</p>
+<p>Si vous ne savez pas par où commencer, la meilleure première étape est d'évaluer l'état actuel de votre site web : bannière de cookies, formulaires, politique de confidentialité. C'est précisément ce que permet notre pré-audit gratuit — un premier bilan clair, sans jargon, généré instantanément.</p>
 `,
   },
   {
@@ -275,7 +275,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
 <div class="cta-block">
   <p><strong>Vous n'êtes pas certain que votre bannière est conforme ?</strong></p>
-  <p>Obtenez un premier bilan clair sous 48 heures — sans jargon, sans engagement.</p>
+  <p>Obtenez un premier bilan clair instantanément — sans jargon, sans engagement.</p>
   <a href="/#formulaire" class="cta-link">Demander mon pré-audit gratuit →</a>
 </div>
 `,
@@ -339,7 +339,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
 <div class="cta-block">
   <p><strong>Vous n'êtes pas certain que votre OBNL est conforme à la Loi 25 ?</strong></p>
-  <p>Obtenez un premier bilan clair sous 48 heures — sans jargon, sans engagement.</p>
+  <p>Obtenez un premier bilan clair instantanément — sans jargon, sans engagement.</p>
   <a href="/#formulaire" class="cta-link">Demander mon pré-audit gratuit →</a>
 </div>
 `,

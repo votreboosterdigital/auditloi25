@@ -103,7 +103,7 @@ export async function POST(request: Request) {
           from: FROM_EMAIL,
           to: email,
           replyTo: NOTIFY_EMAIL,
-          subject: "Votre pré-audit Loi 25 est en route — réponse sous 48 h",
+          subject: "Votre pré-audit Loi 25 est prêt — rapport instantané",
           html: confirmationHtml(name, siteUrl),
         }),
         resend.emails.send({
@@ -146,7 +146,7 @@ function confirmationHtml(name: string, siteUrl: string): string {
     </h1>
     <p style="margin:0 0 24px;font-size:15px;color:#94a3b8;line-height:1.6;">
       Votre demande de pré-audit pour <strong style="color:#e2e8f0;">${siteUrl}</strong> a bien été reçue.
-      Vous recevrez votre rapport <strong style="color:#e2e8f0;">d'ici 48 heures ouvrables</strong>.
+      Votre rapport a été généré <strong style="color:#e2e8f0;">instantanément</strong>.
     </p>
 
     <div style="background:#0d1526;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px 24px;margin-bottom:24px;">

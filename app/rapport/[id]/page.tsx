@@ -162,7 +162,7 @@ export default async function RapportPage({ params }: { params: Promise<{ id: st
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
           <p className="mt-3 text-xs text-slate-500">
-            Sans engagement · Résultat sous 48 h · Rapport PDF livré
+            Sans engagement · Rapport instantané · Audit complet PDF disponible
           </p>
         </div>
 

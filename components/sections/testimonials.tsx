@@ -14,25 +14,25 @@ const testimonials: Testimonial[] = [
   {
     quote:
       "On pensait être en règle parce qu'on avait une bannière. Le pré-audit nous a montré que nos cookies Google Analytics se déclenchaient avant le consentement. Problème corrigé en deux jours.",
-    name: "M. L.",
-    role: "Directrice générale, OBNL santé, Montréal",
-    date: "Janvier 2025",
+    name: "Un dirigeant d'OBNL santé, Montréal",
+    role: "Directeur général, OBNL santé, Montréal",
+    date: "",
     problem: "Bannière non conforme",
   },
   {
     quote:
       "Pas d'équipe TI, pas de ressources juridiques — le rapport était clair, priorisé, et on a pu tout corriger avec notre webmestre habituel. Aucun jargon, aucune prise de tête.",
-    name: "S. B.",
+    name: "Une responsable communications, PME Québec",
     role: "Responsable communications, PME services professionnels, Québec",
-    date: "Février 2025",
+    date: "",
     problem: "Politique de confidentialité absente",
   },
   {
     quote:
       "La CAI avait lancé une campagne de sensibilisation dans notre secteur. On voulait être prêts avant d'être contactés. Le pré-audit nous a donné exactement ce qu'il fallait pour agir.",
-    name: "P. T.",
+    name: "Un coordonnateur TI, organisme municipal",
     role: "Coordonnateur TI, organisme municipal, Rive-Sud",
-    date: "Mars 2025",
+    date: "",
     problem: "Outils tiers non déclarés",
   },
 ];
@@ -108,7 +108,6 @@ export function Testimonials() {
               <footer className="mt-6 border-t border-white/5 pt-4">
                 <p className="text-sm font-semibold text-slate-100">{t.name}</p>
                 <p className="mt-0.5 text-xs text-slate-500">{t.role}</p>
-                <p className="mt-0.5 text-xs text-slate-600">{t.date}</p>
               </footer>
             </motion.li>
           ))}

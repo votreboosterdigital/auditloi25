@@ -25,7 +25,7 @@ const inter = Inter({
 const siteUrl = "https://auditloi25.ca";
 const siteTitle = "Audit Loi 25 pour sites web | Pré-audit gratuit – PME et OBNL québécois";
 const siteDescription =
-  "Audit de conformité Loi 25 pour votre site web : cookies, formulaires, bannière et contenus légaux. Pré-audit gratuit pour PME et OBNL au Québec. Retour sous 48 h, sans engagement.";
+  "Audit de conformité Loi 25 pour votre site web : cookies, formulaires, bannière et contenus légaux. Pré-audit gratuit pour PME et OBNL au Québec. Rapport instantané, sans engagement.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

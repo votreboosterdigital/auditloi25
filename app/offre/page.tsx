@@ -59,7 +59,7 @@ const steps = [
   {
     title: "Pré-audit gratuit via le formulaire.",
     description:
-      "Vous décrivez votre site, vos pages clés et vos outils. Nous réalisons un premier pré-audit Loi 25 et vous envoyons un bilan des zones à risque sous 48 heures ouvrables — sans engagement.",
+      "Vous décrivez votre site, vos pages clés et vos outils. Nous réalisons un premier pré-audit Loi 25 et vous envoyons instantanément un bilan des zones à risque — sans engagement.",
   },
   {
     title: "Devis précis et cadrage de la portée.",
@@ -251,7 +251,7 @@ export default function OffrePage() {
               </p>
               <ul className="mt-4 space-y-3">
                 {[
-                  "Pré-audit gratuit — résultat sous 48 h.",
+                  "Pré-audit gratuit — résultat instantané.",
                   "Audit complet à partir de 450 $ (devis après pré-audit).",
                   "Rapport PDF + séance de restitution incluse.",
                   "Aucun accès à vos serveurs ou à votre CMS requis.",
@@ -534,7 +534,7 @@ export default function OffrePage() {
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-base text-slate-200">
               En 2 minutes, vous nous donnez les informations essentielles sur
-              votre site. Sous 48 heures, vous recevez un premier bilan clair
+              votre site. Vous recevez instantanément un premier bilan clair
               avec les zones à risque et une estimation pour l&apos;audit complet.
               Vous décidez ensuite.
             </p>

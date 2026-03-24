@@ -263,7 +263,7 @@ export default function BanniereCookiesLoi25Page() {
           >
             Obtenir mon pré‑audit gratuit
           </Link>
-          <p className="mt-3 text-xs text-slate-500">Retour sous 48 h · Sans engagement · Aucune carte requise</p>
+          <p className="mt-3 text-xs text-slate-500">Rapport instantané · Sans engagement · Aucune carte requise</p>
         </div>
 
         {/* Lien vers l'offre complète */}

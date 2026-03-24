@@ -220,7 +220,7 @@ export default function AuditLoi25ObnlPage() {
             Votre organisme collecte des données. Vous méritez de savoir si c&apos;est fait dans les règles.
           </p>
           <p className="mt-2 text-sm text-slate-400">
-            Pré-audit gratuit · Résultats sous 48 h · Aucun engagement, aucune carte requise
+            Pré-audit gratuit · Rapport instantané · Aucun engagement, aucune carte requise
           </p>
           <Link
             href="/#formulaire"

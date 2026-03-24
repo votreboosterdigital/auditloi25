@@ -105,13 +105,6 @@ export function Hero() {
               >
                 Obtenir mon pré‑audit gratuit
               </a>
-              <Link
-                href="/offre"
-                onClick={fireOfferClickConversion}
-                className="inline-flex cursor-pointer items-center justify-center rounded-lg border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-slate-300 backdrop-blur-sm transition-colors hover:border-white/20 hover:text-white"
-              >
-                Voir l&apos;offre d&apos;audit Loi&nbsp;25
-              </Link>
             </motion.div>
 
             {/* Trust pills */}
@@ -126,7 +119,7 @@ export function Hero() {
               </span>
               <span className="inline-flex items-center gap-2 rounded-full bg-slate-950/70 px-3 py-1 ring-1 ring-slate-700">
                 <Clock size={12} className="shrink-0 text-slate-400" aria-hidden="true" />
-                Retour sous 48 h
+                Rapport instantané
               </span>
             </motion.div>
 

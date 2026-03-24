@@ -1,0 +1,77 @@
+<h2>Quelle direction de redesign ?</h2>
+<p class="subtitle">Le site actuel a déjà un dark mode solide (slate-950, sky-400, emerald-500). Ces 3 approches diffèrent par leur intensité et leur ambition visuelle.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="refinement" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #0f172a; padding: 20px; border-radius: 8px; font-family: sans-serif;">
+      <div style="background: linear-gradient(135deg, rgba(56,189,248,0.15) 0%, transparent 60%); border-radius: 12px; padding: 20px; border: 1px solid rgba(56,189,248,0.2);">
+        <div style="font-size: 11px; color: #38bdf8; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px;">Audit Loi 25 · CAI</div>
+        <div style="font-size: 22px; font-weight: 800; color: #f8fafc; line-height: 1.2;">Votre site est-il<br>conforme à la Loi 25 ?</div>
+        <div style="margin-top: 12px; display: flex; gap: 8px;">
+          <div style="background: #10b981; color: #0f172a; padding: 6px 16px; border-radius: 8px; font-size: 11px; font-weight: 700;">Pré-audit gratuit</div>
+          <div style="border: 1px solid rgba(56,189,248,0.4); color: #38bdf8; padding: 6px 16px; border-radius: 8px; font-size: 11px;">Voir l'offre →</div>
+        </div>
+        <div style="margin-top: 16px; display: flex; gap: 6px; flex-wrap: wrap;">
+          <span style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 20px; font-size: 10px; color: #94a3b8;">Basé au Québec</span>
+          <span style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 20px; font-size: 10px; color: #94a3b8;">Aligné CAI</span>
+          <span style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 20px; font-size: 10px; color: #94a3b8;">48h retour</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Raffinement ciblé</h3>
+      <p>Même palette de couleurs, même structure. On affine : typographie plus précise (Inter + poids variables), micro-animations CSS, espacement plus cohérent, cards avec glows plus subtils. Effort : <strong>3–4 jours</strong>. Risque : minimal.</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros"><h4>Pour</h4><ul><li>Rapide à déployer</li><li>Aucun risque de régression</li><li>Copy inchangée</li></ul></div>
+        <div class="cons"><h4>Contre</h4><ul><li>Transformation limitée</li><li>Reste proche de l'existant</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="premium" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #060b14; padding: 20px; border-radius: 8px; font-family: sans-serif;">
+      <div style="position: relative; background: linear-gradient(135deg, rgba(56,189,248,0.08) 0%, rgba(16,185,129,0.05) 100%); border-radius: 12px; padding: 20px; border: 1px solid rgba(148,163,184,0.12); overflow: hidden;">
+        <div style="position: absolute; top: -40px; right: -40px; width: 120px; height: 120px; background: radial-gradient(circle, rgba(56,189,248,0.25) 0%, transparent 70%); border-radius: 50%;"></div>
+        <div style="position: absolute; bottom: -30px; left: -20px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(16,185,129,0.2) 0%, transparent 70%); border-radius: 50%;"></div>
+        <div style="font-size: 10px; color: #38bdf8; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; position: relative;">Pour PME et OBNL québécois</div>
+        <div style="font-size: 24px; font-weight: 800; color: #fff; line-height: 1.15; position: relative; letter-spacing: -0.02em;">Votre site est-il<br><span style="background: linear-gradient(90deg, #38bdf8, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">conforme à la Loi 25</span> ?</div>
+        <div style="margin-top: 14px; display: flex; gap: 8px; position: relative;">
+          <div style="background: linear-gradient(135deg, #10b981, #059669); color: #fff; padding: 8px 18px; border-radius: 8px; font-size: 11px; font-weight: 700; box-shadow: 0 0 20px rgba(16,185,129,0.4);">Pré-audit gratuit →</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Premium Upgrade ⭐ Recommandé</h3>
+      <p>Nouvelle paire typo (Geist ou Cal Sans + Inter), gradient mesh backgrounds, glow effects plus prononcés, border animations au hover, section breaks avec séparateurs visuels. Framer Motion pour les entrées. Effort : <strong>1 semaine</strong>.</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros"><h4>Pour</h4><ul><li>Impact visuel fort</li><li>Vibe Linear/Vercel</li><li>Reste maintenable</li></ul></div>
+        <div class="cons"><h4>Contre</h4><ul><li>+1 dépendance (Framer)</li><li>Plus de tests mobiles</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="rebrand" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #03070f; padding: 20px; border-radius: 8px; font-family: sans-serif;">
+      <div style="position: relative; border-radius: 12px; padding: 20px; border: 1px solid rgba(139,92,246,0.3); overflow: hidden; background: linear-gradient(135deg, rgba(139,92,246,0.08) 0%, rgba(56,189,248,0.05) 100%);">
+        <div style="position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 20px 20px;"></div>
+        <div style="position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 200px; height: 200px; background: conic-gradient(from 0deg, rgba(139,92,246,0.3), rgba(56,189,248,0.3), rgba(16,185,129,0.3), rgba(139,92,246,0.3)); filter: blur(40px); border-radius: 50%;"></div>
+        <div style="position: relative; font-size: 10px; color: #a78bfa; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 12px;">Audit · Conformité · Loi 25</div>
+        <div style="position: relative; font-size: 26px; font-weight: 900; color: #fff; line-height: 1.1; letter-spacing: -0.03em;">Protégez votre<br>organisation.</div>
+        <div style="position: relative; margin-top: 6px; font-size: 13px; color: #94a3b8;">Conformité Loi 25 — Québec</div>
+        <div style="position: relative; margin-top: 14px; display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(139,92,246,0.3), rgba(56,189,248,0.2)); border: 1px solid rgba(139,92,246,0.4); padding: 8px 18px; border-radius: 8px; font-size: 11px; color: #e2e8f0; font-weight: 600;">Démarrer gratuitement →</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Full Rebrand</h3>
+      <p>Nouvelle palette (violet + cyan + emerald), dot grid backgrounds, conic gradients, nouvelle typographie headline, composants entièrement refaits. Effort : <strong>2 semaines</strong>. Risque : élevé — peut nécessiter des ajustements de copy.</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros"><h4>Pour</h4><ul><li>Transformation radicale</li><li>Très différenciateur</li></ul></div>
+        <div class="cons"><h4>Contre</h4><ul><li>Long, risqué</li><li>Palette moins "confiance"</li><li>Détourne du business</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top: 24px; font-size: 12px;">Note : le site tourne sur Next.js 16.1.6 (pas 14). L'option B reste ma recommandation — elle donne le look Linear/Vercel sans tout refaire.</p>

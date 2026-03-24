@@ -5,14 +5,14 @@ import { CheckCircle, ArrowRight, Mail, CreditCard } from "lucide-react";
 export const metadata: Metadata = {
   title: "Merci — Votre pré-audit est en route | auditloi25.ca",
   description:
-    "Votre demande de pré-audit Loi 25 a bien été reçue. Vous recevrez votre rapport dans les 48 heures ouvrables.",
+    "Votre demande de pré-audit Loi 25 a bien été reçue. Votre rapport est généré instantanément.",
   robots: { index: false, follow: false },
 };
 
 const nextSteps = [
   {
     label: "Vous recevez votre rapport par email",
-    sub: "Dans les 48 heures ouvrables",
+    sub: "Instantanément, par email",
   },
   {
     label: "On identifie vos zones à risque prioritaires",
@@ -74,7 +74,7 @@ export default async function MerciPage({
             C&apos;est fait&nbsp;! Votre pré-audit est en route.
           </h1>
           <p className="mt-3 text-slate-400">
-            Vous recevrez votre rapport d&apos;ici 48 heures ouvrables. Voici ce qu&apos;il couvrira&nbsp;:
+            Votre rapport a été généré instantanément. Voici ce qu&apos;il couvre&nbsp;:
           </p>
           <ul className="mt-5 space-y-2 text-left text-sm text-slate-300">
             {coverageItems.map((item) => (

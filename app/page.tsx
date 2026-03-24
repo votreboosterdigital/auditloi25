@@ -35,6 +35,44 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-10">
           <Hero />
           <HowItWorks />
+
+          {/* Section visuelle — Voici ce que vous recevez */}
+          <section className="py-16 sm:py-20">
+            <div className="mx-auto max-w-5xl px-4 sm:px-6">
+              <div className="text-center mb-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-400">Rapport instantané</p>
+                <h2 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                  Voici ce que vous recevez — instantanément
+                </h2>
+                <p className="mt-3 text-slate-400 text-sm">
+                  Score de risque · Zones critiques en rouge · Actions prioritaires classées
+                </p>
+              </div>
+              <div className="relative rounded-2xl border border-white/8 bg-slate-900/50 overflow-hidden">
+                {/* Placeholder rapport */}
+                <div className="aspect-[16/9] flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+                  <div className="text-center space-y-4 p-8">
+                    <div className="mx-auto w-20 h-20 rounded-full bg-red-500/10 ring-1 ring-red-500/30 flex items-center justify-center">
+                      <span className="text-3xl font-black text-red-400">42</span>
+                    </div>
+                    <div className="space-y-2 max-w-sm mx-auto">
+                      <div className="h-3 rounded-full bg-red-500/20 ring-1 ring-red-500/20 w-full" />
+                      <div className="h-3 rounded-full bg-amber-500/20 ring-1 ring-amber-500/20 w-3/4 mx-auto" />
+                      <div className="h-3 rounded-full bg-emerald-500/20 ring-1 ring-emerald-500/20 w-1/2 mx-auto" />
+                    </div>
+                    <p className="text-xs text-slate-500">Exemple de rapport — score et zones de votre site réel</p>
+                  </div>
+                </div>
+                {/* Overlay avec badges */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 flex-wrap justify-center">
+                  <span className="rounded-full bg-red-500/20 px-3 py-1 text-xs font-semibold text-red-400 ring-1 ring-red-500/30">Bannière cookies manquante</span>
+                  <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-semibold text-amber-400 ring-1 ring-amber-500/30">Formulaire sans mention</span>
+                  <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-400 ring-1 ring-emerald-500/30">HTTPS actif ✓</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <Features />
           <CasPratique />
           <Testimonials />
