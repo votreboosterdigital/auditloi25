@@ -64,7 +64,8 @@ export default function PolitiqueConfidentialitePage() {
                 l&apos;adresse suivante&nbsp;:
               </p>
               <div className="mt-3 rounded-xl bg-slate-900/70 p-4 ring-1 ring-slate-700/50 text-slate-200">
-                <p className="font-medium">auditloi25.ca</p>
+                <p className="font-medium">Belkacem Mehdi</p>
+                <p className="text-slate-300 text-xs">Responsable de la protection des renseignements personnels — auditloi25.ca</p>
                 <p className="mt-1 text-slate-400">
                   Courriel&nbsp;:{" "}
                   <a
@@ -369,7 +370,8 @@ export default function PolitiqueConfidentialitePage() {
                 la protection des renseignements personnels&nbsp;:
               </p>
               <div className="mt-3 rounded-xl bg-slate-900/70 p-4 ring-1 ring-slate-700/50">
-                <p className="font-medium text-slate-200">auditloi25.ca</p>
+                <p className="font-medium text-slate-200">Belkacem Mehdi</p>
+                <p className="text-xs text-slate-400">Responsable de la protection des renseignements personnels</p>
                 <p className="mt-1 text-slate-400">
                   <a
                     href="mailto:votreboosterdigital@outlook.com"

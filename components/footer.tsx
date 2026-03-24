@@ -38,6 +38,12 @@ export function Footer() {
             <p className="text-xs text-slate-500">
               © {new Date().getFullYear()} auditloi25.ca – Tous droits réservés.
             </p>
+            <p className="text-xs text-slate-500">
+              Responsable de la protection des renseignements personnels&nbsp;:{" "}
+              <a href="mailto:votreboosterdigital@outlook.com" className="hover:text-slate-300 transition-colors">
+                Belkacem Mehdi
+              </a>
+            </p>
           </div>
 
           {/* Nav links */}
