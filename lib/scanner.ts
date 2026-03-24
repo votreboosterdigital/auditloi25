@@ -36,7 +36,7 @@ async function fetchHtml(rawUrl: string): Promise<{ html: string; finalUrl: stri
 
   // Tente l'URL telle quelle
   try {
-    const res = await fetch(url, { headers, signal: AbortSignal.timeout(10000), redirect: "follow" });
+    const res = await fetch(url, { headers, signal: AbortSignal.timeout(6000), redirect: "follow" });
     if (res.ok || res.status < 400) {
       return { html: await res.text(), finalUrl: res.url || url };
     }
@@ -48,7 +48,7 @@ async function fetchHtml(rawUrl: string): Promise<{ html: string; finalUrl: stri
   const withoutWww = url.replace(/^(https?:\/\/)www\./, "$1");
   if (withoutWww !== url) {
     try {
-      const res = await fetch(withoutWww, { headers, signal: AbortSignal.timeout(10000), redirect: "follow" });
+      const res = await fetch(withoutWww, { headers, signal: AbortSignal.timeout(6000), redirect: "follow" });
       if (res.ok || res.status < 400) {
         return { html: await res.text(), finalUrl: res.url || withoutWww };
       }
@@ -61,7 +61,7 @@ async function fetchHtml(rawUrl: string): Promise<{ html: string; finalUrl: stri
   const withWww = url.replace(/^(https?:\/\/)(?!www\.)/, "$1www.");
   if (withWww !== url) {
     try {
-      const res = await fetch(withWww, { headers, signal: AbortSignal.timeout(10000), redirect: "follow" });
+      const res = await fetch(withWww, { headers, signal: AbortSignal.timeout(6000), redirect: "follow" });
       if (res.ok || res.status < 400) {
         return { html: await res.text(), finalUrl: res.url || withWww };
       }
@@ -73,7 +73,7 @@ async function fetchHtml(rawUrl: string): Promise<{ html: string; finalUrl: stri
   // Fallback 3 : http (sites sans HTTPS)
   const httpUrl = url.replace(/^https:\/\//, "http://");
   if (httpUrl !== url) {
-    const res = await fetch(httpUrl, { headers, signal: AbortSignal.timeout(10000), redirect: "follow" });
+    const res = await fetch(httpUrl, { headers, signal: AbortSignal.timeout(6000), redirect: "follow" });
     return { html: await res.text(), finalUrl: res.url || httpUrl };
   }
 
