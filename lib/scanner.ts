@@ -28,16 +28,56 @@ export type FullScanResult = {
 
 async function fetchHtml(rawUrl: string): Promise<{ html: string; finalUrl: string }> {
   const url = rawUrl.startsWith("http") ? rawUrl : `https://${rawUrl}`;
-  const res = await fetch(url, {
-    headers: {
-      "User-Agent": "Mozilla/5.0 (compatible; AuditLoi25Bot/1.0; +https://auditloi25.ca)",
-      "Accept-Language": "fr-CA,fr;q=0.9,en;q=0.5",
-    },
-    signal: AbortSignal.timeout(10000),
-    redirect: "follow",
-  });
-  const html = await res.text();
-  return { html, finalUrl: res.url || url };
+
+  const headers = {
+    "User-Agent": "Mozilla/5.0 (compatible; AuditLoi25Bot/1.0; +https://auditloi25.ca)",
+    "Accept-Language": "fr-CA,fr;q=0.9,en;q=0.5",
+  };
+
+  // Tente l'URL telle quelle
+  try {
+    const res = await fetch(url, { headers, signal: AbortSignal.timeout(10000), redirect: "follow" });
+    if (res.ok || res.status < 400) {
+      return { html: await res.text(), finalUrl: res.url || url };
+    }
+  } catch {
+    // Continuer vers le fallback
+  }
+
+  // Fallback 1 : www → apex (ex: www.exemple.ca → exemple.ca)
+  const withoutWww = url.replace(/^(https?:\/\/)www\./, "$1");
+  if (withoutWww !== url) {
+    try {
+      const res = await fetch(withoutWww, { headers, signal: AbortSignal.timeout(10000), redirect: "follow" });
+      if (res.ok || res.status < 400) {
+        return { html: await res.text(), finalUrl: res.url || withoutWww };
+      }
+    } catch {
+      // Continuer vers le fallback suivant
+    }
+  }
+
+  // Fallback 2 : apex → www (ex: exemple.ca → www.exemple.ca)
+  const withWww = url.replace(/^(https?:\/\/)(?!www\.)/, "$1www.");
+  if (withWww !== url) {
+    try {
+      const res = await fetch(withWww, { headers, signal: AbortSignal.timeout(10000), redirect: "follow" });
+      if (res.ok || res.status < 400) {
+        return { html: await res.text(), finalUrl: res.url || withWww };
+      }
+    } catch {
+      // Continuer vers le fallback suivant
+    }
+  }
+
+  // Fallback 3 : http (sites sans HTTPS)
+  const httpUrl = url.replace(/^https:\/\//, "http://");
+  if (httpUrl !== url) {
+    const res = await fetch(httpUrl, { headers, signal: AbortSignal.timeout(10000), redirect: "follow" });
+    return { html: await res.text(), finalUrl: res.url || httpUrl };
+  }
+
+  throw new Error(`Impossible d'accéder au site : ${url}`);
 }
 
 // ─── Signal extraction ────────────────────────────────────────────────────────
