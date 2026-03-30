@@ -1,7 +1,15 @@
 import type { MetadataRoute } from "next";
+import { BLOG_POSTS } from "@/app/data/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://auditloi25.ca";
+
+  const blogEntries: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
+    url: `${base}/actualites/${post.slug}`,
+    lastModified: post.date,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
 
   return [
     {
@@ -53,6 +61,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${base}/ressources/loi-25-cliniques-sante`,
+      lastModified: "2026-03-30",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/ressources/loi-25-agence-web-marketing`,
+      lastModified: "2026-03-30",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/ressources/loi-25-ecommerce-quebec`,
+      lastModified: "2026-03-30",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/ressources/loi-25-cabinet-comptable`,
+      lastModified: "2026-03-30",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${base}/a-propos`,
       lastModified: "2026-02-15",
       changeFrequency: "yearly",
@@ -70,47 +102,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.7,
     },
-    {
-      url: `${base}/actualites/loi-25-quest-ce-que-cest-guide-pme`,
-      lastModified: "2026-03-18",
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${base}/actualites/cookies-consentement-loi-25-2026`,
-      lastModified: "2026-03-18",
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${base}/actualites/cai-inspection-site-web-comment-se-preparer`,
-      lastModified: "2026-03-18",
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${base}/actualites/politique-confidentialite-loi-25-rediger`,
-      lastModified: "2026-03-18",
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${base}/actualites/banniere-cookies-loi-25-site-web`,
-      lastModified: "2026-03-23",
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/actualites/loi-25-obnl-quebec-obligations`,
-      lastModified: "2026-03-23",
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/actualites/cout-audit-loi-25-entreprise`,
-      lastModified: "2026-03-23",
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
+    ...blogEntries,
   ];
 }
