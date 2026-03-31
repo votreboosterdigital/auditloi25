@@ -1,7 +1,15 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { getSupabase } from "@/lib/supabase";
 import { runScan } from "@/lib/scanner";
 import type { ZoneResult } from "@/lib/scanner";
+
+const scanSchema = z.object({
+  name: z.string().min(1).max(200),
+  email: z.string().email(),
+  siteUrl: z.string().url(),
+  mainPages: z.string().max(1000).optional(),
+});
 
 // Hobby plan — max 10s (maxDuration ignoré sur Hobby, on optimise pour tenir dedans)
 
@@ -60,11 +68,11 @@ function buildAnalyse(siteUrl: string, zones: ZoneResult[], score: number): Anal
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, siteUrl, mainPages } = body;
-
-    if (!name || !email || !siteUrl) {
-      return NextResponse.json({ error: "Champs obligatoires manquants." }, { status: 400 });
+    const parsed = scanSchema.safeParse(body);
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Données invalides." }, { status: 400 });
     }
+    const { name, email, siteUrl, mainPages } = parsed.data;
 
     // 1. Scan technique (fetch + cheerio, ~3-5s)
     const scanResult = await runScan(siteUrl);
