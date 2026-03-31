@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, CheckSquare, ToggleLeft, ShieldAlert, Heart, BookOpen } from "lucide-react";
+import { ArrowLeft, CheckSquare, ToggleLeft, ShieldAlert, Heart, BookOpen, Stethoscope, Globe, ShoppingCart, Calculator } from "lucide-react";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
-  title: "Ressources Loi 25 pour PME et OBNL | auditloi25.ca",
+  title: "Ressources Loi 25 pour PME, OBNL et secteurs spécialisés | auditloi25.ca",
   description:
-    "Guides pratiques sur la conformité Loi 25 pour votre site web : bannière de cookies, amendes, checklist, obligations des OBNL. Expliqués clairement, sans jargon.",
+    "Guides pratiques Loi 25 : bannière de cookies, amendes, checklist site web, obligations par secteur (cliniques, agences web, e-commerce, cabinets comptables). Expliqués clairement, sans jargon.",
   alternates: { canonical: "https://auditloi25.ca/ressources" },
 };
 
@@ -56,6 +56,54 @@ const ressources = [
     titre: "Loi 25 et OBNL : votre organisme est-il à l'abri ?",
     description:
       "La Loi 25 s'applique aux OBNL autant qu'aux entreprises. Formulaires de dons, inscriptions, infolettres — voici ce que votre organisme doit vérifier en priorité.",
+    temps: "5 min de lecture",
+    cta: "Lire le guide",
+  },
+  {
+    href: "/ressources/loi-25-cliniques-sante",
+    badge: "Secteur santé",
+    badgeColor: "bg-sky-400/10 text-sky-300 ring-sky-500/30",
+    icon: <Stethoscope size={22} className="text-sky-400" aria-hidden="true" />,
+    iconBg: "bg-sky-400/10",
+    titre: "Loi 25 et cliniques de santé : êtes-vous vraiment conformes ?",
+    description:
+      "Formulaires de RDV, logiciels de gestion, données de santé sensibles — ce que chaque clinique québécoise doit vérifier pour respecter la Loi 25.",
+    temps: "5 min de lecture",
+    cta: "Lire le guide",
+  },
+  {
+    href: "/ressources/loi-25-agence-web-marketing",
+    badge: "Secteur web",
+    badgeColor: "bg-sky-400/10 text-sky-300 ring-sky-500/30",
+    icon: <Globe size={22} className="text-sky-400" aria-hidden="true" />,
+    iconBg: "bg-sky-400/10",
+    titre: "Loi 25 et agences web : vous êtes exposés deux fois",
+    description:
+      "Votre propre site et les sites de vos clients — comment la Loi 25 s'applique aux agences web et marketing québécoises, et ce que vos contrats doivent prévoir.",
+    temps: "5 min de lecture",
+    cta: "Lire le guide",
+  },
+  {
+    href: "/ressources/loi-25-ecommerce-quebec",
+    badge: "Secteur e-commerce",
+    badgeColor: "bg-emerald-500/10 text-emerald-300 ring-emerald-500/30",
+    icon: <ShoppingCart size={22} className="text-emerald-400" aria-hidden="true" />,
+    iconBg: "bg-emerald-500/10",
+    titre: "Loi 25 et e-commerce : votre boutique collecte plus que vous ne croyez",
+    description:
+      "Commandes, emails marketing, pixels de remarketing — les obligations Loi 25 pour les boutiques en ligne québécoises et comment y répondre concrètement.",
+    temps: "5 min de lecture",
+    cta: "Lire le guide",
+  },
+  {
+    href: "/ressources/loi-25-cabinet-comptable",
+    badge: "Secteur financier",
+    badgeColor: "bg-amber-500/10 text-amber-300 ring-amber-500/30",
+    icon: <Calculator size={22} className="text-amber-400" aria-hidden="true" />,
+    iconBg: "bg-amber-500/10",
+    titre: "Loi 25 et cabinets comptables : des données financières sous haute responsabilité",
+    description:
+      "NAS, relevés bancaires, états financiers — les obligations strictes de la Loi 25 pour les comptables et conseillers financiers québécois.",
     temps: "5 min de lecture",
     cta: "Lire le guide",
   },
