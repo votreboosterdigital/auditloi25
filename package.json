@@ -9,9 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.80.0",
-    "@stripe/stripe-js": "^8.11.0",
     "@supabase/supabase-js": "^2.100.0",
+    "zod": "^3.22.0",
     "@types/cheerio": "^0.22.35",
     "cheerio": "^1.2.0",
     "framer-motion": "^12.37.0",

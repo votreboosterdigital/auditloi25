@@ -31,3 +31,8 @@ create index if not exists rapports_email_idx on rapports (email);
 alter table rapports enable row level security;
 
 -- Aucune policy publique — seul le service role peut lire/écrire
+
+-- Index pour recherche par URL
+create index if not exists rapports_site_url_idx on rapports (site_url);
+-- Index pour tri par date
+create index if not exists rapports_created_at_idx on rapports (created_at DESC);
