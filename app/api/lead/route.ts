@@ -91,6 +91,7 @@ export async function POST(request: Request) {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),
+            signal: AbortSignal.timeout(5000),
           }).catch((err) => console.error("Erreur réseau webhook externe:", err))
         : Promise.resolve(console.warn("LEAD_WEBHOOK_URL non défini.")),
     ]);
