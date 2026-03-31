@@ -31,7 +31,8 @@ export async function POST(request: Request) {
     const customerName = session.customer_details?.name ?? "—";
     const amount = session.amount_total ? `${(session.amount_total / 100).toFixed(2)} $` : "450 $";
 
-    console.log(`Paiement reçu — ${customerEmail} — ${amount}`);
+    // Log sans données personnelles — courriel client non inclus
+    console.log(`Paiement reçu — ${amount} — session ${session.id}`);
 
     if (RESEND_API_KEY) {
       const resend = new Resend(RESEND_API_KEY);
