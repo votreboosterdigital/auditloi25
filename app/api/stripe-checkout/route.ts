@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-
 export async function POST() {
+  // Initialisation lazy de Stripe — évite l'échec au build si la clé est absente
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+
   try {
     const session = await stripe.checkout.sessions.create({
       mode: "payment",

@@ -2,13 +2,15 @@ import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { Resend } from "resend";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET!;
+// Variables lues au runtime pour éviter les erreurs de build
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const FROM_EMAIL = process.env.FROM_EMAIL ?? "noreply@auditloi25.ca";
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL ?? "votreboosterdigital@outlook.com";
 
 export async function POST(request: Request) {
+  // Initialisation lazy de Stripe — évite l'échec au build si la clé est absente
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+  const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET!;
   const body = await request.text();
   const signature = request.headers.get("stripe-signature");
 
@@ -32,7 +34,7 @@ export async function POST(request: Request) {
     const amount = session.amount_total ? `${(session.amount_total / 100).toFixed(2)} $` : "450 $";
 
     // Log sans données personnelles — courriel client non inclus
-    console.log(`Paiement reçu — ${amount} — session ${session.id}`);
+    console.info(`Paiement reçu — ${amount} — session ${session.id}`);
 
     if (RESEND_API_KEY) {
       const resend = new Resend(RESEND_API_KEY);
