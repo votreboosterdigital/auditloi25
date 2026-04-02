@@ -80,8 +80,8 @@ export async function POST(request: Request) {
       source: "auditloi25.ca",
     };
 
-    // Log sans données personnelles
-    console.log("Nouveau lead reçu — site:", siteUrl, "— à:", payload.receivedAt);
+    // Log sans données personnelles — site uniquement, pas de courriel
+    console.info("Nouveau lead reçu — site:", siteUrl, "— à:", payload.receivedAt);
 
     // 1. Scan automatique du site + webhook en parallèle
     const [scan] = await Promise.all([
