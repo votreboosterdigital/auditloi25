@@ -96,6 +96,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    // Pages sectorielles — nouvelles (2026-04-05)
+    {
+      url: `${base}/ressources/loi-25-courtiers-immobiliers`,
+      lastModified: "2026-04-05",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/ressources/loi-25-avocats-notaires-quebec`,
+      lastModified: "2026-04-05",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/ressources/loi-25-restaurants-bars-quebec`,
+      lastModified: "2026-04-05",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
     // Pages institutionnelles
     {
       url: `${base}/a-propos`,
