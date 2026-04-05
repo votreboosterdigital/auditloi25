@@ -12,7 +12,7 @@ export async function GET(request: Request) {
   try {
     const supabase = getSupabase();
     // Requête minimale — juste pour garder la DB active
-    const { error } = await supabase.from("leads").select("id").limit(1);
+    const { error } = await supabase.from("rapports").select("id").limit(1);
     if (error) throw error;
 
     return NextResponse.json({ ok: true, ts: new Date().toISOString() });
