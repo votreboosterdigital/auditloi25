@@ -8,9 +8,9 @@ import { StripeCheckoutButton } from "@/components/stripe-checkout-button";
 
 export const metadata: Metadata = {
   title:
-    "Offre d'audit Loi 25 pour site web | Prix et livrables – auditloi25.ca",
+    "Tarifs audit conformité Loi 25 — À partir de 450 $ | auditloi25.ca",
   description:
-    "Découvrez notre offre d'audit de conformité Loi 25 pour PME et OBNL québécois : livrables détaillés, tarifs transparents, processus clair. Pré-audit gratuit — audit complet à partir de 450 $.",
+    "Coût d'un audit de conformité Loi 25 pour votre site web : pré-audit gratuit, audit complet à partir de 450 $. Rapport PDF + plan d'action priorisé pour PME et OBNL québécois.",
   alternates: { canonical: "https://auditloi25.ca/offre" },
 };
 
